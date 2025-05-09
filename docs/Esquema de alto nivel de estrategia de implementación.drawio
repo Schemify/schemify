@@ -1,0 +1,145 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
+  <diagram name="Página-1" id="Jog1CB8qQKN3SRwH82qO">
+    <mxGraphModel dx="2320" dy="1604" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-1" target="y5nNxfQDsKQJ9tVYJSOM-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="470" y="330" width="220" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-3" target="y5nNxfQDsKQJ9tVYJSOM-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-3" value="Preparación de servidor local con Nginx Proxy Manager" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="490" y="380" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-4" target="y5nNxfQDsKQJ9tVYJSOM-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-4" value="Dockerizar la aplicación principal" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="490" y="480" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-5" value="Desplegar herramientas de monitoreo (Cadvisor, Node Exporter, Prometheus, Grafana)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="480" y="585" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-8" target="y5nNxfQDsKQJ9tVYJSOM-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-8" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=none;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="750" y="320" width="200" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-9" value="&lt;div&gt;Fase 2: Implementación de la Infraestructura de Microservicios&lt;/div&gt;n del Entorno" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="750" y="330" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-10" value="Fase 1: Preparación del Entorno" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="475" y="340" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-11" target="y5nNxfQDsKQJ9tVYJSOM-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-11" value="Instalación de Kubernetes local con Minikube" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="770" y="390" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-12" target="y5nNxfQDsKQJ9tVYJSOM-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-12" value="Levantamiento de un clúster de Kafka Brokers" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="770" y="490" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-14" value="Levantamiento de Kafka UI" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="770" y="595" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-20" target="y5nNxfQDsKQJ9tVYJSOM-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-20" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCFFCC;strokeColor=none;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1041" y="320" width="200" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-21" value="Fase 3: Desarrollo y&amp;nbsp;&lt;div&gt;Comunicación de Microservicios&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1041" y="330" width="189" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="y5nNxfQDsKQJ9tVYJSOM-23" target="y5nNxfQDsKQJ9tVYJSOM-25" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-23" value="Implementar microservicio utilizando gRPC" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="1061" y="390" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="y5nNxfQDsKQJ9tVYJSOM-25" target="y5nNxfQDsKQJ9tVYJSOM-26" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-25" value="Implementar Kafka en el microservicio" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="1061" y="490" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-26" value="Comunicación entre 2 microservicios utilizando Kafka" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="1061" y="595" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-27" target="y5nNxfQDsKQJ9tVYJSOM-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-27" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCCCFF;strokeColor=none;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="215" width="200" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-28" value="Fase 4: Implementación de la Arquitectura y Despliegue" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="225" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="y5nNxfQDsKQJ9tVYJSOM-30" target="y5nNxfQDsKQJ9tVYJSOM-32" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-30" value="Implementación de la arquitectura hexagonal con DDD" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="285" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="y5nNxfQDsKQJ9tVYJSOM-32" target="y5nNxfQDsKQJ9tVYJSOM-33" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-32" value="CRUD básico del microservicio" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="385" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-33" target="y5nNxfQDsKQJ9tVYJSOM-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-33" value="Preparar Kubernetes con Helm" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="490" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-34" target="y5nNxfQDsKQJ9tVYJSOM-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-34" value="Desplegar microservicio en Minikube con manifiesto de Kubernetes" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="595" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-35" value="Implementación de un API Gateway para el microservicio" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="695" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-36" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFCCCC;strokeColor=none;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1635" y="265" width="200" height="460" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-37" value="Fase 5: Seguridad, Pruebas&lt;div&gt;y CI/CD&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1635" y="275" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="y5nNxfQDsKQJ9tVYJSOM-39" target="y5nNxfQDsKQJ9tVYJSOM-41" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-39" value="Implementación de autenticación (OAuth2 y JWT)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="1655" y="335" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" source="y5nNxfQDsKQJ9tVYJSOM-41" target="y5nNxfQDsKQJ9tVYJSOM-42" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-41" value="Implementación de documentación de la API" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="1655" y="435" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-42" target="y5nNxfQDsKQJ9tVYJSOM-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-42" value="Implementación de pruebas unitarias e integración" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="1655" y="540" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-43" value="Implementación de CI/CD con GitHub Actions" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="1655" y="645" width="160" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
