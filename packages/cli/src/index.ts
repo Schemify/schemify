@@ -5,6 +5,10 @@ import { readFileSync } from "fs";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 
+import { checkForUpdate } from "./check-update.js";
+
+checkForUpdate();
+
 // Obtener ruta al package.json (manteniendo soporte para ESM)
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const pkgPath = join(__dirname, "..", "package.json");

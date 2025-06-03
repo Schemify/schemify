@@ -1,13 +1,15 @@
 {
   "name": "@schemifyjs/cli",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "CLI oficial de SchemifyJS",
   "main": "dist/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
+    "prebuild": "node ./scripts/update-version.js",
     "build": "tsc",
+    "release": "npm run build && npm version patch && npm publish --access public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
