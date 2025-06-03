@@ -1,6 +1,6 @@
 {
   "name": "@schemifyjs/cli",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "description": "CLI oficial de SchemifyJS",
   "main": "dist/index.js",
   "files": [
@@ -19,7 +19,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "@schemifyjs/cli": "^0.1.5",
     "@schemifyjs/core": "^0.1.0",
