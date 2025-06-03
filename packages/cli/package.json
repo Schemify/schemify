@@ -1,15 +1,15 @@
 {
   "name": "@schemifyjs/cli",
-  "version": "0.1.9",
+  "version": "0.1.12",
   "description": "CLI oficial de SchemifyJS",
   "main": "dist/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "prebuild": "node ./scripts/update-version.js",
+    "prebuild": "node ./scripts/update-version.mjs",
     "build": "tsc",
-    "release": "npm run build && npm version patch && npm publish --access public",
+    "release": "npm version patch && npm run build && npm publish --access public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
@@ -25,7 +25,8 @@
   "dependencies": {
     "@schemifyjs/cli": "^0.1.5",
     "@schemifyjs/core": "^0.1.0",
-    "chalk": "^5.4.1"
+    "chalk": "^5.4.1",
+    "enquirer": "^2.4.1"
   },
   "devDependencies": {
     "typescript": "^5.8.3"

@@ -1,65 +1,53 @@
 #!/usr/bin/env node
-import { execSync } from "child_process";
 import chalk from "chalk";
 import { readFileSync } from "fs";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 
 import { checkForUpdate } from "./check-update.js";
+import { newCommand } from "./commands/new.js";
 
-checkForUpdate();
-
-// Obtener ruta al package.json (manteniendo soporte para ESM)
+// 🧠 Embed version
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const pkgPath = join(__dirname, "..", "package.json");
 const { version } = JSON.parse(readFileSync(pkgPath, "utf-8"));
 
+// 🚀 Check si hay versión más nueva
+checkForUpdate();
+
+// 🧭 Comando + argumentos
 const [, , cmd, ...args] = process.argv;
 
-const showHelp = () => {
-  console.log(
-    chalk.bold.blue("Schemify CLI") +
-      chalk.gray(` - herramientas para microservicios NestJS\n`)
-  );
-  console.log(chalk.bold("Comandos disponibles:"));
-  console.log(
-    `  ${chalk.green("new")} <nombre>     Crea un nuevo proyecto NestJS`
-  );
-  console.log(`  ${chalk.green("help")}             Muestra esta ayuda`);
-  console.log(
-    `  ${chalk.green("--version")}         Muestra la versión actual`
-  );
-  console.log(`  ${chalk.green("--help")}            Alias de ayuda\n`);
-  console.log(chalk.gray("Ejemplo:"));
-  console.log(`  schemify new mi-app\n`);
+// 🗺️ Router de comandos
+const commands: Record<string, () => void> = {
+  new: () => newCommand(args[0]),
+  help: showHelp,
+  "--help": showHelp,
+  "-h": showHelp,
+  version: () => console.log(chalk.cyan(`Schemify CLI v${version}`)),
+  "--version": () => console.log(chalk.cyan(`Schemify CLI v${version}`)),
+  "-v": () => console.log(chalk.cyan(`Schemify CLI v${version}`)),
 };
 
-switch (cmd) {
-  case "new": {
-    const name = args[0];
-    if (!name) {
-      console.error(chalk.red("❌ Debes indicar un nombre para el proyecto"));
-      process.exit(1);
-    }
-    execSync(`npx nest new ${name}`, { stdio: "inherit" });
-    break;
-  }
+// 🧾 Ayuda
+function showHelp() {
+  console.log(
+    chalk.bold.blue("Schemify CLI") +
+      chalk.gray(" - herramientas para microservicios NestJS\n")
+  );
+  console.log(chalk.bold("Comandos disponibles:"));
+  console.log(`  ${chalk.green("new")} <nombre>     Crea un nuevo proyecto`);
+  console.log(`  ${chalk.green("--version")}         Muestra la versión`);
+  console.log(`  ${chalk.green("--help")}            Muestra la ayuda\n`);
+  console.log(chalk.gray("Ejemplo:"));
+  console.log(`  schemify new mi-app\n`);
+}
 
-  case "help":
-  case "--help":
-  case "-h":
-  case undefined:
-    showHelp();
-    break;
-
-  case "--version":
-  case "-v":
-  case "version":
-    console.log(chalk.cyan(`Schemify CLI v${version}`));
-    break;
-
-  default:
-    console.error(chalk.red(`❌ Comando desconocido: ${cmd}\n`));
-    showHelp();
-    process.exit(1);
+// 🚦 Ejecución
+if (cmd in commands) {
+  commands[cmd]();
+} else {
+  console.error(chalk.red(`❌ Comando desconocido: ${cmd ?? "(vacío)"}\n`));
+  showHelp();
+  process.exit(1);
 }
