@@ -8,16 +8,16 @@ cd "$(dirname "$0")"
 
 # ─────────────────────────────────────────────
 # Instalar dependencias de core
-echo "📦 Instalando dependencias de @schemify/core..."
+echo "📦 Instalando dependencias de @schemifyjs/core..."
 cd packages/core
 npm install
 
 # Compilar core
-echo "🏗️  Compilando @schemify/core..."
+echo "🏗️  Compilando @schemifyjs/core..."
 npm run build
 
 # Linkear core globalmente
-echo "🔗 Linkeando @schemify/core localmente..."
+echo "🔗 Linkeando @schemifyjs/core localmente..."
 npm link
 
 # ─────────────────────────────────────────────
@@ -27,8 +27,8 @@ cd ../cli
 npm install
 
 # Linkear core dentro de CLI
-echo "🔗 Linkeando @schemify/core dentro de @schemify/cli..."
-npm link @schemify/core
+echo "🔗 Linkeando @schemifyjs/core dentro de @schemify/cli..."
+npm link @schemifyjs/core
 
 # Compilar CLI
 echo "🏗️  Compilando @schemify/cli..."

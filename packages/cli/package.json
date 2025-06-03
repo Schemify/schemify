@@ -1,7 +1,7 @@
 {
-  "name": "@schemify/cli",
-  "version": "0.1.0",
-  "description": "",
+  "name": "@schemifyjs/cli",
+  "version": "0.1.4",
+  "description": "CLI oficial de SchemifyJS",
   "main": "dist/index.js",
   "files": [
     "dist"
@@ -21,7 +21,8 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "@schemify/core": "^0.1.0"
+    "@schemifyjs/core": "^0.1.0",
+    "@schemifyjs/cli": "^0.1.0"
   },
   "devDependencies": {
     "typescript": "^5.8.3"
