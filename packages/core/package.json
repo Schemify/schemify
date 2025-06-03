@@ -1,17 +1,15 @@
 {
-  "name": "@schemify/cli",
+  "name": "@schemify/core",
   "version": "0.1.0",
   "description": "",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "bin": {
-    "schemify-nestjs": "dist/index.js"
   },
   "publishConfig": {
     "access": "public"
@@ -20,9 +18,6 @@
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-  "dependencies": {
-    "@schemify/core": "^0.1.0"
-  },
   "devDependencies": {
     "typescript": "^5.8.3"
   }

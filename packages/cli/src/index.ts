@@ -1,6 +1,11 @@
 #!/usr/bin/env node
 
-import { bootstrap } from "@schemify/core";
+import { handleNewCommand } from "./commands/new";
 
-console.log("📦 Bienvenido a Schemify CLI");
-bootstrap();
+const args = process.argv.slice(2);
+
+if (args[0] === "new" && args[1]) {
+  handleNewCommand(args[1]);
+} else {
+  console.log("Uso: schemify new <nombre-proyecto>");
+}

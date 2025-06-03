@@ -1,6 +1,6 @@
 {
   "name": "schemify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "commitlint.config.js",
   "directories": {
@@ -9,11 +9,6 @@
   "workspaces": [
     "packages/*"
   ],
-  "devDependencies": {
-    "@commitlint/cli": "^19.8.0",
-    "@commitlint/config-conventional": "^19.8.0",
-    "husky": "^9.1.7"
-  },
   "scripts": {
     "prepare": "husky",
     "build": "npm run build --workspace=@schemify/core && npm run build --workspace=@schemify/cli",
@@ -99,6 +94,11 @@
     "yargs": "^17.7.2",
     "yargs-parser": "^21.1.1",
     "yocto-queue": "^1.2.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "husky": "^9.1.7"
   },
   "repository": {
     "type": "git",
