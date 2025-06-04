@@ -1,6 +1,6 @@
 {
   "name": "@schemifyjs/core",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,7 +8,9 @@
     "dist"
   ],
   "scripts": {
+    "prebuild": "node ./scripts/update-version.mjs",
     "build": "tsc",
+    "release": "npm version patch && npm run build && npm publish --access public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "publishConfig": {
@@ -17,8 +19,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "fs-extra": "^11.3.0"
   }
 }
