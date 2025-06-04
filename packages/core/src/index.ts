@@ -1,3 +1,1 @@
-export function bootstrap() {
-  console.log("🔧 Schemify core funcionando");
-}
+export * from "./create-project.js";

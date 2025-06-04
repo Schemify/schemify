@@ -1,8 +1,18 @@
-import { execSync } from "child_process";
 import chalk from "chalk";
 import enquirer from "enquirer";
+import { join } from "path";
 
-const allowedTypes = ["microservice", "kafka", "graphql", "grpc"];
+import { createProject } from "@schemifyjs/core";
+interface ParsedArgs {
+  name: string;
+  type: "microservice" | "grpc" | "kafka";
+  packageManager: "npm" | "yarn" | "pnpm";
+  initializeGit: boolean;
+  installDeps: boolean;
+  path: string;
+}
+
+const allowedTypes = ["microservice", "kafka", "graphql", "grpc"] as const;
 
 export const newCommand = async (type?: string) => {
   const { prompt } = enquirer;
@@ -13,7 +23,7 @@ export const newCommand = async (type?: string) => {
     process.exit(1);
   }
 
-  if (!allowedTypes.includes(type)) {
+  if (!allowedTypes.includes(type as any)) {
     console.error(chalk.red(`❌ Tipo no soportado: "${type}"`));
     console.log(
       chalk.gray(
@@ -23,7 +33,11 @@ export const newCommand = async (type?: string) => {
     process.exit(1);
   }
 
-  let answers: { name: string; pm: string; framework: string };
+  let answers: {
+    name: string;
+    pm: "npm" | "yarn" | "pnpm";
+    framework: "nestjs" | "express";
+  };
 
   try {
     answers = await prompt([
@@ -63,22 +77,29 @@ export const newCommand = async (type?: string) => {
   }
 
   const { name, framework, pm } = answers;
+  const projectPath = join(process.cwd(), name);
+
+  const args: ParsedArgs = {
+    name: name,
+    type: type as ParsedArgs["type"],
+    packageManager: pm,
+    initializeGit: true,
+    installDeps: true,
+    path: projectPath,
+  };
 
   try {
     console.log(
       chalk.cyan(`✨ Creando proyecto "${name}" con ${framework}...`)
     );
-    execSync(`npx ${framework} new ${name} --package-manager=${pm}`, {
-      stdio: "inherit",
-    });
+
+    await createProject(args);
 
     console.log(chalk.green(`\n✅ Proyecto creado en ./${name}`));
     console.log(
       chalk.gray(`\n➡️  cd ${name}\n📦 ${pm} install\n🚀 ${pm} run start\n`)
     );
-  } catch (error: unknown) {
-    const err = error as NodeJS.ErrnoException;
-
+  } catch (err: any) {
     const handlers: Record<string, () => void> = {
       ENOENT: () =>
         console.error(chalk.red("❌ Comando no encontrado. ¿Está instalado?")),
