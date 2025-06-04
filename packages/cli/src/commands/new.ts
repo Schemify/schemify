@@ -3,14 +3,7 @@ import enquirer from "enquirer";
 import { join } from "path";
 
 import { createProject } from "@schemifyjs/core";
-interface ParsedArgs {
-  name: string;
-  type: "microservice" | "grpc" | "kafka";
-  packageManager: "npm" | "yarn" | "pnpm";
-  initializeGit: boolean;
-  installDeps: boolean;
-  path: string;
-}
+import { type ProjectOptions } from "../types/options.js";
 
 const allowedTypes = ["microservice", "kafka", "graphql", "grpc"] as const;
 
@@ -79,13 +72,11 @@ export const newCommand = async (type?: string) => {
   const { name, framework, pm } = answers;
   const projectPath = join(process.cwd(), name);
 
-  const args: ParsedArgs = {
+  const args: ProjectOptions = {
     name: name,
-    type: type as ParsedArgs["type"],
-    packageManager: pm,
-    initializeGit: true,
-    installDeps: true,
-    path: projectPath,
+    template: type as ProjectOptions["template"],
+    framework: framework as ProjectOptions["framework"],
+    packageManager: pm as ProjectOptions["packageManager"],
   };
 
   try {
@@ -110,8 +101,8 @@ export const newCommand = async (type?: string) => {
     const handler =
       handlers[err.code ?? ""] ??
       (() => {
-        console.error(chalk.red("❌ Error desconocido."));
-        if (err?.message) console.error(err.message);
+        const fallback = err?.message || "Error desconocido";
+        console.error(chalk.red(`❌ ${fallback}`));
       });
 
     handler();

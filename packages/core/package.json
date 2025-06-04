@@ -1,7 +1,8 @@
 {
   "name": "@schemifyjs/core",
-  "version": "0.1.3",
-  "description": "",
+  "version": "0.1.4",
+  "description": "Módulo core del CLI de SchemifyJS. Contiene funciones reutilizables como scaffolding, manejo de plantillas y utilidades.",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -13,18 +14,36 @@
     "release": "npm version patch && npm run build && npm publish --access public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "schemify",
+    "core",
+    "scaffolding",
+    "template",
+    "monorepo",
+    "utils"
+  ],
+  "author": "Schemify Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Schemify/schemify"
+  },
+  "bugs": {
+    "url": "https://github.com/Schemify/schemify/issues"
+  },
+  "homepage": "https://github.com/Schemify/schemify#readme",
   "publishConfig": {
     "access": "public"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "module",
   "devDependencies": {
-    "@types/fs-extra": "^11.0.4",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "@types/fs-extra": "^11.0.4"
   },
   "dependencies": {
-    "fs-extra": "^11.3.0"
+    "fs-extra": "^11.3.0",
+    "@schemifyjs/types": "^0.1.0"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
