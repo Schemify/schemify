@@ -17,7 +17,8 @@ services:
     ports:
       - '${SERVICE_PORT}:${SERVICE_PORT}'
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     restart: always
     networks:
       - __projectName__-internal-net
@@ -32,6 +33,11 @@ services:
       - POSTGRES_DB
       - POSTGRES_USER
       - POSTGRES_PASSWORD
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     volumes:
       - postgres-prod-data:/var/lib/postgresql/data
     restart: always

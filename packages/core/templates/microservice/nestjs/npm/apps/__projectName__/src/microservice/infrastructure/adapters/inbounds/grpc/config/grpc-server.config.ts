@@ -9,7 +9,7 @@ export function grpcServerOptions(): MicroserviceOptions {
   return {
     transport: Transport.GRPC,
     options: {
-      package: __projectNameCamel__.EXAMPLE_PACKAGE_NAME,
+      package: __projectNameCamel__.__ProjectName___PACKAGE_NAME,
       protoPath: join(__dirname, '..', PROTO_PATHS.__projectNameCamel__),
       url: '0.0.0.0:50051'
     }

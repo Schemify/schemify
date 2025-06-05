@@ -47,7 +47,7 @@ export class Delete__ProjectName__GrpcController {
    * @returns Objeto vacío `__ProjectName__Empty`
    */
 
-  @GrpcMethod(__projectNameCamel__.EXAMPLE_SERVICE_NAME, 'delete__ProjectName__')
+  @GrpcMethod(__projectNameCamel__.__ProjectName___SERVICE_NAME, 'delete__ProjectName__')
   async delete__ProjectName__(
     request: __projectNameCamel__.Get__ProjectName__ByIdDto
   ): Promise<__projectNameCamel__.__ProjectName__Empty> {

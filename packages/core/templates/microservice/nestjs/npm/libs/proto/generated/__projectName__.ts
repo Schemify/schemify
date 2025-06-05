@@ -72,7 +72,7 @@ export interface Update__ProjectName__Data {
   description?: string | undefined
 }
 
-export const EXAMPLE_PACKAGE_NAME = '__projectNameCamel__'
+export const __ProjectName___PACKAGE_NAME = '__projectNameCamel__'
 
 /**
  * ================================
@@ -197,4 +197,4 @@ export function __ProjectName__ServiceControllerMethods() {
   }
 }
 
-export const EXAMPLE_SERVICE_NAME = '__ProjectName__Service'
+export const __ProjectName___SERVICE_NAME = '__ProjectName__Service'

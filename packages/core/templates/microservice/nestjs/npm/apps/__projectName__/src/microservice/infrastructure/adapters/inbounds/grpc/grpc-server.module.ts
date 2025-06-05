@@ -23,7 +23,7 @@ export class GrpcServerModule {
     return {
       transport: Transport.GRPC,
       options: {
-      package: __projectNameCamel__.EXAMPLE_PACKAGE_NAME,
+      package: __projectNameCamel__.__ProjectName___PACKAGE_NAME,
       protoPath: PROTO_PATHS.__projectNameCamel__,
       url: process.env.SERVICE_GRPC_URL
       }

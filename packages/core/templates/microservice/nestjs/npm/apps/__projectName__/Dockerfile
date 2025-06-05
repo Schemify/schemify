@@ -50,4 +50,4 @@ HEALTHCHECK --interval=10s --timeout=3s --start-period=10s --retries=3 \
     CMD nc -z localhost ${SERVICE_PORT} || exit 1
 
 # ─── Iniciar app ────────
-CMD ["node", "./dist/apps/__projectName__/src/main"]
+CMD ["sh", "-c", "npx prisma migrate dev --name auto_init --create-only --schema=prisma/schema.prisma && npx prisma migrate deploy --schema=prisma/schema.prisma && node ./dist/apps/__projectName__/src/main"]

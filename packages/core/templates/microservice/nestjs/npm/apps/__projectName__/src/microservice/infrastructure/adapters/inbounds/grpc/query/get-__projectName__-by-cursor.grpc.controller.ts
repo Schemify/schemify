@@ -60,7 +60,7 @@ export class Get__ProjectName__sByCursorGrpcController {
    * @returns CursorPaginated__ProjectName__s (protobuf)
    */
 
-  @GrpcMethod(__projectNameCamel__.EXAMPLE_SERVICE_NAME, 'get__ProjectName__sByCursor')
+  @GrpcMethod(__projectNameCamel__.__ProjectName___SERVICE_NAME, 'get__ProjectName__sByCursor')
   async get__ProjectName__sByCursor(
     request: __projectNameCamel__.CursorPaginationRequest
   ): Promise<__projectNameCamel__.CursorPaginated__ProjectName__s> {

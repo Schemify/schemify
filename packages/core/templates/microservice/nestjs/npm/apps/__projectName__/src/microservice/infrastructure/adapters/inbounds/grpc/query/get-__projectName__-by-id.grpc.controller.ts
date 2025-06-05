@@ -55,7 +55,7 @@ export class Get__ProjectName__ByIdGrpcController {
    * @returns __projectNameCamel__.__ProjectName__ (objeto compatible con el contrato Protobuf)
    */
 
-  @GrpcMethod(__projectNameCamel__.EXAMPLE_SERVICE_NAME, 'get__ProjectName__ById')
+  @GrpcMethod(__projectNameCamel__.__ProjectName___SERVICE_NAME, 'get__ProjectName__ById')
   async get__ProjectName__ById(
     request: __projectNameCamel__.Get__ProjectName__ByIdDto
   ): Promise<__projectNameCamel__.__ProjectName__> {

@@ -50,7 +50,7 @@ export class GetAll__ProjectName__sGrpcController {
    *
    * @returns Protobuf ` __projectNameCamel__.__ProjectName__s` con la lista de ejemplos
    */
-  @GrpcMethod('__ProjectName__Service', 'getAll__ProjectName__s')
+  @GrpcMethod(__projectNameCamel__.__ProjectName___SERVICE_NAME, 'getAll__ProjectName__s')
   async getAll__ProjectName__s(): Promise< __projectNameCamel__.__ProjectName__s> {
     const entities = await this.queryBus.execute<
       GetAll__ProjectName__sQuery,

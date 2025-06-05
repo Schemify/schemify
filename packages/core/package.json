@@ -1,6 +1,6 @@
 {
   "name": "@schemifyjs/core",
-  "version": "0.1.14",
+  "version": "0.1.22",
   "description": "Módulo core del CLI de SchemifyJS. Contiene funciones reutilizables como scaffolding, manejo de plantillas y utilidades.",
   "type": "module",
   "main": "dist/index.js",
