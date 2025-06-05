@@ -1,0 +1,31 @@
+{
+  "name": "@schemifyjs/types",
+  "version": "0.1.6",
+  "description": "Tipos compartidos entre los paquetes CLI y Core de SchemifyJS",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "node ./scripts/update-version.mjs",
+    "build": "tsc",
+    "release": "npm version patch && npm run build && npm publish --access public"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "types",
+    "shared",
+    "schemify",
+    "cli",
+    "core"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
