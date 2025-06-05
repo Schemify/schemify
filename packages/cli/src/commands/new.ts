@@ -3,7 +3,8 @@ import enquirer from "enquirer";
 import { join } from "path";
 
 import { createProject } from "@schemifyjs/core";
-import { type ProjectOptions } from "../types/options.js";
+
+import { type ProjectOptions } from "@schemifyjs/types";
 
 const allowedTypes = ["microservice", "kafka", "graphql", "grpc"] as const;
 
@@ -70,7 +71,6 @@ export const newCommand = async (type?: string) => {
   }
 
   const { name, framework, pm } = answers;
-  const projectPath = join(process.cwd(), name);
 
   const args: ProjectOptions = {
     name: name,

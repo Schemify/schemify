@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 import chalk from "chalk";
 import { readFileSync } from "fs";
 import { fileURLToPath } from "url";
@@ -11,23 +12,6 @@ import { newCommand } from "./commands/new.js";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const pkgPath = join(__dirname, "..", "package.json");
 const { version } = JSON.parse(readFileSync(pkgPath, "utf-8"));
-
-// 🚀 Check si hay versión más nueva
-checkForUpdate();
-
-// 🧭 Comando + argumentos
-const [, , cmd, ...args] = process.argv;
-
-// 🗺️ Router de comandos
-const commands: Record<string, () => void> = {
-  new: () => newCommand(args[0]),
-  help: showHelp,
-  "--help": showHelp,
-  "-h": showHelp,
-  version: () => console.log(chalk.cyan(`Schemify CLI v${version}`)),
-  "--version": () => console.log(chalk.cyan(`Schemify CLI v${version}`)),
-  "-v": () => console.log(chalk.cyan(`Schemify CLI v${version}`)),
-};
 
 // 🧾 Ayuda
 function showHelp() {
@@ -42,6 +26,34 @@ function showHelp() {
   console.log(chalk.gray("Ejemplo:"));
   console.log(`  schemify new mi-app\n`);
 }
+
+// 🗺️ Router de comandos
+const commands: Record<string, () => void> = {
+  new: () => newCommand(process.argv[3]),
+  help: showHelp,
+  "--help": showHelp,
+  "-h": showHelp,
+  version: () => console.log(chalk.cyan(`Schemify CLI v${version}`)),
+  "--version": () => console.log(chalk.cyan(`Schemify CLI v${version}`)),
+  "-v": () => console.log(chalk.cyan(`Schemify CLI v${version}`)),
+};
+
+// 🚀 Check si hay versión más nueva
+checkForUpdate();
+
+// ⚡ Flags globales primero
+if (process.argv.includes("-v") || process.argv.includes("--version")) {
+  commands.version();
+  process.exit(0);
+}
+
+if (process.argv.includes("-h") || process.argv.includes("--help")) {
+  commands.help();
+  process.exit(0);
+}
+
+// 🧭 Comando + argumentos
+const [, , cmd] = process.argv;
 
 // 🚦 Ejecución
 if (cmd in commands) {

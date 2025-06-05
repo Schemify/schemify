@@ -1,0 +1,28 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+// datasource db {
+//   provider = "postgresql"
+//   url      = env("DATABASE_URL")
+// }
+
+// Solo para shadow database
+// Prisma usa esto internamente al generar migraciones
+// No se conecta a tu producción jamás
+datasource shadowDb {
+  provider = "sqlite"
+  url      = "file:./dev-shadow.db"
+}
+
+// DATABASE_URL="postgresql://dummy:dummy@localhost:5432/dummy" \
+// npx prisma migrate dev --name init --schema=apps/my-microservice/prisma/schema.prisma
+
+model __ProjectNameCamel__ {
+id          String   @id
+name        String
+description String?
+createdAt   DateTime @default(now())
+updatedAt   DateTime @updatedAt
+}

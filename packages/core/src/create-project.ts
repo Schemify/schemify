@@ -1,30 +1,40 @@
 import path from "path";
-import fs from "fs-extra";
+
+import { execa } from "execa";
 
 import { copyTemplate } from "./utils/copy-template.js";
 import { replacePlaceholders } from "./utils/replace-placeholders.js";
 import { verifyNoPlaceholders } from "./utils/verify-no-placeholders.js";
-
-import { ProjectOptions } from "@schemifyjs/types";
+import { type ProjectOptions } from "@schemifyjs/types";
 
 export async function createProject(options: ProjectOptions) {
   const projectPath = path.resolve(options.name);
 
+  // 📦 Copia directa al nombre final (ej: my-microservice/)
   await copyTemplate(options);
 
-  await fs.rename(
-    path.join(projectPath, "apps", "schemify-microservice"),
-    path.join(projectPath, "apps", options.name)
-  );
-
-  await replacePlaceholders(projectPath, {
-    name: options.name,
-    description: "Proyecto generado con Schemify",
-    author: "Tu Nombre",
-  });
+  const replacements = generateNameVariants(options.name);
+  replacePlaceholders(projectPath, replacements);
 
   await verifyNoPlaceholders(projectPath);
 
-  // if (options.initializeGit) { await initGit(projectPath); }
-  // if (options.installDeps) { await installDependencies(projectPath, options.packageManager); }
+  await execa("npm", ["install"], { cwd: projectPath, stdio: "inherit" });
+
+  // if (options.initializeGit) await initGit(projectPath);
+  // if (options.installDeps) await installDependencies(projectPath, options.packageManager);
+}
+
+function generateNameVariants(name: string): Record<string, string> {
+  const camel = name.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+  const pascal = camel.charAt(0).toUpperCase() + camel.slice(1);
+  const snake = name.replace(/-/g, "_");
+  const screamingSnake = snake.toUpperCase();
+
+  return {
+    projectName: name,
+    projectNameCamel: camel, // example: myMicroservice
+    ProjectName: pascal, // example: MyMicroservice
+    project_name: snake,
+    PROJECT_NAME: screamingSnake,
+  };
 }

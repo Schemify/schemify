@@ -1,0 +1,48 @@
+services:
+  __projectName__:
+    build:
+      context: ../../
+      dockerfile: apps/__projectName__/Dockerfile
+      args:
+        DATABASE_URL: ${DATABASE_URL}
+    container_name: __projectName__-prod
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV
+      - SERVICE_APP_NAME
+      - SERVICE_PORT
+      - SERVICE_GRPC_URL
+      - DATABASE_URL
+    ports:
+      - '${SERVICE_PORT}:${SERVICE_PORT}'
+    depends_on:
+      - postgres
+    restart: always
+    networks:
+      - __projectName__-internal-net
+      - kafka-shared-net
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: postgres-__projectName__
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_DB
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+    volumes:
+      - postgres-prod-data:/var/lib/postgresql/data
+    restart: always
+    networks:
+      - __projectName__-internal-net
+
+volumes:
+  postgres-prod-data:
+
+networks:
+  __projectName__-internal-net:
+    driver: bridge
+  kafka-shared-net:
+    external: true

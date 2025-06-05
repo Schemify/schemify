@@ -1,16 +1,17 @@
 {
   "name": "@schemifyjs/core",
-  "version": "0.1.4",
+  "version": "0.1.14",
   "description": "Módulo core del CLI de SchemifyJS. Contiene funciones reutilizables como scaffolding, manejo de plantillas y utilidades.",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "templates"
   ],
   "scripts": {
     "prebuild": "node ./scripts/update-version.mjs",
-    "build": "tsc",
+    "build": "tsc && cp -r ./templates ./dist/templates",
     "release": "npm version patch && npm run build && npm publish --access public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -36,12 +37,13 @@
     "access": "public"
   },
   "devDependencies": {
-    "typescript": "^5.8.3",
-    "@types/fs-extra": "^11.0.4"
+    "@types/fs-extra": "^11.0.4",
+    "typescript": "^5.8.3"
   },
   "dependencies": {
-    "fs-extra": "^11.3.0",
-    "@schemifyjs/types": "^0.1.0"
+    "@schemifyjs/types": "^0.1.0",
+    "execa": "^9.6.0",
+    "fs-extra": "^11.3.0"
   },
   "engines": {
     "node": ">=18"
