@@ -1,0 +1,642 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.9 Chrome/134.0.6998.205 Electron/35.4.0 Safari/537.36" version="27.0.9" pages="4">
+  <diagram name="Página-1" id="Jog1CB8qQKN3SRwH82qO">
+    <mxGraphModel dx="906" dy="544" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-1" target="y5nNxfQDsKQJ9tVYJSOM-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCFFFF;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="470" y="330" width="220" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-3" target="y5nNxfQDsKQJ9tVYJSOM-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-3" value="Preparación de servidor local con Nginx Proxy Manager" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" parent="1" vertex="1">
+          <mxGeometry x="490" y="380" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-4" target="y5nNxfQDsKQJ9tVYJSOM-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-4" value="Dockerizar la aplicación principal" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" parent="1" vertex="1">
+          <mxGeometry x="490" y="480" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-5" value="Desplegar herramientas de monitoreo (Cadvisor, Node Exporter, Prometheus, Grafana)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" parent="1" vertex="1">
+          <mxGeometry x="480" y="585" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-8" target="y5nNxfQDsKQJ9tVYJSOM-20" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-8" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=none;gradientColor=none;" parent="1" vertex="1">
+          <mxGeometry x="750" y="320" width="200" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-9" value="&lt;div&gt;Fase 2: Implementación de la Infraestructura de Microservicios&lt;/div&gt;n del Entorno" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="750" y="330" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-10" value="Fase 1: Preparación del Entorno" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="475" y="340" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-11" target="y5nNxfQDsKQJ9tVYJSOM-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-11" value="Instalación de Kubernetes local con Minikube" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" parent="1" vertex="1">
+          <mxGeometry x="770" y="390" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-12" target="y5nNxfQDsKQJ9tVYJSOM-14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-12" value="Levantamiento de un clúster de Kafka Brokers" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" parent="1" vertex="1">
+          <mxGeometry x="770" y="490" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-14" value="Levantamiento de Kafka UI" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" parent="1" vertex="1">
+          <mxGeometry x="770" y="595" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-20" target="y5nNxfQDsKQJ9tVYJSOM-27" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-20" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCFFCC;strokeColor=none;gradientColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1041" y="320" width="200" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-21" value="Fase 3: Desarrollo y&amp;nbsp;&lt;div&gt;Comunicación de Microservicios&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="1041" y="330" width="189" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-23" target="y5nNxfQDsKQJ9tVYJSOM-25" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-23" value="Implementar microservicio utilizando gRPC" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" parent="1" vertex="1">
+          <mxGeometry x="1061" y="390" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-25" target="y5nNxfQDsKQJ9tVYJSOM-26" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-25" value="Implementar Kafka en el microservicio" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" parent="1" vertex="1">
+          <mxGeometry x="1061" y="490" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-26" value="Comunicación entre 2 microservicios utilizando Kafka" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" parent="1" vertex="1">
+          <mxGeometry x="1061" y="595" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-27" target="y5nNxfQDsKQJ9tVYJSOM-36" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-27" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCCCFF;strokeColor=none;gradientColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1320" y="215" width="200" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-28" value="Fase 4: Implementación de la Arquitectura y Despliegue" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="1320" y="225" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-30" target="y5nNxfQDsKQJ9tVYJSOM-32" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-30" value="Implementación de la arquitectura hexagonal con DDD" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" parent="1" vertex="1">
+          <mxGeometry x="1340" y="285" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-32" target="y5nNxfQDsKQJ9tVYJSOM-33" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-32" value="CRUD básico del microservicio" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" parent="1" vertex="1">
+          <mxGeometry x="1340" y="385" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-33" target="y5nNxfQDsKQJ9tVYJSOM-34" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-33" value="Preparar Kubernetes con Helm" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" parent="1" vertex="1">
+          <mxGeometry x="1340" y="490" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-34" target="y5nNxfQDsKQJ9tVYJSOM-35" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-34" value="Desplegar microservicio en Minikube con manifiesto de Kubernetes" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" parent="1" vertex="1">
+          <mxGeometry x="1340" y="595" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-35" value="Implementación de un API Gateway para el microservicio" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" parent="1" vertex="1">
+          <mxGeometry x="1340" y="695" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-36" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFCCCC;strokeColor=none;gradientColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1635" y="265" width="200" height="460" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-37" value="Fase 5: Seguridad, Pruebas&lt;div&gt;y CI/CD&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="1635" y="275" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-39" target="y5nNxfQDsKQJ9tVYJSOM-41" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-39" value="Implementación de autenticación (OAuth2 y JWT)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" parent="1" vertex="1">
+          <mxGeometry x="1655" y="335" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-41" target="y5nNxfQDsKQJ9tVYJSOM-42" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-41" value="Implementación de documentación de la API" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" parent="1" vertex="1">
+          <mxGeometry x="1655" y="435" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="y5nNxfQDsKQJ9tVYJSOM-42" target="y5nNxfQDsKQJ9tVYJSOM-43" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-42" value="Implementación de pruebas unitarias e integración" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" parent="1" vertex="1">
+          <mxGeometry x="1655" y="540" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="y5nNxfQDsKQJ9tVYJSOM-43" value="Implementación de CI/CD con GitHub Actions" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;" parent="1" vertex="1">
+          <mxGeometry x="1655" y="645" width="160" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="ltGbBHWiJQyUpfgjZx5-" name="Página-2">
+    <mxGraphModel dx="2373" dy="1601" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ZHbBijV9w1WvNDBUEkwE-2" value="Infra" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;startSize=23;" vertex="1" parent="1">
+          <mxGeometry x="-1063" y="230" width="1793" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ZHbBijV9w1WvNDBUEkwE-3" value="CLI Core" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;startSize=23;" vertex="1" parent="1">
+          <mxGeometry x="-1063" y="310" width="1793" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ZHbBijV9w1WvNDBUEkwE-6" value="Backend" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;startSize=23;" vertex="1" parent="1">
+          <mxGeometry x="-1063" y="150" width="1793" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ZHbBijV9w1WvNDBUEkwE-83" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ZHbBijV9w1WvNDBUEkwE-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1633" y="40.02857142857147" as="sourcePoint" />
+            <mxPoint x="1654" y="40.02905569007271" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZHbBijV9w1WvNDBUEkwE-7" value="QA" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;startSize=23;" vertex="1" parent="1">
+          <mxGeometry x="-1063" y="390" width="1793" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ZHbBijV9w1WvNDBUEkwE-30" value="Escribir pruebas unitarias (handlers, use-cases)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="ZHbBijV9w1WvNDBUEkwE-7">
+          <mxGeometry x="43" y="20" width="147" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ZHbBijV9w1WvNDBUEkwE-71" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-354" y="270" as="sourcePoint" />
+            <mxPoint x="-264.96296296296305" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZHbBijV9w1WvNDBUEkwE-84" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="455" y="270.03703703703695" as="sourcePoint" />
+            <mxPoint x="510.02857142857147" y="210" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="510" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZHbBijV9w1WvNDBUEkwE-88" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" target="ZHbBijV9w1WvNDBUEkwE-30">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-595" y="370" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="-595" y="380" />
+              <mxPoint x="-946" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZHbBijV9w1WvNDBUEkwE-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-414.0000000000002" y="210" as="sourcePoint" />
+            <mxPoint x="-414" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZHbBijV9w1WvNDBUEkwE-73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-200" y="190.03703703703695" as="sourcePoint" />
+            <mxPoint x="-178.96296296296305" y="190.03763752171358" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZHbBijV9w1WvNDBUEkwE-79" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="190.03703703703695" as="sourcePoint" />
+            <mxPoint x="121.03703703703695" y="190.03763752171358" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZHbBijV9w1WvNDBUEkwE-81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="350" y="210" as="sourcePoint" />
+            <mxPoint x="349.99999999999955" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZHbBijV9w1WvNDBUEkwE-80" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="190.03703703703695" as="sourcePoint" />
+            <mxPoint x="271.03703703703695" y="190.03752345215753" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZHbBijV9w1WvNDBUEkwE-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-115" y="210" as="sourcePoint" />
+            <mxPoint x="-114.96296296296305" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZHbBijV9w1WvNDBUEkwE-91" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ZHbBijV9w1WvNDBUEkwE-31" target="ZHbBijV9w1WvNDBUEkwE-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZHbBijV9w1WvNDBUEkwE-31" value="Pruebas e2e gRPC y Kafka&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-850" y="410" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ZHbBijV9w1WvNDBUEkwE-32" value="Validación de reglas de negocio en entidades" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-703" y="410" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="jbBXgwVBVPhjQumedCub-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-525" y="130" as="sourcePoint" />
+            <mxPoint x="-955" y="170" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-525" y="140" />
+              <mxPoint x="-955" y="140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZHbBijV9w1WvNDBUEkwE-63" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-499.9999999999998" y="190.03703703703695" as="sourcePoint" />
+            <mxPoint x="-478.96296296296305" y="190.03705815279363" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZHbBijV9w1WvNDBUEkwE-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-739.9999999999998" y="190.03703703703695" as="sourcePoint" />
+            <mxPoint x="-719.9999999999998" y="190.03703703703695" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZHbBijV9w1WvNDBUEkwE-76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="50.02857142857147" y="250" as="sourcePoint" />
+            <mxPoint x="35.03703703703695" y="210" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="50" y="240" />
+              <mxPoint x="35" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZHbBijV9w1WvNDBUEkwE-75" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-35" y="270.03703703703695" as="sourcePoint" />
+            <mxPoint x="-10" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZHbBijV9w1WvNDBUEkwE-85" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" target="ZHbBijV9w1WvNDBUEkwE-19">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-683" y="350" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZHbBijV9w1WvNDBUEkwE-86" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="650.0285714285715" y="210" as="sourcePoint" />
+            <mxPoint x="-955" y="330" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="650" y="300" />
+              <mxPoint x="-955" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZHbBijV9w1WvNDBUEkwE-90" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ZHbBijV9w1WvNDBUEkwE-30" target="ZHbBijV9w1WvNDBUEkwE-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jbBXgwVBVPhjQumedCub-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-890" y="190" as="sourcePoint" />
+            <mxPoint x="-868.962962962963" y="190.03763752171358" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0On1so1wWObU738mXutB-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-1160.5" y="-300" width="190.5" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="0On1so1wWObU738mXutB-2" value="Configuración&amp;nbsp;&lt;div&gt;Kafka Brokers&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1125.5" y="-100" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0On1so1wWObU738mXutB-3" value="Configuración contraros&amp;nbsp;&lt;div&gt;gRPC (.proto)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1140" y="-280" width="149" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0On1so1wWObU738mXutB-4" value="Configuración&lt;div&gt;Dockerfile&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1125.5" y="-220" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0On1so1wWObU738mXutB-5" value="Configuración&lt;div&gt;Docker Compose&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1125.5" y="-160" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-IA4F1IcVTJhDw8JmUC3-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=none;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-903" y="-450" width="383" height="540" as="geometry" />
+        </mxCell>
+        <mxCell id="-IA4F1IcVTJhDw8JmUC3-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-IA4F1IcVTJhDw8JmUC3-3" target="-IA4F1IcVTJhDw8JmUC3-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-IA4F1IcVTJhDw8JmUC3-3" value="Preparar Prisma: conexión DB y generación client" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-795" y="-230" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-IA4F1IcVTJhDw8JmUC3-4" value="Estructura hexagonal visible por bounded context (puertos/adaptadores)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-795" y="20" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="-IA4F1IcVTJhDw8JmUC3-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-IA4F1IcVTJhDw8JmUC3-6" target="-IA4F1IcVTJhDw8JmUC3-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-IA4F1IcVTJhDw8JmUC3-6" value="Definir Dominio y Eventos de Dominio" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-780" y="-430" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-IA4F1IcVTJhDw8JmUC3-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-IA4F1IcVTJhDw8JmUC3-8" target="-IA4F1IcVTJhDw8JmUC3-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-IA4F1IcVTJhDw8JmUC3-8" value="Definir puertos capa de aplicación" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=1;collapsible=0;width=210;height=30;fillColor=#FFFFFF;gradientColor=none;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="-890" y="-370" width="350" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="-IA4F1IcVTJhDw8JmUC3-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="-IA4F1IcVTJhDw8JmUC3-8" source="-IA4F1IcVTJhDw8JmUC3-10" target="-IA4F1IcVTJhDw8JmUC3-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-IA4F1IcVTJhDw8JmUC3-10" value="Crear handlers CQRS para&amp;nbsp;command, query y event&amp;nbsp; (Entrada)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="-IA4F1IcVTJhDw8JmUC3-8">
+          <mxGeometry x="20" y="50" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="-IA4F1IcVTJhDw8JmUC3-11" value="Definir Repositorios y Productores de mensajes&lt;div&gt;(Salida)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="-IA4F1IcVTJhDw8JmUC3-8">
+          <mxGeometry x="180" y="50" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="-IA4F1IcVTJhDw8JmUC3-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-IA4F1IcVTJhDw8JmUC3-13" target="-IA4F1IcVTJhDw8JmUC3-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-IA4F1IcVTJhDw8JmUC3-13" value="Definir adaptadores capa Infraestructura" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=1;collapsible=0;width=250;height=30;" vertex="1" parent="1">
+          <mxGeometry x="-875" y="-170" width="320" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="-IA4F1IcVTJhDw8JmUC3-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="-IA4F1IcVTJhDw8JmUC3-13" source="-IA4F1IcVTJhDw8JmUC3-15" target="-IA4F1IcVTJhDw8JmUC3-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-IA4F1IcVTJhDw8JmUC3-15" value="Agregar gRPC controllers (Entrada)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="-IA4F1IcVTJhDw8JmUC3-13">
+          <mxGeometry x="20" y="50" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-IA4F1IcVTJhDw8JmUC3-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="-IA4F1IcVTJhDw8JmUC3-13" source="-IA4F1IcVTJhDw8JmUC3-17" target="-IA4F1IcVTJhDw8JmUC3-19">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="235" y="100" />
+              <mxPoint x="85" y="100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-IA4F1IcVTJhDw8JmUC3-17" value="Agregar Prisma repositories (Salida)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="-IA4F1IcVTJhDw8JmUC3-13">
+          <mxGeometry x="170" y="50" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-IA4F1IcVTJhDw8JmUC3-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="-IA4F1IcVTJhDw8JmUC3-13" source="-IA4F1IcVTJhDw8JmUC3-19" target="-IA4F1IcVTJhDw8JmUC3-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-IA4F1IcVTJhDw8JmUC3-19" value="Agregar Kafka producers (Salida)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="-IA4F1IcVTJhDw8JmUC3-13">
+          <mxGeometry x="20" y="110" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="-IA4F1IcVTJhDw8JmUC3-20" value="Agregar Kafka consumers (Entrada)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="-IA4F1IcVTJhDw8JmUC3-13">
+          <mxGeometry x="170" y="110" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vmsQwEx_KOTfqwNgZn6z-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCFFCC;strokeColor=none;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-370" y="-435" width="200" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="vmsQwEx_KOTfqwNgZn6z-2" value="Crear scaffolding base en paquete NPM" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-70" y="-200" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vmsQwEx_KOTfqwNgZn6z-4" value="Crear CLI para comandos" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-300" y="-310" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vmsQwEx_KOTfqwNgZn6z-6" value="Crear paquete&amp;nbsp;&lt;div&gt;&lt;i&gt;schemifyjs/types&lt;/i&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="-280" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vmsQwEx_KOTfqwNgZn6z-7" value="Crear paquetes de NPM" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=1;collapsible=0;width=210;height=30;fillColor=#FFFFFF;gradientColor=none;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="-320" y="-360" width="350" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="vmsQwEx_KOTfqwNgZn6z-5" value="Crear L" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="vmsQwEx_KOTfqwNgZn6z-7">
+          <mxGeometry x="170" y="50" width="130" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="4OHG4TXGBuWGuXaJIQLu" name="Página-3">
+    <mxGraphModel dx="802" dy="482" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-1" value="Infra" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;startSize=23;" vertex="1" parent="1">
+          <mxGeometry x="80" y="550" width="1793" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-2" value="Separar producers y consumers" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="DZh6hJ3G1KYUo_AOoZiw-1">
+          <mxGeometry x="48" y="20" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-3" value="CLI Core" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;startSize=23;" vertex="1" parent="1">
+          <mxGeometry x="80" y="630" width="1793" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-4" value="Crear scaffolding base en paquete NPM" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="DZh6hJ3G1KYUo_AOoZiw-3">
+          <mxGeometry x="43" y="20" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-5" value="Implementar CLI para generar: command/query/event/infra" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="DZh6hJ3G1KYUo_AOoZiw-3">
+          <mxGeometry x="193" y="20" width="187" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-6" value="Backend" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;startSize=23;" vertex="1" parent="1">
+          <mxGeometry x="80" y="470" width="1793" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="DZh6hJ3G1KYUo_AOoZiw-6" source="DZh6hJ3G1KYUo_AOoZiw-9" target="DZh6hJ3G1KYUo_AOoZiw-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-9" value="Crear&amp;nbsp;&lt;div&gt;docker-compose.yml&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="DZh6hJ3G1KYUo_AOoZiw-6">
+          <mxGeometry x="1513" y="20" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-10" value="Setup .env, redes, volúmenes" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="DZh6hJ3G1KYUo_AOoZiw-6">
+          <mxGeometry x="1653" y="20" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-11" value="QA" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;startSize=23;" vertex="1" parent="1">
+          <mxGeometry x="80" y="710" width="1793" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-12" value="Escribir pruebas unitarias (handlers, use-cases)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="DZh6hJ3G1KYUo_AOoZiw-11">
+          <mxGeometry x="43" y="20" width="147" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-13" value="Dominio" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;startSize=23;" vertex="1" parent="1">
+          <mxGeometry x="80" y="390" width="1793" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-14" value="Definir Aggregate Roots (Entidad)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="DZh6hJ3G1KYUo_AOoZiw-13">
+          <mxGeometry x="43" y="20" width="117" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZh6hJ3G1KYUo_AOoZiw-16" target="DZh6hJ3G1KYUo_AOoZiw-24">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="813" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-16" value="Configurar gRPC server" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="669" y="570" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZh6hJ3G1KYUo_AOoZiw-18" target="DZh6hJ3G1KYUo_AOoZiw-9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1653" y="590" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-18" value="Crear base de estructura hexagonal (puertos/adaptadores)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1388" y="570" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZh6hJ3G1KYUo_AOoZiw-20" target="DZh6hJ3G1KYUo_AOoZiw-12">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="548" y="700" />
+              <mxPoint x="197" y="700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-20" value="CLI genera estructura" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="483" y="650" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZh6hJ3G1KYUo_AOoZiw-22" target="DZh6hJ3G1KYUo_AOoZiw-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-22" value="Implementar casos de uso" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="664" y="490" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZh6hJ3G1KYUo_AOoZiw-24" target="DZh6hJ3G1KYUo_AOoZiw-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-24" value="Agregar gRPC controllers (entrada)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="813" y="490" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZh6hJ3G1KYUo_AOoZiw-26" target="DZh6hJ3G1KYUo_AOoZiw-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-26" value="Agregar Kafka consumers (entrada)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1113" y="490" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZh6hJ3G1KYUo_AOoZiw-28" target="DZh6hJ3G1KYUo_AOoZiw-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-28" value="Estructura hexagonal visible por bounded context" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1413" y="490" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZh6hJ3G1KYUo_AOoZiw-30" target="DZh6hJ3G1KYUo_AOoZiw-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-30" value="Agregar Kafka producers (salida)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1263" y="490" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZh6hJ3G1KYUo_AOoZiw-32" target="DZh6hJ3G1KYUo_AOoZiw-52">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-32" value="Agregar Prisma repositories (salida)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="963" y="490" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZh6hJ3G1KYUo_AOoZiw-34" target="DZh6hJ3G1KYUo_AOoZiw-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-34" value="Pruebas e2e gRPC y Kafka&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="293" y="730" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-35" value="Validación de reglas de negocio en entidades" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="730" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZh6hJ3G1KYUo_AOoZiw-37" target="DZh6hJ3G1KYUo_AOoZiw-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-37" value="Modelar eventos de dominio" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="553" y="410" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZh6hJ3G1KYUo_AOoZiw-39" target="DZh6hJ3G1KYUo_AOoZiw-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-39" value="Definir reglas del negocio y delegar ejecución" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="263" y="410" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZh6hJ3G1KYUo_AOoZiw-41">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="768" y="460" />
+              <mxPoint x="188" y="460" />
+            </Array>
+            <mxPoint x="188" y="490.0000000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-41" value="Sin dependencias de infra" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="703" y="410" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZh6hJ3G1KYUo_AOoZiw-14" target="DZh6hJ3G1KYUo_AOoZiw-39">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="263" y="430.02857142857147" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZh6hJ3G1KYUo_AOoZiw-44" target="DZh6hJ3G1KYUo_AOoZiw-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-44" value="Crear entidades y value objects" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="433" y="410" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZh6hJ3G1KYUo_AOoZiw-46" target="DZh6hJ3G1KYUo_AOoZiw-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-46" value="Crear interfaces de repositorios/event-publishers (puertos de salida)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="423" y="490" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZh6hJ3G1KYUo_AOoZiw-48" target="DZh6hJ3G1KYUo_AOoZiw-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-48" value="Implementar comandos y queries (CQRS)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="273" y="490" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZh6hJ3G1KYUo_AOoZiw-50" target="DZh6hJ3G1KYUo_AOoZiw-26">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1193" y="560" />
+              <mxPoint x="1178" y="560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-50" value="Configurar Kafka (topics, brokers)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1133" y="570" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZh6hJ3G1KYUo_AOoZiw-52" target="DZh6hJ3G1KYUo_AOoZiw-50">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-52" value="Preparar Prisma: conexión DB y generación client" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="948" y="570" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" target="DZh6hJ3G1KYUo_AOoZiw-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="188" y="530.0000000000001" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZh6hJ3G1KYUo_AOoZiw-2" target="DZh6hJ3G1KYUo_AOoZiw-48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZh6hJ3G1KYUo_AOoZiw-5" target="DZh6hJ3G1KYUo_AOoZiw-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZh6hJ3G1KYUo_AOoZiw-10" target="DZh6hJ3G1KYUo_AOoZiw-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1793" y="620" />
+              <mxPoint x="188" y="620" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-57" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZh6hJ3G1KYUo_AOoZiw-12" target="DZh6hJ3G1KYUo_AOoZiw-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-58" value="&lt;h4 data-start=&quot;460&quot; data-end=&quot;501&quot;&gt;🧱 &lt;strong data-start=&quot;468&quot; data-end=&quot;501&quot;&gt;Fase 1 – Infraestructura Base&lt;/strong&gt;&lt;/h4&gt;&#xa;&lt;ul data-start=&quot;502&quot; data-end=&quot;667&quot;&gt;&#xa;&lt;li data-start=&quot;502&quot; data-end=&quot;547&quot;&gt;&#xa;&lt;p data-start=&quot;504&quot; data-end=&quot;547&quot;&gt;Configurar &lt;strong data-start=&quot;515&quot; data-end=&quot;524&quot;&gt;Kafka&lt;/strong&gt;, &lt;strong data-start=&quot;526&quot; data-end=&quot;534&quot;&gt;gRPC&lt;/strong&gt; y &lt;strong data-start=&quot;537&quot; data-end=&quot;547&quot;&gt;Prisma&lt;/strong&gt;&lt;/p&gt;&#xa;&lt;/li&gt;&#xa;&lt;li data-start=&quot;548&quot; data-end=&quot;591&quot;&gt;&#xa;&lt;p data-start=&quot;550&quot; data-end=&quot;591&quot;&gt;Setup de &lt;code data-start=&quot;559&quot; data-end=&quot;565&quot;&gt;.env&lt;/code&gt;, Docker, red, y volúmenes&lt;/p&gt;&#xa;&lt;/li&gt;&#xa;&lt;li data-start=&quot;592&quot; data-end=&quot;667&quot;&gt;&#xa;&lt;p data-start=&quot;594&quot; data-end=&quot;667&quot;&gt;Crear estructura de carpetas basada en &lt;em data-start=&quot;633&quot; data-end=&quot;667&quot;&gt;hexagonal screaming architecture&lt;/em&gt;&lt;/p&gt;&#xa;&lt;/li&gt;&#xa;&lt;/ul&gt;&#xa;&lt;p data-start=&quot;669&quot; data-end=&quot;753&quot;&gt;&lt;strong data-start=&quot;669&quot; data-end=&quot;695&quot;&gt;🛠️ Diagrama sugerido:&lt;/strong&gt; &lt;em data-start=&quot;696&quot; data-end=&quot;716&quot;&gt;Roadmap horizontal&lt;/em&gt; o &lt;em data-start=&quot;719&quot; data-end=&quot;753&quot;&gt;diagrama de bloques secuenciales&lt;/em&gt;&lt;/p&gt;&#xa;&lt;hr data-start=&quot;755&quot; data-end=&quot;758&quot;&gt;&#xa;&lt;h4 data-start=&quot;760&quot; data-end=&quot;808&quot;&gt;⚙️ &lt;strong data-start=&quot;768&quot; data-end=&quot;808&quot;&gt;Fase 2 – Scaffold Automatizado (CLI)&lt;/strong&gt;&lt;/h4&gt;&#xa;&lt;ul data-start=&quot;809&quot; data-end=&quot;935&quot;&gt;&#xa;&lt;li data-start=&quot;809&quot; data-end=&quot;852&quot;&gt;&#xa;&lt;p data-start=&quot;811&quot; data-end=&quot;852&quot;&gt;Crear paquete CLI (Core, Commands, Types)&lt;/p&gt;&#xa;&lt;/li&gt;&#xa;&lt;li data-start=&quot;853&quot; data-end=&quot;900&quot;&gt;&#xa;&lt;p data-start=&quot;855&quot; data-end=&quot;900&quot;&gt;Generar comandos, queries, handlers, adapters&lt;/p&gt;&#xa;&lt;/li&gt;&#xa;&lt;li data-start=&quot;901&quot; data-end=&quot;935&quot;&gt;&#xa;&lt;p data-start=&quot;903&quot; data-end=&quot;935&quot;&gt;Aplicar &lt;em data-start=&quot;911&quot; data-end=&quot;935&quot;&gt;screaming architecture&lt;/em&gt;&lt;/p&gt;&#xa;&lt;/li&gt;&#xa;&lt;/ul&gt;&#xa;&lt;p data-start=&quot;937&quot; data-end=&quot;1014&quot;&gt;&lt;strong data-start=&quot;937&quot; data-end=&quot;963&quot;&gt;🛠️ Diagrama sugerido:&lt;/strong&gt; &lt;em data-start=&quot;964&quot; data-end=&quot;985&quot;&gt;Flujo tipo Pipeline&lt;/em&gt;, con íconos CLI → estructura&lt;/p&gt;&#xa;&lt;hr data-start=&quot;1016&quot; data-end=&quot;1019&quot;&gt;&#xa;&lt;h4 data-start=&quot;1021&quot; data-end=&quot;1074&quot;&gt;🧠 &lt;strong data-start=&quot;1029&quot; data-end=&quot;1074&quot;&gt;Fase 3 – Lógica Aplicación (CQRS + Ports)&lt;/strong&gt;&lt;/h4&gt;&#xa;&lt;ul data-start=&quot;1075&quot; data-end=&quot;1216&quot;&gt;&#xa;&lt;li data-start=&quot;1075&quot; data-end=&quot;1122&quot;&gt;&#xa;&lt;p data-start=&quot;1077&quot; data-end=&quot;1122&quot;&gt;Commands ↔ Handlers ↔ UseCases ↔ Aggregates&lt;/p&gt;&#xa;&lt;/li&gt;&#xa;&lt;li data-start=&quot;1123&quot; data-end=&quot;1160&quot;&gt;&#xa;&lt;p data-start=&quot;1125&quot; data-end=&quot;1160&quot;&gt;Queries independientes (read model)&lt;/p&gt;&#xa;&lt;/li&gt;&#xa;&lt;li data-start=&quot;1161&quot; data-end=&quot;1216&quot;&gt;&#xa;&lt;p data-start=&quot;1163&quot; data-end=&quot;1216&quot;&gt;Puertos de entrada/salida: Kafka, gRPC, Repos, Events&lt;/p&gt;&#xa;&lt;/li&gt;&#xa;&lt;/ul&gt;&#xa;&lt;p data-start=&quot;1218&quot; data-end=&quot;1330&quot;&gt;&lt;strong data-start=&quot;1218&quot; data-end=&quot;1244&quot;&gt;🛠️ Diagrama sugerido:&lt;/strong&gt; &lt;em data-start=&quot;1245&quot; data-end=&quot;1293&quot;&gt;Arquitectura hexagonal (puertos &amp;amp; adaptadores)&lt;/em&gt;&lt;br data-start=&quot;1293&quot; data-end=&quot;1296&quot;&gt;&#xa;Alternativa: &lt;em data-start=&quot;1309&quot; data-end=&quot;1330&quot;&gt;Diagrama C4 nivel 3&lt;/em&gt;&lt;/p&gt;&#xa;&lt;hr data-start=&quot;1332&quot; data-end=&quot;1335&quot;&gt;&#xa;&lt;h4 data-start=&quot;1337&quot; data-end=&quot;1378&quot;&gt;🔍 &lt;strong data-start=&quot;1345&quot; data-end=&quot;1378&quot;&gt;Fase 4 – Testing y Validación&lt;/strong&gt;&lt;/h4&gt;&#xa;&lt;ul data-start=&quot;1379&quot; data-end=&quot;1483&quot;&gt;&#xa;&lt;li data-start=&quot;1379&quot; data-end=&quot;1425&quot;&gt;&#xa;&lt;p data-start=&quot;1381&quot; data-end=&quot;1425&quot;&gt;Pruebas unitarias de casos de uso, entidades&lt;/p&gt;&#xa;&lt;/li&gt;&#xa;&lt;li data-start=&quot;1426&quot; data-end=&quot;1464&quot;&gt;&#xa;&lt;p data-start=&quot;1428&quot; data-end=&quot;1464&quot;&gt;e2e testing para eventos Kafka, gRPC&lt;/p&gt;&#xa;&lt;/li&gt;&#xa;&lt;li data-start=&quot;1465&quot; data-end=&quot;1483&quot;&gt;&#xa;&lt;p data-start=&quot;1467&quot; data-end=&quot;1483&quot;&gt;Mocks de puertos&lt;/p&gt;&#xa;&lt;/li&gt;&#xa;&lt;/ul&gt;&#xa;&lt;p data-start=&quot;1485&quot; data-end=&quot;1548&quot;&gt;&lt;strong data-start=&quot;1485&quot; data-end=&quot;1511&quot;&gt;🛠️ Diagrama sugerido:&lt;/strong&gt; &lt;em data-start=&quot;1512&quot; data-end=&quot;1528&quot;&gt;Swimlane de QA&lt;/em&gt;, &lt;em data-start=&quot;1530&quot; data-end=&quot;1548&quot;&gt;Checklist visual&lt;/em&gt;&lt;/p&gt;&#xa;&lt;hr data-start=&quot;1550&quot; data-end=&quot;1553&quot;&gt;&#xa;&lt;h4 data-start=&quot;1555&quot; data-end=&quot;1600&quot;&gt;🚀 &lt;strong data-start=&quot;1563&quot; data-end=&quot;1600&quot;&gt;Fase 5 – Empaquetado y Despliegue&lt;/strong&gt;&lt;/h4&gt;&#xa;&lt;ul data-start=&quot;1601&quot; data-end=&quot;1697&quot;&gt;&#xa;&lt;li data-start=&quot;1601&quot; data-end=&quot;1634&quot;&gt;&#xa;&lt;p data-start=&quot;1603&quot; data-end=&quot;1634&quot;&gt;Dockerización del microservicio&lt;/p&gt;&#xa;&lt;/li&gt;&#xa;&lt;li data-start=&quot;1635&quot; data-end=&quot;1660&quot;&gt;&#xa;&lt;p data-start=&quot;1637&quot; data-end=&quot;1660&quot;&gt;Automatización de CI/CD&lt;/p&gt;&#xa;&lt;/li&gt;&#xa;&lt;li data-start=&quot;1661&quot; data-end=&quot;1697&quot;&gt;&#xa;&lt;p data-start=&quot;1663&quot; data-end=&quot;1697&quot;&gt;Release del paquete CLI (opcional)&lt;/p&gt;&#xa;&lt;/li&gt;&#xa;&lt;/ul&gt;&#xa;&lt;p data-start=&quot;1699&quot; data-end=&quot;1767&quot;&gt;&lt;strong data-start=&quot;1699&quot; data-end=&quot;1725&quot;&gt;🛠️ Diagrama sugerido:&lt;/strong&gt; &lt;em data-start=&quot;1726&quot; data-end=&quot;1749&quot;&gt;Roadmap de despliegue&lt;/em&gt;, &lt;em data-start=&quot;1751&quot; data-end=&quot;1767&quot;&gt;pipeline CI/CD&lt;/em&gt;&lt;/p&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="920" width="470" height="2210" as="geometry" />
+        </mxCell>
+        <mxCell id="DZh6hJ3G1KYUo_AOoZiw-59" value="Preparación&amp;nbsp;&lt;div&gt;Servidor Local&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="403" y="220" width="130" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="PPbVvg5zp8m1Ub3xg4Ul" name="Página-4">
+    <mxGraphModel dx="1869" dy="626" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="jTYol2UJVmRAsHk76EfA-7" value="1. Infraestructura&lt;br&gt;Kafka, gRPC, Docker" style="html=1;shape=mxgraph.infographic.ribbonSimple;notch1=20;notch2=20;align=center;verticalAlign=middle;fontSize=14;fontStyle=0;fillColor=#FFFFFF;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-280" y="320" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jTYol2UJVmRAsHk76EfA-8" value="3&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;. Scaffold &amp;amp; Código&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;CLI, estructura Hexa&lt;/span&gt;&lt;/div&gt;" style="html=1;shape=mxgraph.infographic.ribbonSimple;notch1=20;notch2=20;align=center;verticalAlign=middle;fontSize=14;fontStyle=0;fillColor=#FFFFFF;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="180" y="320" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jTYol2UJVmRAsHk76EfA-9" value="2. Implementación App&lt;br&gt;CQRS, puertos, casos" style="html=1;shape=mxgraph.infographic.ribbonSimple;notch1=20;notch2=20;align=center;verticalAlign=middle;fontSize=14;fontStyle=0;fillColor=#FFFFFF;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-50" y="320" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jTYol2UJVmRAsHk76EfA-10" value="4. Testing&lt;br&gt;e2e, mocks, prisma" style="html=1;shape=mxgraph.infographic.ribbonSimple;notch1=20;notch2=20;align=center;verticalAlign=middle;fontSize=14;fontStyle=0;fillColor=#FFFFFF;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-280" y="410" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jTYol2UJVmRAsHk76EfA-11" value="5. Despliegue CI/CD&amp;nbsp;&lt;br&gt;Docker, GitHub CI" style="html=1;shape=mxgraph.infographic.ribbonSimple;notch1=20;notch2=20;align=center;verticalAlign=middle;fontSize=14;fontStyle=0;fillColor=#FFFFFF;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-50" y="410" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jTYol2UJVmRAsHk76EfA-12" value="6. Observabilidad&lt;br&gt;Logs, métricas, health" style="html=1;shape=mxgraph.infographic.ribbonSimple;notch1=20;notch2=20;align=center;verticalAlign=middle;fontSize=14;fontStyle=0;fillColor=#FFFFFF;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="180" y="410" width="200" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
