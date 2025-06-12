@@ -52,7 +52,10 @@ export class Update__ProjectName__GrpcController {
    * @returns __projectNameCamel__.__ProjectName__` (respuesta actualizada)
    */
 
-  @GrpcMethod(__projectNameCamel__.__ProjectName___SERVICE_NAME, 'update__ProjectName__')
+  @GrpcMethod(
+    __projectNameCamel__.__ProjectName___SERVICE_NAME,
+    'update__ProjectName__'
+  )
   async update__ProjectName__(
     request: __projectNameCamel__.Update__ProjectName__Dto
   ): Promise<__projectNameCamel__.__ProjectName__> {

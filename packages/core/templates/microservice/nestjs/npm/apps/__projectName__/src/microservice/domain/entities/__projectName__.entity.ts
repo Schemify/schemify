@@ -86,7 +86,10 @@ export class __ProjectName__Entity extends AggregateRoot {
    * Método fábrica para crear una nueva entidad con sus reglas e invariantes.
    * Dispara un evento de dominio __ProjectName__CreatedEvent.
    */
-  static create(input: { name: string; description?: string }): __ProjectName__Entity {
+  static create(input: {
+    name: string
+    description?: string
+  }): __ProjectName__Entity {
     const now = new Date()
 
     const entity = new __ProjectName__Entity(uuidv4(), {
@@ -160,7 +163,9 @@ export class __ProjectName__Entity extends AggregateRoot {
         const newDesc = DescriptionValueObject.create(value)
         if (!this.props.description?.equals(newDesc)) {
           updated.description = newDesc
-          this.apply(new __ProjectName__DescriptionUpdatedEvent(this.id, newDesc))
+          this.apply(
+            new __ProjectName__DescriptionUpdatedEvent(this.id, newDesc)
+          )
         }
       }
     }

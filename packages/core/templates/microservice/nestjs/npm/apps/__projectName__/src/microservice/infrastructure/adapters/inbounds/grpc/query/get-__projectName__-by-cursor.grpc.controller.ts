@@ -28,7 +28,6 @@ import { __ProjectName__Entity } from '@__projectName__/microservice/domain/enti
 import { Get__ProjectName__sByCursorQuery } from '@__projectName__/microservice/application/ports/inbounds/queries'
 import { __ProjectName__Mapper } from '@__projectName__/microservice/infrastructure/mappers/__projectName__.mapper'
 
-
 @Controller('__ProjectName__Service')
 export class Get__ProjectName__sByCursorGrpcController {
   constructor(
@@ -60,7 +59,10 @@ export class Get__ProjectName__sByCursorGrpcController {
    * @returns CursorPaginated__ProjectName__s (protobuf)
    */
 
-  @GrpcMethod(__projectNameCamel__.__ProjectName___SERVICE_NAME, 'get__ProjectName__sByCursor')
+  @GrpcMethod(
+    __projectNameCamel__.__ProjectName___SERVICE_NAME,
+    'get__ProjectName__sByCursor'
+  )
   async get__ProjectName__sByCursor(
     request: __projectNameCamel__.CursorPaginationRequest
   ): Promise<__projectNameCamel__.CursorPaginated__ProjectName__s> {

@@ -13,7 +13,9 @@ import { GetAll__ProjectName__sPort } from '@__projectName__/microservice/applic
 import { __ProjectName__Mapper } from '@__projectName__/microservice/infrastructure/mappers/__projectName__.mapper'
 
 @Injectable()
-export class GetAll__ProjectName__sPrismaRepository implements GetAll__ProjectName__sPort {
+export class GetAll__ProjectName__sPrismaRepository
+  implements GetAll__ProjectName__sPort
+{
   constructor(
     private readonly prisma: PrismaService,
     private readonly mapper: __ProjectName__Mapper

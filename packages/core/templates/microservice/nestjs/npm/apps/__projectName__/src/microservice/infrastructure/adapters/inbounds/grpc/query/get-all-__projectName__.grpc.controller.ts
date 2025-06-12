@@ -24,13 +24,11 @@ import { Controller } from '@nestjs/common'
 import { QueryBus } from '@nestjs/cqrs'
 import { GrpcMethod } from '@nestjs/microservices'
 
-
 import { __projectNameCamel__ } from '@proto'
 
 import { GetAll__ProjectName__sQuery } from '@__projectName__/microservice/application/ports/inbounds/queries'
 import { __ProjectName__Entity } from '@__projectName__/microservice/domain/entities/__projectName__.entity'
 import { __ProjectName__Mapper } from '@__projectName__/microservice/infrastructure/mappers/__projectName__.mapper'
-
 
 @Controller()
 export class GetAll__ProjectName__sGrpcController {
@@ -50,15 +48,20 @@ export class GetAll__ProjectName__sGrpcController {
    *
    * @returns Protobuf ` __projectNameCamel__.__ProjectName__s` con la lista de ejemplos
    */
-  @GrpcMethod(__projectNameCamel__.__ProjectName___SERVICE_NAME, 'getAll__ProjectName__s')
-  async getAll__ProjectName__s(): Promise< __projectNameCamel__.__ProjectName__s> {
+  @GrpcMethod(
+    __projectNameCamel__.__ProjectName___SERVICE_NAME,
+    'getAll__ProjectName__s'
+  )
+  async getAll__ProjectName__s(): Promise<__projectNameCamel__.__ProjectName__s> {
     const entities = await this.queryBus.execute<
       GetAll__ProjectName__sQuery,
       __ProjectName__Entity[]
     >(new GetAll__ProjectName__sQuery())
 
     return {
-      __projectNameCamel__s: entities.map((entity) => this.mapper.entityToProto(entity))
+      __projectNameCamel__s: entities.map((entity) =>
+        this.mapper.entityToProto(entity)
+      )
     }
   }
 }

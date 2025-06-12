@@ -1,22 +1,22 @@
 export enum TemplateType {
-  Microservice = "microservices",
+  Microservice = 'microservice'
   //   Grpc = "grpc",
   //   Kafka = "kafka",
 }
 
 export enum FrameworkType {
-  NestJS = "nestjs",
+  NestJS = 'nestjs'
 }
 
 export enum PackageManagerType {
-  Npm = "npm",
+  Npm = 'npm'
   //   Yarn = "yarn",
   //   Pnpm = "pnpm",
 }
 
 export interface ProjectOptions {
-  name: string;
-  template: TemplateType;
-  framework: FrameworkType;
-  packageManager: PackageManagerType;
+  name: string
+  template: TemplateType
+  framework: FrameworkType
+  packageManager: PackageManagerType
 }

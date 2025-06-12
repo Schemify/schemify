@@ -50,7 +50,9 @@ export class Delete__ProjectName__Handler
     const entity = await this.get__ProjectName__ByIdPort.getById(command.id)
 
     if (!entity) {
-      throw new NotFoundException(`__ProjectName__ with id ${command.id} not found`)
+      throw new NotFoundException(
+        `__ProjectName__ with id ${command.id} not found`
+      )
     }
 
     await this.delete__ProjectName__Port.delete(command.id)

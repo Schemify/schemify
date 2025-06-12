@@ -22,7 +22,6 @@ import { __projectNameCamel__ } from '@proto'
 
 import { Delete__ProjectName__Command } from '@__projectName__/microservice/application/ports/inbounds/commands'
 
-
 @Controller()
 export class Delete__ProjectName__GrpcController {
   constructor(private readonly commandBus: CommandBus) {}
@@ -47,7 +46,10 @@ export class Delete__ProjectName__GrpcController {
    * @returns Objeto vacío `__ProjectName__Empty`
    */
 
-  @GrpcMethod(__projectNameCamel__.__ProjectName___SERVICE_NAME, 'delete__ProjectName__')
+  @GrpcMethod(
+    __projectNameCamel__.__ProjectName___SERVICE_NAME,
+    'delete__ProjectName__'
+  )
   async delete__ProjectName__(
     request: __projectNameCamel__.Get__ProjectName__ByIdDto
   ): Promise<__projectNameCamel__.__ProjectName__Empty> {

@@ -28,7 +28,6 @@
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs'
 import { Inject } from '@nestjs/common'
 
-
 import { __ProjectName__Entity } from '@__projectName__/microservice/domain/entities/__projectName__.entity'
 
 import { GetAll__ProjectName__sPort } from '@__projectName__/microservice/application/ports/outbounds/repositories/__projectName__-query-ports'

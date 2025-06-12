@@ -5,10 +5,8 @@ import { CqrsModule } from '@nestjs/cqrs'
 import { GrpcQueryControllers } from './query'
 import { GrpcCommandControllers } from './command'
 
-import {  __projectNameCamel__ } from '@proto'
+import { __projectNameCamel__ } from '@proto'
 import { PROTO_PATHS } from '@__projectName__/microservice/infrastructure/shared/constants/proto-paths'
-
-
 
 import { SharedModule } from '@__projectName__/libs/shared/shared.module'
 
@@ -23,9 +21,9 @@ export class GrpcServerModule {
     return {
       transport: Transport.GRPC,
       options: {
-      package: __projectNameCamel__.__ProjectName___PACKAGE_NAME,
-      protoPath: PROTO_PATHS.__projectNameCamel__,
-      url: process.env.SERVICE_GRPC_URL
+        package: __projectNameCamel__.__ProjectName___PACKAGE_NAME,
+        protoPath: PROTO_PATHS.__projectNameCamel__,
+        url: process.env.SERVICE_GRPC_URL
       }
     }
   }

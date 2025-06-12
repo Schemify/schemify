@@ -8,7 +8,9 @@ import { PrismaService } from '@__projectName__/microservice/infrastructure/adap
 import { Delete__ProjectName__Port } from '@__projectName__/microservice/application/ports/outbounds/repositories/__projectName__-command-ports'
 
 @Injectable()
-export class Delete__ProjectName__PrismaRepository implements Delete__ProjectName__Port {
+export class Delete__ProjectName__PrismaRepository
+  implements Delete__ProjectName__Port
+{
   constructor(private readonly prisma: PrismaService) {}
 
   async delete(id: string): Promise<void> {

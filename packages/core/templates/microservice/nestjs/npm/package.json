@@ -22,6 +22,8 @@
     "test:e2e:schemify": "jest --selectProjects __projectName__"
   },
   "dependencies": {
+    "@schemify/core": "{{schemifyCoreVersion}}",
+    "@schemify/types": "{{schemifyTypesVersion}}",
     "@grpc/grpc-js": "^1.13.3",
     "@grpc/proto-loader": "^0.7.13",
     "@nestjs/common": "^11.0.1",
@@ -49,6 +51,7 @@
     "uuid": "^11.1.0"
   },
   "devDependencies": {
+    "@schemify/cli": "{{schemifyCliVersion}}",
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
     "@darraghor/eslint-plugin-nestjs-typed": "^6.4.3",

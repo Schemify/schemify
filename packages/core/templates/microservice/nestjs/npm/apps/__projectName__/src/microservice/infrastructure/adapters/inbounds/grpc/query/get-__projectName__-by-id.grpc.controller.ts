@@ -23,7 +23,6 @@ import { __projectNameCamel__ } from '@proto'
 import { Get__ProjectName__ByIdQuery } from '@__projectName__/microservice/application/ports/inbounds/queries'
 import { __ProjectName__Mapper } from '@__projectName__/microservice/infrastructure/mappers/__projectName__.mapper'
 
-
 @Controller('__ProjectName__Service')
 export class Get__ProjectName__ByIdGrpcController {
   constructor(
@@ -55,7 +54,10 @@ export class Get__ProjectName__ByIdGrpcController {
    * @returns __projectNameCamel__.__ProjectName__ (objeto compatible con el contrato Protobuf)
    */
 
-  @GrpcMethod(__projectNameCamel__.__ProjectName___SERVICE_NAME, 'get__ProjectName__ById')
+  @GrpcMethod(
+    __projectNameCamel__.__ProjectName___SERVICE_NAME,
+    'get__ProjectName__ById'
+  )
   async get__ProjectName__ById(
     request: __projectNameCamel__.Get__ProjectName__ByIdDto
   ): Promise<__projectNameCamel__.__ProjectName__> {

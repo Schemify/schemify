@@ -86,23 +86,33 @@ export const __ProjectName___PACKAGE_NAME = '__projectNameCamel__'
 export interface __ProjectName__ServiceClient {
   /** Crear un nuevo ejemplo */
 
-  create__ProjectName__(request: Create__ProjectName__Dto): Observable<__ProjectName__>
+  create__ProjectName__(
+    request: Create__ProjectName__Dto
+  ): Observable<__ProjectName__>
 
   /** Obtener todos los ejemplos (no paginado) */
 
-  getAll__ProjectName__s(request: __ProjectName__Empty): Observable<__ProjectName__s>
+  getAll__ProjectName__s(
+    request: __ProjectName__Empty
+  ): Observable<__ProjectName__s>
 
   /** Obtener un ejemplo por ID */
 
-  get__ProjectName__ById(request: Get__ProjectName__ByIdDto): Observable<__ProjectName__>
+  get__ProjectName__ById(
+    request: Get__ProjectName__ByIdDto
+  ): Observable<__ProjectName__>
 
   /** Actualizar un ejemplo existente */
 
-  update__ProjectName__(request: Update__ProjectName__Dto): Observable<__ProjectName__>
+  update__ProjectName__(
+    request: Update__ProjectName__Dto
+  ): Observable<__ProjectName__>
 
   /** Eliminar un ejemplo por ID */
 
-  delete__ProjectName__(request: Get__ProjectName__ByIdDto): Observable<__ProjectName__Empty>
+  delete__ProjectName__(
+    request: Get__ProjectName__ByIdDto
+  ): Observable<__ProjectName__Empty>
 
   /** Soporte para scroll infinito (cursor-based pagination) */
 
@@ -149,7 +159,10 @@ export interface __ProjectName__ServiceController {
 
   delete__ProjectName__(
     request: Get__ProjectName__ByIdDto
-  ): Promise<__ProjectName__Empty> | Observable<__ProjectName__Empty> | __ProjectName__Empty
+  ):
+    | Promise<__ProjectName__Empty>
+    | Observable<__ProjectName__Empty>
+    | __ProjectName__Empty
 
   /** Soporte para scroll infinito (cursor-based pagination) */
 

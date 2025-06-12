@@ -13,14 +13,18 @@ import { Get__ProjectName__ByIdPort } from '@__projectName__/microservice/applic
 import { __ProjectName__Mapper } from '@__projectName__/microservice/infrastructure/mappers/__projectName__.mapper'
 
 @Injectable()
-export class Get__ProjectName__ByIdPrismaRepository implements Get__ProjectName__ByIdPort {
+export class Get__ProjectName__ByIdPrismaRepository
+  implements Get__ProjectName__ByIdPort
+{
   constructor(
     private readonly prisma: PrismaService,
     private readonly mapper: __ProjectName__Mapper
   ) {}
 
   async getById(id: string): Promise<__ProjectName__Entity | null> {
-    const result = await this.prisma.__projectNameCamel__.findUnique({ where: { id } })
+    const result = await this.prisma.__projectNameCamel__.findUnique({
+      where: { id }
+    })
 
     if (!result) return null
 

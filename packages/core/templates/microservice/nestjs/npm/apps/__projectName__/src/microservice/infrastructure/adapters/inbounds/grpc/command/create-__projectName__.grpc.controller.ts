@@ -57,11 +57,17 @@ export class Create__ProjectName__GrpcController {
    * @param request DTO gRPC generado desde `.proto`
    * @returns `__projectName__.__ProjectName__` (respuesta serializada)
    */
-  @GrpcMethod(__projectNameCamel__.__ProjectName___SERVICE_NAME, 'create__ProjectName__')
+  @GrpcMethod(
+    __projectNameCamel__.__ProjectName___SERVICE_NAME,
+    'create__ProjectName__'
+  )
   async create__ProjectName__(
     request: __projectNameCamel__.Create__ProjectName__Dto
   ): Promise<__projectNameCamel__.__ProjectName__> {
-    const command = new Create__ProjectName__Command(request.name, request.description)
+    const command = new Create__ProjectName__Command(
+      request.name,
+      request.description
+    )
 
     const entity = await this.commandBus.execute<
       Create__ProjectName__Command, // comando que viaja

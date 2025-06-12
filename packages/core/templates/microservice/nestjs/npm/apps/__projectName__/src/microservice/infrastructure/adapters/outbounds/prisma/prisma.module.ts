@@ -10,7 +10,6 @@ import { Module } from '@nestjs/common'
 
 import { PrismaService } from './prisma.service'
 
-
 import { SharedModule } from '@__projectName__/libs/shared/shared.module'
 import { __ProjectName__Mapper } from '@__projectName__/microservice/infrastructure/mappers/__projectName__.mapper'
 
@@ -47,13 +46,28 @@ import {
     PrismaService,
 
     // Command ports
-    { provide: Create__ProjectName__Port, useClass: Create__ProjectName__PrismaRepository },
-    { provide: Update__ProjectName__Port, useClass: Update__ProjectName__PrismaRepository },
-    { provide: Delete__ProjectName__Port, useClass: Delete__ProjectName__PrismaRepository },
+    {
+      provide: Create__ProjectName__Port,
+      useClass: Create__ProjectName__PrismaRepository
+    },
+    {
+      provide: Update__ProjectName__Port,
+      useClass: Update__ProjectName__PrismaRepository
+    },
+    {
+      provide: Delete__ProjectName__Port,
+      useClass: Delete__ProjectName__PrismaRepository
+    },
 
     // Query ports
-    { provide: Get__ProjectName__ByIdPort, useClass: Get__ProjectName__ByIdPrismaRepository },
-    { provide: GetAll__ProjectName__sPort, useClass: GetAll__ProjectName__sPrismaRepository },
+    {
+      provide: Get__ProjectName__ByIdPort,
+      useClass: Get__ProjectName__ByIdPrismaRepository
+    },
+    {
+      provide: GetAll__ProjectName__sPort,
+      useClass: GetAll__ProjectName__sPrismaRepository
+    },
     {
       provide: Get__ProjectName__sWithCursorPort,
       useClass: Get__ProjectName__sWithCursorPrismaRepository

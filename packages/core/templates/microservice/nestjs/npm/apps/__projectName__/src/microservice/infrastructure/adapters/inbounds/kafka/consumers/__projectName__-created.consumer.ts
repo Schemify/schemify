@@ -8,7 +8,6 @@ import { QueryBus } from '@nestjs/cqrs'
 import { __ProjectName__CreatedEvent } from '@__projectName__/microservice/domain/events/__projectName__-created.event'
 import { Envelope } from '@__projectName__/libs/shared/events/event-envelope'
 
-
 import { Get__ProjectName__ByIdQuery } from '@__projectName__/microservice/application/ports/inbounds/queries'
 
 @Controller()
@@ -22,7 +21,9 @@ export class __ProjectName__CreatedConsumer {
 
       const evt = env.payload as __ProjectName__CreatedEvent
 
-      const query = new Get__ProjectName__ByIdQuery({ id: evt.__projectNameCamel__.id })
+      const query = new Get__ProjectName__ByIdQuery({
+        id: evt.__projectNameCamel__.id
+      })
 
       const event = await this.queryBus.execute(query)
 

@@ -11,7 +11,9 @@ import { PrismaService } from '@__projectName__/microservice/infrastructure/adap
 import { Update__ProjectName__Port } from '@__projectName__/microservice/application/ports/outbounds/repositories/__projectName__-command-ports'
 
 @Injectable()
-export class Update__ProjectName__PrismaRepository implements Update__ProjectName__Port {
+export class Update__ProjectName__PrismaRepository
+  implements Update__ProjectName__Port
+{
   constructor(private readonly prisma: PrismaService) {}
 
   async update(entity: __ProjectName__Entity): Promise<void> {

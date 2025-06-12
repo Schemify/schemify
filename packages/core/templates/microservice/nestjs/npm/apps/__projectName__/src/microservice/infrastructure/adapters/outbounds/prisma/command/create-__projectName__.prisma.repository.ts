@@ -12,7 +12,9 @@ import { Create__ProjectName__Port } from '@__projectName__/microservice/applica
 import { __ProjectName__Mapper } from '@__projectName__/microservice/infrastructure/mappers/__projectName__.mapper'
 
 @Injectable()
-export class Create__ProjectName__PrismaRepository implements Create__ProjectName__Port {
+export class Create__ProjectName__PrismaRepository
+  implements Create__ProjectName__Port
+{
   constructor(
     private readonly prisma: PrismaService,
     private readonly mapper: __ProjectName__Mapper

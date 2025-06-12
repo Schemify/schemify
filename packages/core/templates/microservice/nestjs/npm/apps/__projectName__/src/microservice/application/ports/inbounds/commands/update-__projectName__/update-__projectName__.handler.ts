@@ -52,11 +52,17 @@ export class Update__ProjectName__Handler
    * @returns La entidad actualizada
    * @throws NotFoundException si el recurso no existe
    */
-  async execute(command: Update__ProjectName__Command): Promise<__ProjectName__Entity> {
-    const __projectNameCamel__ = await this.get__ProjectName__ByIdPort.getById(command.id)
+  async execute(
+    command: Update__ProjectName__Command
+  ): Promise<__ProjectName__Entity> {
+    const __projectNameCamel__ = await this.get__ProjectName__ByIdPort.getById(
+      command.id
+    )
 
     if (!__projectNameCamel__) {
-      throw new NotFoundException(`__ProjectName__ with id ${command.id} not found`)
+      throw new NotFoundException(
+        `__ProjectName__ with id ${command.id} not found`
+      )
     }
 
     // ✅ Usamos el método de actualización centralizado en el agregado

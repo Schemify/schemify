@@ -10,7 +10,9 @@ import { __ProjectName__CreatedEvent } from '@__projectName__/microservice/domai
 import { Envelope } from '@__projectName__/libs/shared/events/event-envelope'
 
 @Injectable()
-export class Kafka__ProjectName__EventsPublisher implements __ProjectName__EventPublisherPort {
+export class Kafka__ProjectName__EventsPublisher
+  implements __ProjectName__EventPublisherPort
+{
   constructor(private readonly kafkaProducer: KafkaProducerService) {}
 
   async publishCreatedEvent(evt: __ProjectName__CreatedEvent) {

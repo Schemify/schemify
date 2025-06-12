@@ -1,111 +1,123 @@
-import chalk from "chalk";
-import enquirer from "enquirer";
-import { join } from "path";
+import { ProjectScaffolder } from '@schemifyjs/core'
 
-import { createProject } from "@schemifyjs/core";
+import {
+  TemplateType,
+  FrameworkType,
+  PackageManagerType,
+  type ProjectOptions
+} from '@schemifyjs/types'
 
-import { type ProjectOptions } from "@schemifyjs/types";
+import chalk from 'chalk'
+import enquirer from 'enquirer'
 
-const allowedTypes = ["microservice", "kafka", "graphql", "grpc"] as const;
+type Answers = {
+  name: string
+  pm: PackageManagerType
+  framework: FrameworkType
+}
 
-export const newCommand = async (type?: string) => {
-  const { prompt } = enquirer;
+const allowedTypes = Object.values(TemplateType) as readonly TemplateType[]
+
+export const newCommand = async (type?: TemplateType) => {
+  const { prompt } = enquirer
 
   if (!type) {
-    console.error(chalk.red("❌ Debes indicar el tipo de proyecto."));
-    console.log(chalk.gray("Ejemplo: schemify new kafka"));
-    process.exit(1);
+    console.error(chalk.red('❌ Debes indicar el tipo de proyecto.'))
+    console.log(
+      chalk.gray(`Ejemplo: schemify new ${TemplateType.Microservice}`)
+    )
+    process.exit(1)
   }
 
-  if (!allowedTypes.includes(type as any)) {
-    console.error(chalk.red(`❌ Tipo no soportado: "${type}"`));
+  if (!allowedTypes.includes(type)) {
+    console.error(chalk.red(`❌ Tipo no soportado: "${type}"`))
     console.log(
       chalk.gray(
-        `Tipos disponibles: ${allowedTypes.map((t) => `"${t}"`).join(", ")}`
+        `Tipos disponibles: ${allowedTypes.map((t) => `"${t}"`).join(', ')}`
       )
-    );
-    process.exit(1);
+    )
+    process.exit(1)
   }
 
-  let answers: {
-    name: string;
-    pm: "npm" | "yarn" | "pnpm";
-    framework: "nestjs" | "express";
-  };
+  let answers: Answers
 
   try {
-    answers = await prompt([
+    answers = (await prompt<Answers>([
       {
-        type: "input",
-        name: "name",
+        type: 'input',
+        name: 'name',
         message: `Nombre del ${type}:`,
         initial: `my-${type}`,
-        validate: (input: string) =>
+        validate: (input) =>
           /^[a-z]([a-z0-9]*(-[a-z0-9]+)*)?$/.test(input)
             ? true
-            : "❌ Nombre inválido. Usa minúsculas, números y guiones (ej: my-service).",
+            : '❌ Nombre inválido. Usa minúsculas, números y guiones.'
       },
       {
-        type: "select",
-        name: "pm",
-        message: "¿Gestor de paquetes?",
+        type: 'select',
+        name: 'pm',
+        message: '¿Gestor de paquetes?',
         choices: [
-          { name: "npm", message: "npm" },
-          { name: "yarn", disabled: "(próximamente)" },
-          { name: "pnpm", disabled: "(próximamente)" },
-        ],
+          { name: PackageManagerType.Npm, message: 'npm' },
+          {
+            name: PackageManagerType.Npm,
+            message: 'yarn',
+            disabled: '(próx.)'
+          },
+          {
+            name: PackageManagerType.Npm,
+            message: 'pnpm',
+            disabled: '(próx.)'
+          }
+        ]
       },
       {
-        type: "select",
-        name: "framework",
-        message: "¿Qué framework quieres usar?",
+        type: 'select',
+        name: 'framework',
+        message: 'Framework:',
         choices: [
-          { name: "nestjs", message: "NestJS" },
-          { name: "express", message: "ExpressJS", disabled: "(próximamente)" },
-        ],
-      },
-    ]);
+          { name: FrameworkType.NestJS, message: 'NestJS' },
+          {
+            name: FrameworkType.NestJS,
+            message: 'ExpressJS',
+            disabled: '(próx.)'
+          }
+        ]
+      }
+    ])) as Answers
   } catch {
-    console.error(chalk.red("🚫 Ejecución cancelada"));
-    process.exit(1);
+    console.error(chalk.red('🚫 Ejecución cancelada'))
+    process.exit(1)
   }
-
-  const { name, framework, pm } = answers;
 
   const args: ProjectOptions = {
-    name: name,
-    template: type as ProjectOptions["template"],
-    framework: framework as ProjectOptions["framework"],
-    packageManager: pm as ProjectOptions["packageManager"],
-  };
+    name: answers.name,
+    template: type,
+    framework: answers.framework,
+    packageManager: answers.pm
+  }
 
   try {
-    console.log(
-      chalk.cyan(`✨ Creando proyecto "${name}" con ${framework}...`)
-    );
+    console.log(chalk.cyan(`✨ Creando proyecto "${args.name}"...`))
 
-    await createProject(args);
+    const scaffolder = new ProjectScaffolder()
 
-    console.log(chalk.green(`\n✅ Proyecto creado en ./${name}`));
+    await scaffolder.scaffold(args)
+
+    console.log(chalk.green(`\n✅ Proyecto creado en ./${args.name}`))
     console.log(
-      chalk.gray(`\n➡️  cd ${name}\n📦 ${pm} install\n🚀 ${pm} run start\n`)
-    );
+      chalk.gray(
+        `\n➡️  cd ${args.name}\n📦 ${args.packageManager} install\n🚀 ${args.packageManager} run start\n`
+      )
+    )
   } catch (err: any) {
-    const handlers: Record<string, () => void> = {
-      ENOENT: () =>
-        console.error(chalk.red("❌ Comando no encontrado. ¿Está instalado?")),
-      ERR_INVALID_ARG_VALUE: () =>
-        console.error(chalk.red("❌ Argumento inválido en el CLI.")),
-    };
-
-    const handler =
-      handlers[err.code ?? ""] ??
-      (() => {
-        const fallback = err?.message || "Error desconocido";
-        console.error(chalk.red(`❌ ${fallback}`));
-      });
-
-    handler();
-    process.exit(1);
+    const msgs: Record<string, string> = {
+      ENOENT: '❌ Comando no encontrado. ¿Está instalado?',
+      ERR_INVALID_ARG_VALUE: '❌ Argumento inválido en el CLI.'
+    }
+    console.error(
+      chalk.red(msgs[err.code] ?? err.message ?? 'Error desconocido')
+    )
+    process.exit(1)
   }
-};
+}

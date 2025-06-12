@@ -32,8 +32,6 @@ import { __ProjectName__Entity } from '@__projectName__/microservice//domain/ent
 
 import { Create__ProjectName__Port } from '@__projectName__/microservice/application/ports/outbounds/repositories/__projectName__-command-ports'
 
-
-
 @CommandHandler(Create__ProjectName__Command)
 export class Create__ProjectName__Handler
   implements ICommandHandler<Create__ProjectName__Command>
@@ -50,7 +48,9 @@ export class Create__ProjectName__Handler
    * @param command Datos del nuevo ejemplo
    * @returns Instancia del agregado `__ProjectName__Entity` creado
    */
-  async execute(command: Create__ProjectName__Command): Promise<__ProjectName__Entity> {
+  async execute(
+    command: Create__ProjectName__Command
+  ): Promise<__ProjectName__Entity> {
     const entity = __ProjectName__Entity.create({
       name: command.name,
       description: command.description

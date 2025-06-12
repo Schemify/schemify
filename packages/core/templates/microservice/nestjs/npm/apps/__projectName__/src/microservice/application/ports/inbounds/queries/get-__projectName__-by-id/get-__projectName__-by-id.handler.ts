@@ -33,7 +33,6 @@ import { __ProjectName__Entity } from '@__projectName__/microservice/domain/enti
 
 import { Get__ProjectName__ByIdPort } from '@__projectName__/microservice/application/ports/outbounds/repositories/__projectName__-query-ports'
 
-
 @QueryHandler(Get__ProjectName__ByIdQuery)
 export class Get__ProjectName__ByIdHandler
   implements IQueryHandler<Get__ProjectName__ByIdQuery>
@@ -49,7 +48,9 @@ export class Get__ProjectName__ByIdHandler
    * @param query Objeto con el ID del agregado a buscar
    * @returns `__ProjectName__Entity` si se encuentra, o `null` si no existe
    */
-  async execute(query: Get__ProjectName__ByIdQuery): Promise<__ProjectName__Entity | null> {
+  async execute(
+    query: Get__ProjectName__ByIdQuery
+  ): Promise<__ProjectName__Entity | null> {
     return this.queryRepository.getById(query.payload.id)
   }
 }

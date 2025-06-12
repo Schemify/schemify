@@ -53,7 +53,9 @@ export class __ProjectName__Mapper {
    * @param entity Entidad del dominio
    * @returns Objeto Protobuf plano
    */
-  entityToProto(entity: __ProjectName__Entity): __projectNameCamel__.__ProjectName__{
+  entityToProto(
+    entity: __ProjectName__Entity
+  ): __projectNameCamel__.__ProjectName__ {
     if (!entity) {
       throw new Error('entityToProto: received undefined entity')
     }
