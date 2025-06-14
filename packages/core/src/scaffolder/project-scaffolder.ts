@@ -4,14 +4,14 @@ import { execa } from 'execa'
 import { copyTemplate } from '../utils/copy-template.js'
 import { replacePlaceholders } from '../utils/replace-placeholders.js'
 import { verifyNoPlaceholders } from '../utils/verify-no-placeholders.js'
-import { VersionReader } from '../utils/version-reader.js'
 
+import { ScaffoldingContext } from './config/version.js'
 /**
  * Clase que orquesta el proceso de scaffolding de proyectos.
  * Sigue el principio SRP y delega trabajo a utilidades.
  */
 export class ProjectScaffolder {
-  constructor(private readonly versionReader = VersionReader.getInstance()) {}
+  constructor(private readonly versionReader = ScaffoldingContext) {}
 
   async scaffold(options: ProjectOptions): Promise<void> {
     const projectPath = path.resolve(options.name)
