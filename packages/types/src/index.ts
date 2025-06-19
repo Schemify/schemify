@@ -1,2 +1,1 @@
-export * from './types/project-options.js'
-export * from './types/cli/cli-flags.js'
+export * from './types/new.command.types.js'

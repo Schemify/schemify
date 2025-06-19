@@ -2,7 +2,7 @@ import fs from 'fs-extra'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
-import { type ProjectOptions } from '@schemifyjs/types'
+import { type ProjectOptions, TemplateType } from '@schemifyjs/types'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 

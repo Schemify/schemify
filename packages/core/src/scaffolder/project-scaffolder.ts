@@ -5,21 +5,19 @@ import { copyTemplate } from '../utils/copy-template.js'
 import { replacePlaceholders } from '../utils/replace-placeholders.js'
 import { verifyNoPlaceholders } from '../utils/verify-no-placeholders.js'
 
-import { ScaffoldingContext } from './config/version.js'
 /**
  * Clase que orquesta el proceso de scaffolding de proyectos.
  * Sigue el principio SRP y delega trabajo a utilidades.
  */
 export class ProjectScaffolder {
-  constructor(private readonly versionReader = ScaffoldingContext) {}
+  constructor() {}
 
   async scaffold(options: ProjectOptions): Promise<void> {
     const projectPath = path.resolve(options.name)
     await copyTemplate(options)
 
     const replacements = {
-      ...this.generateNameVariants(options.name),
-      ...this.versionReader.getSchemifyVersions()
+      ...this.generateNameVariants(options.name)
     }
 
     replacePlaceholders(projectPath, replacements)

@@ -1,29 +1,27 @@
 import { Command } from 'commander'
-import { version as CLIVersion } from './version.js'
-import { configureHelp } from './config/help.config.js'
 
+import { registerHelpCommand } from './commands/help.command.js'
+import { registerVersionCommand } from './commands/version.command.js'
+import { registerGenerateCommand } from './commands/generate/generate.command.js'
 import { registerNewCommand } from './commands/new/new.command.js'
 
 export class CLIArgumentParser {
   private program = new Command()
 
   constructor() {
-    this.setup()
+    this.setupConfiguration()
+    this.setupCommands()
   }
 
-  private setup(): void {
-    this.program
-      .name('schemify')
-      .usage('<command> [options]')
-      .description(
-        'Create and manage microservice projects using advanced templates'
-      )
-      .version(CLIVersion, '-v, --version', 'Show current CLI version')
-      .showHelpAfterError(true)
+  private setupConfiguration(): void {
+    this.program.showHelpAfterError(true)
+  }
 
-    // 🧩 Modular config
-    configureHelp(this.program)
+  private setupCommands(): void {
+    registerHelpCommand(this.program)
+    registerVersionCommand(this.program)
     registerNewCommand(this.program)
+    registerGenerateCommand(this.program)
   }
 
   public async parse(argv = process.argv): Promise<void> {

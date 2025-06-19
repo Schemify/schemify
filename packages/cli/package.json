@@ -1,6 +1,6 @@
 {
   "name": "@schemifyjs/cli",
-  "version": "0.1.45",
+  "version": "0.1.49",
   "description": "CLI oficial de SchemifyJS",
   "type": "module",
   "main": "dist/index.js",
@@ -12,7 +12,7 @@
     "dist"
   ],
   "scripts": {
-    "postinstall": "node ./dist/scripts/postinstall.js",
+    "postinstall": "node -e \"const fs=require('fs');fs.existsSync('./dist/scripts/postinstall.js') && require('./dist/scripts/postinstall.js')\"",
     "prebuild": "node ./scripts/update-version.mjs",
     "build": "tsc",
     "release": "npm version patch && npm run build && npm publish --access public",

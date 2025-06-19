@@ -22,19 +22,8 @@ describe('CLIArgumentParser - comando `new`', () => {
     ;(ProjectScaffolder as Mock).mockClear()
   })
 
-  it('debe ejecutar `scaffold` con los argumentos correctos cuando se pasa el comando `new` con todos los flags', async () => {
-    const argv = [
-      'node',
-      'schemify',
-      'new',
-      'microservice',
-      '--name',
-      'test-app',
-      '--pm',
-      'npm',
-      '--framework',
-      'nestjs'
-    ]
+  it('debe ejecutar `scaffold` con los argumentos correctos cuando se pasa el comando `new` con el nombre del proyecto', async () => {
+    const argv = ['node', 'schemify', 'new', 'test-app']
 
     await parser.parse(argv)
 
