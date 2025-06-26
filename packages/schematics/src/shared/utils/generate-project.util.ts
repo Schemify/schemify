@@ -75,10 +75,21 @@ function applyReplacements(
   input: string,
   dict: Record<string, string>
 ): string {
-  return Object.entries(dict).reduce(
+  let result = input
+
+  // Reemplazar formato __variable__
+  result = Object.entries(dict).reduce(
     (acc, [key, val]) => acc.replace(new RegExp(`__${key}__`, 'g'), val),
-    input
+    result
   )
+
+  // Reemplazar formato {{variable}}
+  result = Object.entries(dict).reduce(
+    (acc, [key, val]) => acc.replace(new RegExp(`{{${key}}}`, 'g'), val),
+    result
+  )
+
+  return result
 }
 
 function isBinaryFile(filePath: string): boolean {

@@ -1,0 +1,30 @@
+/**
+ * __project_name_pascal__CreatedEvent
+ * -----------------------------------------------------------------------------
+ * Evento de dominio que representa la creación exitosa de un nuevo `__project_name_pascal__Entity`.
+ *
+ * Es emitido dentro del método `__project_name_pascal__Entity.create()`.
+ *
+ * Este evento puede ser utilizado para:
+ *  - Auditar la creación de recursos
+ *  - Disparar integraciones externas
+ *  - Notificar a otras partes del sistema (proyecciones, otros microservicios)
+ *  - Iniciar flujos secundarios o comandos relacionados
+ *  - Disparar lógica reactiva (envío de emails, logging, etc.)
+ */
+
+import { IEvent } from '@nestjs/cqrs'
+import { __project_name_pascal__Entity } from '../entities/__project_name_camel__.entity'
+import { DomainEvent } from '../domain/domain.event'
+
+export class __project_name_pascal__CreatedEvent
+  extends DomainEvent
+  implements IEvent
+{
+  public readonly __project_name_camel__: __project_name_pascal__Entity
+
+  constructor(__project_name_camel__: __project_name_pascal__Entity) {
+    super()
+    this.__project_name_camel__ = __project_name_camel__
+  }
+}

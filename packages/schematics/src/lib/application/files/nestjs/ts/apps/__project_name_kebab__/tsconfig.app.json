@@ -2,7 +2,7 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "declaration": false,
-    "outDir": "../../dist/apps/__project_name_kebab__"
+    "outDir": "../../dist/apps/__project_name_camel__"
   },
   "include": ["src/**/*"],
   "exclude": [

@@ -2,13 +2,13 @@
 // versions:
 //   protoc-gen-ts_proto  v2.7.0
 //   protoc               v3.20.3
-// source: libs/proto/services/__project_name_kebab__.proto
+// source: libs/proto/services/__project_name_camel__.proto
 
 /* eslint-disable */
 import { GrpcMethod, GrpcStreamMethod } from '@nestjs/microservices'
 import { Observable } from 'rxjs'
 
-export const protobufPackage = '__project_name_kebab__'
+export const protobufPackage = '__project_name_camel__'
 
 /** ! Mensaje vacío (común en operaciones sin payload) */
 export interface __project_name_pascal__Empty {}
@@ -72,51 +72,51 @@ export interface Update__project_name_pascal__Data {
   description?: string | undefined
 }
 
-export const CLIENTES_PACKAGE_NAME = '__project_name_kebab__'
+export const __project_name_screaming___PACKAGE_NAME = '__project_name_camel__'
 
 /**
  * ================================
  *   📦 Servicio __project_name_pascal__Service
  * ================================
  *
- * Contratos de comunicación entre el cliente y el servidor
+ * Contratos de comunicación entre el __project_name_camel__ y el servidor
  * para la gestión de ejemplos en la aplicación.
  */
 
 export interface __project_name_pascal__ServiceClient {
   /** Crear un nuevo ejemplo */
 
-  createClientes(
+  create__project_name_pascal__(
     request: Create__project_name_pascal__Dto
   ): Observable<__project_name_pascal__>
 
   /** Obtener todos los ejemplos (no paginado) */
 
-  getAllClientes(
+  getAll__project_name_pascal__(
     request: __project_name_pascal__Empty
   ): Observable<__project_name_pascal__List>
 
   /** Obtener un ejemplo por ID */
 
-  getClientesById(
+  get__project_name_pascal__ById(
     request: Get__project_name_pascal__ByIdDto
   ): Observable<__project_name_pascal__>
 
   /** Actualizar un ejemplo existente */
 
-  updateClientes(
+  update__project_name_pascal__(
     request: Update__project_name_pascal__Dto
   ): Observable<__project_name_pascal__>
 
   /** Eliminar un ejemplo por ID */
 
-  deleteClientes(
+  delete__project_name_pascal__(
     request: Get__project_name_pascal__ByIdDto
   ): Observable<__project_name_pascal__Empty>
 
   /** Soporte para scroll infinito (cursor-based pagination) */
 
-  getClientesByCursor(
+  get__project_name_pascal__ByCursor(
     request: CursorPaginationRequest
   ): Observable<CursorPaginated__project_name_pascal__>
 }
@@ -126,38 +126,50 @@ export interface __project_name_pascal__ServiceClient {
  *   📦 Servicio __project_name_pascal__Service
  * ================================
  *
- * Contratos de comunicación entre el cliente y el servidor
+ * Contratos de comunicación entre el __project_name_camel__ y el servidor
  * para la gestión de ejemplos en la aplicación.
  */
 
 export interface __project_name_pascal__ServiceController {
   /** Crear un nuevo ejemplo */
 
-  createClientes(
+  create__project_name_pascal__(
     request: Create__project_name_pascal__Dto
-  ): Promise<__project_name_pascal__> | Observable<__project_name_pascal__> | __project_name_pascal__
+  ):
+    | Promise<__project_name_pascal__>
+    | Observable<__project_name_pascal__>
+    | __project_name_pascal__
 
   /** Obtener todos los ejemplos (no paginado) */
 
-  getAllClientes(
+  getAll__project_name_pascal__(
     request: __project_name_pascal__Empty
-  ): Promise<__project_name_pascal__List> | Observable<__project_name_pascal__List> | __project_name_pascal__List
+  ):
+    | Promise<__project_name_pascal__List>
+    | Observable<__project_name_pascal__List>
+    | __project_name_pascal__List
 
   /** Obtener un ejemplo por ID */
 
-  getClientesById(
+  get__project_name_pascal__ById(
     request: Get__project_name_pascal__ByIdDto
-  ): Promise<__project_name_pascal__> | Observable<__project_name_pascal__> | __project_name_pascal__
+  ):
+    | Promise<__project_name_pascal__>
+    | Observable<__project_name_pascal__>
+    | __project_name_pascal__
 
   /** Actualizar un ejemplo existente */
 
-  updateClientes(
+  update__project_name_pascal__(
     request: Update__project_name_pascal__Dto
-  ): Promise<__project_name_pascal__> | Observable<__project_name_pascal__> | __project_name_pascal__
+  ):
+    | Promise<__project_name_pascal__>
+    | Observable<__project_name_pascal__>
+    | __project_name_pascal__
 
   /** Eliminar un ejemplo por ID */
 
-  deleteClientes(
+  delete__project_name_pascal__(
     request: Get__project_name_pascal__ByIdDto
   ):
     | Promise<__project_name_pascal__Empty>
@@ -166,7 +178,7 @@ export interface __project_name_pascal__ServiceController {
 
   /** Soporte para scroll infinito (cursor-based pagination) */
 
-  getClientesByCursor(
+  get__project_name_pascal__ByCursor(
     request: CursorPaginationRequest
   ):
     | Promise<CursorPaginated__project_name_pascal__>
@@ -177,19 +189,19 @@ export interface __project_name_pascal__ServiceController {
 export function __project_name_pascal__ServiceControllerMethods() {
   return function (constructor: Function) {
     const grpcMethods: string[] = [
-      'createClientes',
-      'getAllClientes',
-      'getClientesById',
-      'updateClientes',
-      'deleteClientes',
-      'getClientesByCursor'
+      'create__project_name_pascal__',
+      'getAll__project_name_pascal__',
+      'get__project_name_pascal__ById',
+      'update__project_name_pascal__',
+      'delete__project_name_pascal__',
+      'get__project_name_pascal__ByCursor'
     ]
     for (const method of grpcMethods) {
       const descriptor: any = Reflect.getOwnPropertyDescriptor(
         constructor.prototype,
         method
       )
-      GrpcMethod('ClientesService', method)(
+      GrpcMethod('__project_name_pascal__Service', method)(
         constructor.prototype[method],
         method,
         descriptor
@@ -201,7 +213,7 @@ export function __project_name_pascal__ServiceControllerMethods() {
         constructor.prototype,
         method
       )
-      GrpcStreamMethod('ClientesService', method)(
+      GrpcStreamMethod('__project_name_pascal__Service', method)(
         constructor.prototype[method],
         method,
         descriptor
@@ -210,4 +222,5 @@ export function __project_name_pascal__ServiceControllerMethods() {
   }
 }
 
-export const CLIENTES_SERVICE_NAME = 'ClientesService'
+export const __project_name_screaming___SERVICE_NAME =
+  '__project_name_pascal__Service'

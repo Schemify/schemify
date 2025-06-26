@@ -8,11 +8,11 @@ until nc -z $(echo $project_name_screaming_DATABASE_URL | sed -E 's|.*//([^:/]+)
   sleep 2
 done
 
-echo "🔁 Generando Prisma Client (por seguridad)..."
+echo "🔁 Generando Prisma __project_name_pascal__ (por seguridad)..."
 npx prisma generate --schema=prisma/schema.prisma
 
 echo "🚀 Aplicando migraciones (si hay)..."
 npx prisma migrate deploy --schema=prisma/schema.prisma
 
 echo "✅ Iniciando aplicación..."
-exec node dist/apps/__project_name_kebab__/src/main
+exec node dist/apps/__project_name_camel__/src/main

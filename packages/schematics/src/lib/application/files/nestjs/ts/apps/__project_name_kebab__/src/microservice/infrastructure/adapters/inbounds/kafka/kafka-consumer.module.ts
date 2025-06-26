@@ -3,13 +3,13 @@ import { KafkaOptions } from '@nestjs/microservices'
 
 import { KafkaConsumers } from './consumers'
 
-import { ApplicationModule } from '@__project_name_kebab__/microservice/application/application.module'
-import { buildKafkaConsumerOptions } from '@__project_name_kebab__/libs/shared/config/kafka/kafka.config'
+import { ApplicationModule } from '@__project_name_camel__/microservice/application/application.module'
+import { buildKafkaConsumerOptions } from '@__project_name_camel__/libs/shared/config/kafka/kafka.config'
 
 // Configuración de Kafka con validación
 const kafkaConfig = {
-  clientId: process.env.KAFKA_CLIENT_ID || 'schemify-consumer',
-  groupId: process.env.KAFKA_GROUP_ID || '__project_name_kebab__-group',
+  __project_name_camel__Id: process.env.KAFKA_CLIENT_ID || 'schemify-consumer',
+  groupId: process.env.KAFKA_GROUP_ID || '__project_name_camel__-group',
   brokers: (process.env.KAFKA_BROKERS || 'kafka1:9092')
     .split(',')
     .map((broker) => broker.trim())
@@ -19,7 +19,7 @@ const kafkaConfig = {
 // Log de configuración usando NestJS Logger
 const logger = new Logger('KafkaConsumerModule')
 logger.log('🔧 Kafka Consumer Config:', {
-  clientId: kafkaConfig.clientId,
+  __project_name_camel__Id: kafkaConfig.__project_name_camel__Id,
   groupId: kafkaConfig.groupId,
   brokers: kafkaConfig.brokers,
   env: {

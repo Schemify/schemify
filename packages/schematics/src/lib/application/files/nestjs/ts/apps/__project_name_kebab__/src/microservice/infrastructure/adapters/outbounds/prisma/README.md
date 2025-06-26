@@ -5,7 +5,7 @@ Este directorio contiene la integración de **Prisma ORM** dentro del microservi
 ## 🎯 Propósito de esta capa
 
 - Actuar como **adaptador de infraestructura** para la capa de dominio
-- Encapsular la configuración y lifecycle del cliente Prisma
+- Encapsular la configuración y lifecycle del __project_name_camel__ Prisma
 - Proveer una forma centralizada y desacoplada de acceso a la base de datos
 - Facilitar la implementación de `Repositories` que cumplan contratos del dominio
 
@@ -14,7 +14,7 @@ Este directorio contiene la integración de **Prisma ORM** dentro del microservi
 ```txt
 📁 prisma
 ├── prisma.module.ts             → Módulo NestJS que expone el servicio Prisma
-├── prisma.service.ts            → Cliente Prisma extendido y gestionado por NestJS
+├── prisma.service.ts            → __project_name_pascal__ Prisma extendido y gestionado por NestJS
 └── 📁 repositories
     ├── 📁 read/                  → Implementaciones del `__project_name_pascal__QueryRepository`
     └── 📁 write/                 → Implementaciones del `__project_name_pascal__CommandRepository`
@@ -24,7 +24,7 @@ Este directorio contiene la integración de **Prisma ORM** dentro del microservi
 
 ```ts
 @Injectable()
-export class PrismaService extends PrismaClient
+export class PrismaService extends Prisma__project_name_pascal__
   implements OnModuleInit, OnModuleDestroy {
   async onModuleInit() {
     await this.$connect()
@@ -38,7 +38,7 @@ export class PrismaService extends PrismaClient
 
 ### ✅ ¿Por qué así?
 
-* Centraliza la conexión y desconexión del cliente Prisma
+* Centraliza la conexión y desconexión del __project_name_camel__ Prisma
 * Encapsula toda la lógica de inicialización y limpieza
 * Permite usar `PrismaService` desde cualquier `@Injectable` de NestJS
 * Compatible con `app.enableShutdownHooks()` para cerrar conexiones
@@ -67,9 +67,9 @@ export class PrismaModule {}
 
 Contiene implementaciones específicas para consultas de solo lectura:
 
-* `find-all-__project_name_kebab__.prisma.repository.ts`
-* `find-__project_name_kebab__-by-id.prisma.repository.ts`
-* `find-__project_name_kebab__-by-cursor.prisma.repository.ts`
+* `find-all-__project_name_camel__.prisma.repository.ts`
+* `find-__project_name_camel__-by-id.prisma.repository.ts`
+* `find-__project_name_camel__-by-cursor.prisma.repository.ts`
 
 Cada clase implementa `__project_name_pascal__QueryRepository`, y solo los métodos requeridos para ese caso de uso (seguimos **CQRS**).
 
@@ -77,9 +77,9 @@ Cada clase implementa `__project_name_pascal__QueryRepository`, y solo los méto
 
 Contiene implementaciones de escritura:
 
-* `create-__project_name_kebab__.prisma.repository.ts`
-* `update-__project_name_kebab__.prisma.repository.ts`
-* `delete-__project_name_kebab__.prisma.repository.ts`
+* `create-__project_name_camel__.prisma.repository.ts`
+* `update-__project_name_camel__.prisma.repository.ts`
+* `delete-__project_name_camel__.prisma.repository.ts`
 
 Estas clases implementan `__project_name_pascal__CommandRepository`.
 
@@ -122,8 +122,8 @@ export class GetAll__project_name_pascal__Handler {
 * 📘 CQRS en NestJS:
   [https://docs.nestjs.com/recipes/cqrs](https://docs.nestjs.com/recipes/cqrs)
 
-* 📘 Prisma Client lifecycle (onModuleInit):
-  [https://www.prisma.io/docs/guides/database/troubleshooting-orm/help-articles/nextjs-prisma-client](https://www.prisma.io/docs/guides/database/troubleshooting-orm/help-articles/nextjs-prisma-client)
+* 📘 Prisma __project_name_pascal__ lifecycle (onModuleInit):
+  [https://www.prisma.io/docs/guides/database/troubleshooting-orm/help-articles/nextjs-prisma-__project_name_camel__](https://www.prisma.io/docs/guides/database/troubleshooting-orm/help-articles/nextjs-prisma-__project_name_camel__)
 
 ## ✅ ¿Dónde comenzar?
 

@@ -55,9 +55,9 @@ services:
           echo '⏳ Kafka aún no está listo, esperando...' &&
           sleep 5
         done &&
-        echo '📝 Creando topics de __project_name_kebab__...' &&
-        kafka-topics --create --topic __project_name_kebab__.created --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1 --if-not-exists &&
-        kafka-topics --create --topic __project_name_kebab__.description-updated --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1 --if-not-exists &&
+        echo '📝 Creando topics de __project_name_camel__...' &&
+        kafka-topics --create --topic __project_name_camel__.created --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1 --if-not-exists &&
+        kafka-topics --create --topic __project_name_camel__.description-updated --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1 --if-not-exists &&
         echo '📋 Listando todos los topics:' &&
         kafka-topics --list --bootstrap-server localhost:9092 &&
         echo '✅ Topics creados exitosamente!' &&

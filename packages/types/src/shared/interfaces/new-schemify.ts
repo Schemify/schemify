@@ -17,4 +17,5 @@ export enum PackageManagerType {
 export interface ApplicationOptions extends NewSchemify {
   framework: FrameworkType
   packageManager: PackageManagerType
+  versions?: Record<string, string>
 }

@@ -26,9 +26,9 @@
  */
 
 // 🧩 Controladores individuales (por comando)
-import { Create__project_name_pascal__GrpcController } from './create-__project_name_kebab__/create-__project_name_kebab__.grpc.controller'
-import { Update__project_name_pascal__GrpcController } from './update-__project_name_kebab__/update-__project_name_kebab__.grpc.controller'
-import { Delete__project_name_pascal__GrpcController } from './delete-__project_name_kebab__/delete-__project_name_kebab__.grpc.controller'
+import { Create__project_name_pascal__GrpcController } from './create-__project_name_camel__/create-__project_name_camel__.grpc.controller'
+import { Update__project_name_pascal__GrpcController } from './update-__project_name_camel__/update-__project_name_camel__.grpc.controller'
+import { Delete__project_name_pascal__GrpcController } from './delete-__project_name_camel__/delete-__project_name_camel__.grpc.controller'
 
 /**
  * 📦 Conjunto de controladores gRPC de escritura para CQRS Commands
@@ -40,6 +40,6 @@ export const GrpcCommandControllers = [
 ]
 
 // 📤 Exportación individual si se necesita
-export * from './create-__project_name_kebab__/create-__project_name_kebab__.grpc.controller'
-export * from './update-__project_name_kebab__/update-__project_name_kebab__.grpc.controller'
-export * from './delete-__project_name_kebab__/delete-__project_name_kebab__.grpc.controller'
+export * from './create-__project_name_camel__/create-__project_name_camel__.grpc.controller'
+export * from './update-__project_name_camel__/update-__project_name_camel__.grpc.controller'
+export * from './delete-__project_name_camel__/delete-__project_name_camel__.grpc.controller'

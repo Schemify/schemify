@@ -1,14 +1,14 @@
 import { Module, Logger } from '@nestjs/common'
-import { ClientsModule } from '@nestjs/microservices'
+import { __project_name_pascal__sModule } from '@nestjs/microservices'
 
-import { KafkaProducerService } from './client/kafka-producer.service'
+import { KafkaProducerService } from './__project_name_camel__/kafka-producer.service'
 
-import { Kafka__project_name_pascal__CreatedPublisher } from './producers/cliente-created/__project_name_kebab__-created.adapter'
-import { __project_name_pascal__CreatedPublisherPort } from '@__project_name_kebab__/microservice/application/ports/outbounds/messaging/__project_name_kebab__-created-publisher.port'
-import { buildKafkaProducerOptions } from '@__project_name_kebab__/libs/shared/config/kafka/kafka.config'
+import { Kafka__project_name_pascal__CreatedPublisher } from './producers/__project_name_camel__-created/__project_name_camel__-created.adapter'
+import { __project_name_pascal__CreatedPublisherPort } from '@__project_name_camel__/microservice/application/ports/outbounds/messaging/__project_name_camel__-created-publisher.port'
+import { buildKafkaProducerOptions } from '@__project_name_camel__/libs/shared/config/kafka/kafka.config'
 
 const kafkaConfig = {
-  clientId: process.env.KAFKA_CLIENT_ID || 'schemify-producer',
+  __project_name_camel__Id: process.env.KAFKA_CLIENT_ID || 'schemify-producer',
   brokers: (process.env.KAFKA_BROKERS || 'kafka1:9092')
     .split(',')
     .map((broker) => broker.trim())
@@ -18,7 +18,7 @@ const kafkaConfig = {
 // Log de configuración usando NestJS Logger
 const logger = new Logger('KafkaProducerModule')
 logger.log('🔧 Kafka Producer Config:', {
-  clientId: kafkaConfig.clientId,
+  __project_name_camel__Id: kafkaConfig.__project_name_camel__Id,
   brokers: kafkaConfig.brokers,
   env: {
     KAFKA_CLIENT_ID: process.env.KAFKA_CLIENT_ID,
@@ -27,7 +27,11 @@ logger.log('🔧 Kafka Producer Config:', {
 })
 
 @Module({
-  imports: [ClientsModule.register([buildKafkaProducerOptions(kafkaConfig)])],
+  imports: [
+    __project_name_pascal__sModule.register([
+      buildKafkaProducerOptions(kafkaConfig)
+    ])
+  ],
   providers: [
     KafkaProducerService,
     {

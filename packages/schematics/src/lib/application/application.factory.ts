@@ -11,6 +11,10 @@ import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
+export interface ApplicationScaffolderOptions extends ApplicationOptions {
+  versions?: Record<string, string>
+}
+
 export class ApplicationScaffolder {
   async scaffold(schemify: ApplicationOptions): Promise<void> {
     const outputPath = path.resolve(schemify.name)
@@ -19,10 +23,16 @@ export class ApplicationScaffolder {
       '../application/files/nestjs/ts'
     )
 
+    // Usar las versiones recibidas en el objeto options
+    const replacements = {
+      ...generateNameVariants(schemify.name),
+      ...(schemify.versions || {})
+    }
+
     await SchematicEngine({
       schematicPath: schematicPath,
       outputPath: outputPath,
-      replacements: generateNameVariants(schemify.name)
+      replacements: replacements
     })
 
     await runInstallCommand(outputPath)

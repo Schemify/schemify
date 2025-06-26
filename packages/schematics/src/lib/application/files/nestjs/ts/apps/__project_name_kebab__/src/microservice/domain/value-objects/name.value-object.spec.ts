@@ -4,18 +4,20 @@ describe('NameValueObject', () => {
   describe('create', () => {
     it('should create name with valid value', () => {
       // Arrange & Act
-      const name = NameValueObject.create('Cliente Test')
+      const name = NameValueObject.create('__project_name_pascal__ Test')
 
       // Assert
-      expect(name.value).toBe('Cliente Test')
+      expect(name.value).toBe('__project_name_pascal__ Test')
     })
 
     it('should trim whitespace from name', () => {
       // Arrange & Act
-      const name = NameValueObject.create('  Cliente con espacios  ')
+      const name = NameValueObject.create(
+        '  __project_name_pascal__ con espacios  '
+      )
 
       // Assert
-      expect(name.value).toBe('Cliente con espacios')
+      expect(name.value).toBe('__project_name_pascal__ con espacios')
     })
 
     it('should throw error for empty string', () => {
@@ -73,8 +75,8 @@ describe('NameValueObject', () => {
   describe('equals', () => {
     it('should return true for same values', () => {
       // Arrange
-      const name1 = NameValueObject.create('Cliente Test')
-      const name2 = NameValueObject.create('Cliente Test')
+      const name1 = NameValueObject.create('__project_name_pascal__ Test')
+      const name2 = NameValueObject.create('__project_name_pascal__ Test')
 
       // Act & Assert
       expect(name1.equals(name2)).toBe(true)
@@ -82,8 +84,8 @@ describe('NameValueObject', () => {
 
     it('should return false for different values', () => {
       // Arrange
-      const name1 = NameValueObject.create('Cliente Test')
-      const name2 = NameValueObject.create('Cliente Diferente')
+      const name1 = NameValueObject.create('__project_name_pascal__ Test')
+      const name2 = NameValueObject.create('__project_name_pascal__ Diferente')
 
       // Act & Assert
       expect(name1.equals(name2)).toBe(false)
@@ -91,8 +93,8 @@ describe('NameValueObject', () => {
 
     it('should return false for same value with different casing', () => {
       // Arrange
-      const name1 = NameValueObject.create('Cliente Test')
-      const name2 = NameValueObject.create('cliente test')
+      const name1 = NameValueObject.create('__project_name_pascal__ Test')
+      const name2 = NameValueObject.create('__project_name_camel__ test')
 
       // Act & Assert
       expect(name1.equals(name2)).toBe(false)
@@ -100,8 +102,8 @@ describe('NameValueObject', () => {
 
     it('should return true for same value with different whitespace', () => {
       // Arrange
-      const name1 = NameValueObject.create('Cliente Test')
-      const name2 = NameValueObject.create('  Cliente Test  ')
+      const name1 = NameValueObject.create('__project_name_pascal__ Test')
+      const name2 = NameValueObject.create('  __project_name_pascal__ Test  ')
 
       // Act & Assert
       expect(name1.equals(name2)).toBe(true)
@@ -111,26 +113,28 @@ describe('NameValueObject', () => {
   describe('edge cases', () => {
     it('should handle special characters', () => {
       // Arrange & Act
-      const name = NameValueObject.create('Cliente @#$%^&*()')
+      const name = NameValueObject.create('__project_name_pascal__ @#$%^&*()')
 
       // Assert
-      expect(name.value).toBe('Cliente @#$%^&*()')
+      expect(name.value).toBe('__project_name_pascal__ @#$%^&*()')
     })
 
     it('should handle numbers in name', () => {
       // Arrange & Act
-      const name = NameValueObject.create('Cliente 123')
+      const name = NameValueObject.create('__project_name_pascal__ 123')
 
       // Assert
-      expect(name.value).toBe('Cliente 123')
+      expect(name.value).toBe('__project_name_pascal__ 123')
     })
 
     it('should handle unicode characters', () => {
       // Arrange & Act
-      const name = NameValueObject.create('Cliente Español ñáéíóú')
+      const name = NameValueObject.create(
+        '__project_name_pascal__ Español ñáéíóú'
+      )
 
       // Assert
-      expect(name.value).toBe('Cliente Español ñáéíóú')
+      expect(name.value).toBe('__project_name_pascal__ Español ñáéíóú')
     })
   })
 })

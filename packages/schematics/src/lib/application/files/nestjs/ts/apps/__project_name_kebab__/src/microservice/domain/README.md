@@ -30,28 +30,28 @@ La capa de dominio representa **el corazón del negocio**: encapsula **las regla
 ```txt
 📁 domain
 ├── 📁 entities                    → Entidades del dominio (Aggregate Roots)
-│   └── __project_name_kebab__.entity.ts         → Entidad raíz que contiene reglas, estado y eventos
+│   └── __project_name_camel__.entity.ts         → Entidad raíz que contiene reglas, estado y eventos
 │
 ├── 📁 value-objects              → Objetos de valor (validan datos y reglas simples)
 │   ├── name.value-object.ts      → NameValueObject (mín/max, obligatorio)
 │   └── description.value-object.ts → DescriptionValueObject (máx 300)
 │
 ├── 📁 events                     → Eventos de dominio (emitidos desde entidades)
-│   ├── __project_name_kebab__-created.event.ts
-│   ├── __project_name_kebab__-renamed.event.ts
-│   └── __project_name_kebab__-description-updated.event.ts
+│   ├── __project_name_camel__-created.event.ts
+│   ├── __project_name_camel__-renamed.event.ts
+│   └── __project_name_camel__-description-updated.event.ts
 │
 ├── 📁 repositories               → Contratos de acceso a persistencia
-│   ├── __project_name_kebab__.read-repository.ts
-│   └── __project_name_kebab__.write-repository.ts
+│   ├── __project_name_camel__.read-repository.ts
+│   └── __project_name_camel__.write-repository.ts
 │
 ├── 📁 interfaces                 → Tipos reutilizables entre archivos del dominio
-│   └── __project_name_kebab__.domain.interface.ts
+│   └── __project_name_camel__.domain.interface.ts
 ```
 
 ## 🧠 Qué hace cada componente
 
-### 🔹 `entities/__project_name_kebab__.entity.ts`
+### 🔹 `entities/__project_name_camel__.entity.ts`
 - Es la **entidad raíz** del agregado `__project_name_pascal__`
 - Controla el estado y la validez del agregado
 - Expone métodos:
@@ -97,13 +97,13 @@ La capa de dominio representa **el corazón del negocio**: encapsula **las regla
 
 ## 🧭 ¿Dónde se usa esta capa?
 
-| Capa                | ¿Cómo usa el dominio?                                     |
-| ------------------- | --------------------------------------------------------- |
-| ✅ Application Layer | Instancia `__project_name_pascal__Entity`, llama `create()`, `update()`   |
-| ✅ Repositories      | Usan `fromPrimitives()` y `toPrimitives()` para persistir |
-| ✅ Event Handlers    | Escuchan eventos del dominio emitidos desde entidades     |
-| ❌ Infraestructura   | NO debe modificar entidades directamente                  |
-| ❌ Controladores     | NO interactúan con el dominio directamente                |
+| Capa                | ¿Cómo usa el dominio?                                                   |
+| ------------------- | ----------------------------------------------------------------------- |
+| ✅ Application Layer | Instancia `__project_name_pascal__Entity`, llama `create()`, `update()` |
+| ✅ Repositories      | Usan `fromPrimitives()` y `toPrimitives()` para persistir               |
+| ✅ Event Handlers    | Escuchan eventos del dominio emitidos desde entidades                   |
+| ❌ Infraestructura   | NO debe modificar entidades directamente                                |
+| ❌ Controladores     | NO interactúan con el dominio directamente                              |
 
 ---
 

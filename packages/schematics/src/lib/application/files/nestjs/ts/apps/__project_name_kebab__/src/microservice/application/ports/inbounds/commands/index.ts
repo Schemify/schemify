@@ -23,9 +23,9 @@
  */
 
 // 📦 Array con todos los Command Handlers
-import { Create__project_name_pascal__Handler } from './create-__project_name_kebab__/create-__project_name_kebab__.handler'
-import { Update__project_name_pascal__Handler } from './update-__project_name_kebab__/update-__project_name_kebab__.handler'
-import { Delete__project_name_pascal__Handler } from './delete-__project_name_kebab__/delete-__project_name_kebab__.handler'
+import { Create__project_name_pascal__Handler } from './create-__project_name_camel__/create-__project_name_camel__.handler'
+import { Update__project_name_pascal__Handler } from './update-__project_name_camel__/update-__project_name_camel__.handler'
+import { Delete__project_name_pascal__Handler } from './delete-__project_name_camel__/delete-__project_name_camel__.handler'
 
 /**
  * Handlers a registrar en el CommandBus
@@ -37,6 +37,6 @@ export const CommandHandlers = [
 ]
 
 // 📤 Reexportación directa de los comandos para facilitar imports individuales
-export * from './create-__project_name_kebab__/create-__project_name_kebab__.command'
-export * from './update-__project_name_kebab__/update-__project_name_kebab__.command'
-export * from './delete-__project_name_kebab__/delete-__project_name_kebab__.command'
+export * from './create-__project_name_camel__/create-__project_name_camel__.command'
+export * from './update-__project_name_camel__/update-__project_name_camel__.command'
+export * from './delete-__project_name_camel__/delete-__project_name_camel__.command'

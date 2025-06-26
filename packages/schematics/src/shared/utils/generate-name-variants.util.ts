@@ -14,7 +14,7 @@ export function generateNameVariants(raw: string): Record<string, string> {
   const screamingSnake = snake.toUpperCase()
 
   return {
-    __project_name_kebab__: normalized,
+    project_name_kebab: normalized,
     project_name_camel: camel,
     project_name_pascal: pascal,
     project_name_snake: snake,

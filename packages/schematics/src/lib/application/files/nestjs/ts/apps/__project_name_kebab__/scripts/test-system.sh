@@ -34,13 +34,13 @@ cleanup() {
     print_message "Limpiando recursos..."
     
     # Detener contenedores si están ejecutándose
-    if docker ps -q --filter "name=__project_name_kebab__-test" | grep -q .; then
-        docker stop $(docker ps -q --filter "name=__project_name_kebab__-test")
+    if docker ps -q --filter "name=__project_name_camel__-test" | grep -q .; then
+        docker stop $(docker ps -q --filter "name=__project_name_camel__-test")
     fi
     
     # Remover contenedores si existen
-    if docker ps -aq --filter "name=__project_name_kebab__-test" | grep -q .; then
-        docker rm $(docker ps -aq --filter "name=__project_name_kebab__-test")
+    if docker ps -aq --filter "name=__project_name_camel__-test" | grep -q .; then
+        docker rm $(docker ps -aq --filter "name=__project_name_camel__-test")
     fi
     
     print_success "Limpieza completada"
@@ -82,8 +82,8 @@ start_test_services() {
     print_message "Levantando servicios de prueba..."
     
     # Crear red de Docker si no existe
-    if ! docker network ls | grep -q "__project_name_kebab__-test-net"; then
-        docker network create __project_name_kebab__-test-net
+    if ! docker network ls | grep -q "__project_name_camel__-test-net"; then
+        docker network create __project_name_camel__-test-net
     fi
     
     # Levantar servicios usando docker-compose.test.yml
@@ -93,7 +93,7 @@ start_test_services() {
     print_message "Esperando a que la base de datos esté lista..."
     timeout=30
     counter=0
-    while ! docker exec __project_name_kebab__-test-db pg_isready -U postgres &> /dev/null; do
+    while ! docker exec __project_name_camel__-test-db pg_isready -U postgres &> /dev/null; do
         if [ $counter -ge $timeout ]; then
             print_error "Timeout esperando la base de datos"
             exit 1
@@ -120,13 +120,13 @@ start_test_services() {
         --bootstrap-server localhost:9092 \
         --replication-factor 1 \
         --partitions 1 \
-        --topic __project_name_kebab__.created
+        --topic __project_name_camel__.created
     
     docker exec kafka-test kafka-topics --create --if-not-exists \
         --bootstrap-server localhost:9092 \
         --replication-factor 1 \
         --partitions 1 \
-        --topic __project_name_kebab__.updated
+        --topic __project_name_camel__.updated
     
     print_success "Servicios de prueba levantados correctamente"
 }
@@ -135,7 +135,7 @@ start_test_services() {
 run_test_migrations() {
     print_message "Ejecutando migraciones de prueba..."
     
-    # Generar cliente Prisma
+    # Generar __project_name_camel__ Prisma
     npm run db:generate
     
     # Ejecutar migraciones
@@ -305,11 +305,11 @@ docker-compose -f docker-compose.test.yml down -v 2>/dev/null || true
 
 # Start test infrastructure
 echo "🚀 Starting test infrastructure..."
-docker-compose -f docker-compose.test.yml up -d __project_name_kebab__-test-db kafka-test
+docker-compose -f docker-compose.test.yml up -d __project_name_camel__-test-db kafka-test
 
 # Wait for database to be ready
 echo "⏳ Waiting for database to be ready..."
-until docker exec __project_name_kebab__-test-db pg_isready -U postgres > /dev/null 2>&1; do
+until docker exec __project_name_camel__-test-db pg_isready -U postgres > /dev/null 2>&1; do
     echo "   Waiting for PostgreSQL..."
     sleep 2
 done
@@ -324,7 +324,7 @@ done
 echo "✅ Test environment is ready!"
 
 # Set environment variables for tests
-export project_name_screaming_DATABASE_URL="postgresql://postgres:postgres@localhost:5434/clientes_test"
+export project_name_screaming_DATABASE_URL="postgresql://postgres:postgres@localhost:5434/__project_name_kebab___test"
 export KAFKA_BROKERS="localhost:9094"
 export NODE_ENV="test"
 

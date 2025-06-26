@@ -3,9 +3,9 @@ datasource db {
   url      = env("project_name_screaming_DATABASE_URL")
 }
 
-generator client {
-  provider      = "prisma-client-js"
-  binaryTargets = ["native", "debian-openssl-3.0.x"]
+generator __project_name_camel__ {
+provider      = "prisma-client-js"
+binaryTargets = ["native", "debian-openssl-3.0.x"]
 }
 
 model project_name_pascal {

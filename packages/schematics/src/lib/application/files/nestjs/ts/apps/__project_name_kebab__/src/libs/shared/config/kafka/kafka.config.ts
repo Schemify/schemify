@@ -4,7 +4,7 @@ import { KafkaOptions, Transport } from '@nestjs/microservices'
 import { KafkaConfig, logLevel } from 'kafkajs'
 
 export interface KafkaCommonConfig {
-  clientId: string
+  __project_name_camel__Id: string
   brokers: string[]
   retries?: number
   connectionTimeout?: number
@@ -23,14 +23,14 @@ export const defaultKafkaRetryConfig = {
   retries: 10
 }
 
-export const createKafkaClientConfig = ({
-  clientId,
+export const createKafka__project_name_pascal__Config = ({
+  __project_name_camel__Id,
   brokers,
   retries = 10,
   connectionTimeout = 5000,
   requestTimeout = 3000
 }: KafkaCommonConfig): KafkaConfig => ({
-  clientId,
+  __project_name_camel__Id,
   brokers,
   connectionTimeout,
   requestTimeout,
@@ -47,7 +47,7 @@ export const buildKafkaProducerOptions = (
   name: 'KAFKA_PRODUCER',
   transport: Transport.KAFKA,
   options: {
-    client: createKafkaClientConfig(config),
+    __project_name_camel__: createKafka__project_name_pascal__Config(config),
     producer: {
       allowAutoTopicCreation: true,
       idempotent: true
@@ -60,7 +60,7 @@ export const buildKafkaConsumerOptions = (
 ): KafkaOptions => ({
   transport: Transport.KAFKA,
   options: {
-    client: createKafkaClientConfig(config),
+    __project_name_camel__: createKafka__project_name_pascal__Config(config),
     consumer: {
       groupId: config.groupId,
       allowAutoTopicCreation: true,

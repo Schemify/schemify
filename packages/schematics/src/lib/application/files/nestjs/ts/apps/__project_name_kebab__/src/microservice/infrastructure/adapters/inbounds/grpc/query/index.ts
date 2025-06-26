@@ -25,9 +25,9 @@
  */
 
 // 🧩 Controladores individuales (por caso de uso)
-import { GetAll__project_name_pascal__GrpcController } from './get-all/get-all-__project_name_kebab__.grpc.controller'
-import { Get__project_name_pascal__ByIdGrpcController } from './get-__project_name_kebab__-by-id/get-__project_name_kebab__-by-id.grpc.controller'
-import { Get__project_name_pascal__ByCursorGrpcController } from './get-__project_name_kebab__-by-cursor/get-__project_name_kebab__-by-cursor.grpc.controller'
+import { GetAll__project_name_pascal__GrpcController } from './get-all/get-all-__project_name_camel__.grpc.controller'
+import { Get__project_name_pascal__ByIdGrpcController } from './get-__project_name_camel__-by-id/get-__project_name_camel__-by-id.grpc.controller'
+import { Get__project_name_pascal__ByCursorGrpcController } from './get-__project_name_camel__-by-cursor/get-__project_name_camel__-by-cursor.grpc.controller'
 
 /**
  * 📦 Array de controladores gRPC para Queries (Lectura)
@@ -39,6 +39,6 @@ export const GrpcQueryControllers = [
 ]
 
 // 📤 Exportación individual si se necesita
-export * from './get-all/get-all-__project_name_kebab__.grpc.controller'
-export * from './get-__project_name_kebab__-by-id/get-__project_name_kebab__-by-id.grpc.controller'
-export * from './get-__project_name_kebab__-by-cursor/get-__project_name_kebab__-by-cursor.grpc.controller'
+export * from './get-all/get-all-__project_name_camel__.grpc.controller'
+export * from './get-__project_name_camel__-by-id/get-__project_name_camel__-by-id.grpc.controller'
+export * from './get-__project_name_camel__-by-cursor/get-__project_name_camel__-by-cursor.grpc.controller'

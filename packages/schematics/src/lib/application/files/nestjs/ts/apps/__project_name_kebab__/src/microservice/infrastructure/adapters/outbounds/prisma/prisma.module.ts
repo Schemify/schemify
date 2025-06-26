@@ -1,7 +1,7 @@
 /**
  * PrismaModule
  * -----------------------------------------------------------------------------
- * Módulo responsable de registrar el servicio PrismaClient como un provider.
+ * Módulo responsable de registrar el servicio Prisma__project_name_pascal__ como un provider.
  * Este módulo se importa una sola vez y se exporta para cualquier otro
  * módulo que necesite acceso a la base de datos.
  */
@@ -10,21 +10,21 @@ import { Module } from '@nestjs/common'
 
 import { PrismaService } from './prisma.service'
 
-import { SharedModule } from '@__project_name_kebab__/libs/shared/shared.module'
-import { __project_name_pascal__Mapper } from '@__project_name_kebab__/microservice/infrastructure/mappers/__project_name_kebab__.mapper'
+import { SharedModule } from '@__project_name_camel__/libs/shared/shared.module'
+import { __project_name_pascal__Mapper } from '@__project_name_camel__/microservice/infrastructure/mappers/__project_name_camel__.mapper'
 
 // Puertos (abstract classes)
 import {
   Create__project_name_pascal__Port,
   Update__project_name_pascal__Port,
   Delete__project_name_pascal__Port
-} from '@__project_name_kebab__/microservice/application/ports/outbounds/repositories/__project_name_kebab__-command-ports'
+} from '@__project_name_camel__/microservice/application/ports/outbounds/repositories/__project_name_camel__-command-ports'
 
 import {
   GetAll__project_name_pascal__Port,
   Get__project_name_pascal__ByIdPort,
   Get__project_name_pascal__WithCursorPort
-} from '@__project_name_kebab__/microservice/application/ports/outbounds/repositories/__project_name_kebab__-query-ports'
+} from '@__project_name_camel__/microservice/application/ports/outbounds/repositories/__project_name_camel__-query-ports'
 
 // Adaptadores de salida (implementaciones)
 import {

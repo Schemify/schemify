@@ -5,11 +5,11 @@ describe('DescriptionValueObject', () => {
     it('should create description with valid value', () => {
       // Arrange & Act
       const description = DescriptionValueObject.create(
-        'Descripción del cliente'
+        'Descripción del __project_name_camel__'
       )
 
       // Assert
-      expect(description.value).toBe('Descripción del cliente')
+      expect(description.value).toBe('Descripción del __project_name_camel__')
     })
 
     it('should trim whitespace from description', () => {
@@ -61,7 +61,7 @@ describe('DescriptionValueObject', () => {
     it('should handle very long description', () => {
       // Arrange
       const longDescription =
-        'Esta es una descripción muy larga que contiene muchos caracteres para probar el comportamiento del value object cuando se manejan textos extensos que podrían ser utilizados para describir __project_name_kebab__ con información detallada sobre sus características, necesidades y preferencias.'
+        'Esta es una descripción muy larga que contiene muchos caracteres para probar el comportamiento del value object cuando se manejan textos extensos que podrían ser utilizados para describir __project_name_camel__ con información detallada sobre sus características, necesidades y preferencias.'
 
       // Act
       const description = DescriptionValueObject.create(longDescription)
@@ -168,10 +168,12 @@ describe('DescriptionValueObject', () => {
 
     it('should handle numbers in description', () => {
       // Arrange & Act
-      const description = DescriptionValueObject.create('Cliente número 123')
+      const description = DescriptionValueObject.create(
+        '__project_name_pascal__ número 123'
+      )
 
       // Assert
-      expect(description.value).toBe('Cliente número 123')
+      expect(description.value).toBe('__project_name_pascal__ número 123')
     })
 
     it('should handle unicode characters', () => {

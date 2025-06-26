@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/unbound-method */
 import { Test, TestingModule } from '@nestjs/testing'
 import { KafkaProducerService } from './kafka-producer.service'
-import { ClientKafka } from '@nestjs/microservices'
+import { __project_name_pascal__Kafka } from '@nestjs/microservices'
 import { of, throwError } from 'rxjs'
 
 describe('KafkaProducerService', () => {
   let service: KafkaProducerService
-  let mockClientKafka: jest.Mocked<ClientKafka>
+  let mock__project_name_pascal__Kafka: jest.Mocked<__project_name_pascal__Kafka>
 
   beforeEach(async () => {
-    const mockClient = {
+    const mock__project_name_pascal__ = {
       connect: jest.fn().mockResolvedValue(undefined),
       emit: jest.fn().mockReturnValue(of({})),
       close: jest.fn().mockResolvedValue(undefined)
@@ -20,13 +20,13 @@ describe('KafkaProducerService', () => {
         KafkaProducerService,
         {
           provide: 'KAFKA_PRODUCER',
-          useValue: mockClient
+          useValue: mock__project_name_pascal__
         }
       ]
     }).compile()
 
     service = module.get<KafkaProducerService>(KafkaProducerService)
-    mockClientKafka = module.get('KAFKA_PRODUCER')
+    mock__project_name_pascal__Kafka = module.get('KAFKA_PRODUCER')
   })
 
   afterEach(() => {
@@ -39,7 +39,7 @@ describe('KafkaProducerService', () => {
       await service.onModuleInit()
 
       // Assert
-      expect(mockClientKafka.connect).toHaveBeenCalledTimes(1)
+      expect(mock__project_name_pascal__Kafka.connect).toHaveBeenCalledTimes(1)
       expect(service['ready']).toBe(true)
     })
 
@@ -51,13 +51,15 @@ describe('KafkaProducerService', () => {
       await service.onModuleInit()
 
       // Assert
-      expect(mockClientKafka.connect).not.toHaveBeenCalled()
+      expect(mock__project_name_pascal__Kafka.connect).not.toHaveBeenCalled()
     })
 
     it('should handle connection errors', async () => {
       // Arrange
       const connectionError = new Error('Connection failed')
-      mockClientKafka.connect.mockRejectedValue(connectionError)
+      mock__project_name_pascal__Kafka.connect.mockRejectedValue(
+        connectionError
+      )
 
       // Act & Assert
       await expect(service.onModuleInit()).rejects.toThrow('Connection failed')
@@ -71,13 +73,16 @@ describe('KafkaProducerService', () => {
       const topic = 'test.topic'
       const payload = { key: 'test-key', value: 'test-value' }
       const expectedResult = { success: true }
-      mockClientKafka.emit.mockReturnValue(of(expectedResult))
+      mock__project_name_pascal__Kafka.emit.mockReturnValue(of(expectedResult))
 
       // Act
       const result = await service.emit(topic, payload)
 
       // Assert
-      expect(mockClientKafka.emit).toHaveBeenCalledWith(topic, payload)
+      expect(mock__project_name_pascal__Kafka.emit).toHaveBeenCalledWith(
+        topic,
+        payload
+      )
       expect(result).toEqual(expectedResult)
     })
 
@@ -91,8 +96,11 @@ describe('KafkaProducerService', () => {
       await service.emit(topic, payload)
 
       // Assert
-      expect(mockClientKafka.connect).toHaveBeenCalledTimes(1)
-      expect(mockClientKafka.emit).toHaveBeenCalledWith(topic, payload)
+      expect(mock__project_name_pascal__Kafka.connect).toHaveBeenCalledTimes(1)
+      expect(mock__project_name_pascal__Kafka.emit).toHaveBeenCalledWith(
+        topic,
+        payload
+      )
       expect(service['ready']).toBe(true)
     })
 
@@ -106,8 +114,11 @@ describe('KafkaProducerService', () => {
       await service.emit(topic, payload)
 
       // Assert
-      expect(mockClientKafka.connect).not.toHaveBeenCalled()
-      expect(mockClientKafka.emit).toHaveBeenCalledWith(topic, payload)
+      expect(mock__project_name_pascal__Kafka.connect).not.toHaveBeenCalled()
+      expect(mock__project_name_pascal__Kafka.emit).toHaveBeenCalledWith(
+        topic,
+        payload
+      )
     })
 
     it('should handle emit errors', async () => {
@@ -115,7 +126,9 @@ describe('KafkaProducerService', () => {
       const topic = 'test.topic'
       const payload = { key: 'test-key', value: 'test-value' }
       const emitError = new Error('Emit failed')
-      mockClientKafka.emit.mockReturnValue(throwError(() => emitError))
+      mock__project_name_pascal__Kafka.emit.mockReturnValue(
+        throwError(() => emitError)
+      )
 
       // Act & Assert
       await expect(service.emit(topic, payload)).rejects.toThrow('Emit failed')
@@ -125,7 +138,9 @@ describe('KafkaProducerService', () => {
       // Arrange
       service['ready'] = false
       const connectionError = new Error('Connection failed')
-      mockClientKafka.connect.mockRejectedValue(connectionError)
+      mock__project_name_pascal__Kafka.connect.mockRejectedValue(
+        connectionError
+      )
       const topic = 'test.topic'
       const payload = { key: 'test-key', value: 'test-value' }
 
@@ -133,7 +148,7 @@ describe('KafkaProducerService', () => {
       await expect(service.emit(topic, payload)).rejects.toThrow(
         'Connection failed'
       )
-      expect(mockClientKafka.emit).not.toHaveBeenCalled()
+      expect(mock__project_name_pascal__Kafka.emit).not.toHaveBeenCalled()
     })
   })
 
@@ -146,7 +161,7 @@ describe('KafkaProducerService', () => {
       await service.onApplicationShutdown()
 
       // Assert
-      expect(mockClientKafka.close).toHaveBeenCalledTimes(1)
+      expect(mock__project_name_pascal__Kafka.close).toHaveBeenCalledTimes(1)
     })
 
     it('should not close if not connected', async () => {
@@ -157,14 +172,14 @@ describe('KafkaProducerService', () => {
       await service.onApplicationShutdown()
 
       // Assert
-      expect(mockClientKafka.close).not.toHaveBeenCalled()
+      expect(mock__project_name_pascal__Kafka.close).not.toHaveBeenCalled()
     })
 
     it('should handle close errors gracefully', async () => {
       // Arrange
       service['ready'] = true
       const closeError = new Error('Close failed')
-      mockClientKafka.close.mockRejectedValue(closeError)
+      mock__project_name_pascal__Kafka.close.mockRejectedValue(closeError)
 
       // Act & Assert
       await expect(service.onApplicationShutdown()).rejects.toThrow(
@@ -179,7 +194,7 @@ describe('KafkaProducerService', () => {
       const topic = 'test.topic'
       const payload = { key: 'test-key', value: 'test-value' }
       const expectedResult = { success: true }
-      mockClientKafka.emit.mockReturnValue(of(expectedResult))
+      mock__project_name_pascal__Kafka.emit.mockReturnValue(of(expectedResult))
 
       // Act
       await service.onModuleInit()
@@ -187,9 +202,12 @@ describe('KafkaProducerService', () => {
       await service.onApplicationShutdown()
 
       // Assert
-      expect(mockClientKafka.connect).toHaveBeenCalledTimes(1)
-      expect(mockClientKafka.emit).toHaveBeenCalledWith(topic, payload)
-      expect(mockClientKafka.close).toHaveBeenCalledTimes(1)
+      expect(mock__project_name_pascal__Kafka.connect).toHaveBeenCalledTimes(1)
+      expect(mock__project_name_pascal__Kafka.emit).toHaveBeenCalledWith(
+        topic,
+        payload
+      )
+      expect(mock__project_name_pascal__Kafka.close).toHaveBeenCalledTimes(1)
       expect(emitResult).toEqual(expectedResult)
     })
 
@@ -205,10 +223,18 @@ describe('KafkaProducerService', () => {
       await service.emit(topic2, payload2)
 
       // Assert
-      expect(mockClientKafka.connect).toHaveBeenCalledTimes(1)
-      expect(mockClientKafka.emit).toHaveBeenCalledTimes(2)
-      expect(mockClientKafka.emit).toHaveBeenNthCalledWith(1, topic1, payload1)
-      expect(mockClientKafka.emit).toHaveBeenNthCalledWith(2, topic2, payload2)
+      expect(mock__project_name_pascal__Kafka.connect).toHaveBeenCalledTimes(1)
+      expect(mock__project_name_pascal__Kafka.emit).toHaveBeenCalledTimes(2)
+      expect(mock__project_name_pascal__Kafka.emit).toHaveBeenNthCalledWith(
+        1,
+        topic1,
+        payload1
+      )
+      expect(mock__project_name_pascal__Kafka.emit).toHaveBeenNthCalledWith(
+        2,
+        topic2,
+        payload2
+      )
     })
   })
 })

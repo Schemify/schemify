@@ -1,7 +1,7 @@
 @echo off
 echo Setting up test environment variables...
 
-set project_name_screaming_DATABASE_URL=postgresql://postgres:postgres@localhost:5434/clientes_test
+set project_name_screaming_DATABASE_URL=postgresql://postgres:postgres@localhost:5434/__project_name_kebab___test
 set KAFKA_BROKERS=localhost:9094
 set NODE_ENV=test
 

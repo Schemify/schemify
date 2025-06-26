@@ -11,11 +11,11 @@ RUN npm ci
 
 COPY . .
 
-# ✅ Solo generar Prisma Client (sin aplicar migraciones)
-RUN npx prisma generate --schema=apps/__project_name_kebab__/prisma/schema.prisma
+# ✅ Solo generar Prisma __project_name_pascal__ (sin aplicar migraciones)
+RUN npx prisma generate --schema=apps/__project_name_camel__/prisma/schema.prisma
 
 # ✅ Compilar código
-RUN npm run build __project_name_kebab__
+RUN npm run build __project_name_camel__
 RUN npm run build proto
 
 # -----------------------------
@@ -38,7 +38,7 @@ COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/node_modules ./node_modules
 
 # ─── Copiar Prisma schema y migraciones ────────
-COPY --from=builder /app/apps/__project_name_kebab__/prisma ./prisma
+COPY --from=builder /app/apps/__project_name_camel__/prisma ./prisma
 COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
 COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma
 

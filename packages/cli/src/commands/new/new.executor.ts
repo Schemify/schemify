@@ -1,5 +1,5 @@
 import { NewSchemify } from '@schemifyjs/types'
-import { runNewCommand } from '@schemifyjs/core'
+import { runNewCommandHandler } from '@schemifyjs/core'
 import {
   withErrorHandling,
   ValidationError
@@ -14,7 +14,7 @@ export class NewCommand {
 
     // Execute with error handling
     await withErrorHandling(async () => {
-      await runNewCommand(this.newSchemify)
+      await runNewCommandHandler(this.newSchemify)
     }, 'Failed to create new application')
   }
 

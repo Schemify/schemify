@@ -35,31 +35,31 @@ Su objetivo principal es **coordinar la ejecución de los casos de uso** del sis
 ```txt
 📁 application
 ├── 📁 commands                  → Casos de uso que modifican el sistema (write)
-│   ├── 📁 create-__project_name_kebab__
-│   │   ├── create-__project_name_kebab__.command.ts
-│   │   └── create-__project_name_kebab__.handler.ts
-│   ├── 📁 update-__project_name_kebab__
-│   │   ├── update-__project_name_kebab__.command.ts
-│   │   └── update-__project_name_kebab__.handler.ts
-│   ├── 📁 delete-__project_name_kebab__
-│   │   ├── delete-__project_name_kebab__.command.ts
-│   │   └── delete-__project_name_kebab__.handler.ts
+│   ├── 📁 create-__project_name_camel__
+│   │   ├── create-__project_name_camel__.command.ts
+│   │   └── create-__project_name_camel__.handler.ts
+│   ├── 📁 update-__project_name_camel__
+│   │   ├── update-__project_name_camel__.command.ts
+│   │   └── update-__project_name_camel__.handler.ts
+│   ├── 📁 delete-__project_name_camel__
+│   │   ├── delete-__project_name_camel__.command.ts
+│   │   └── delete-__project_name_camel__.handler.ts
 │   └── index.ts                → Exporta y registra todos los handlers
 
 ├── 📁 queries                   → Casos de uso que consultan el sistema (read)
-│   ├── 📁 get-all-__project_name_kebab__
-│   ├── 📁 get-__project_name_kebab__-by-id
-│   └── 📁 get-__project_name_kebab__-by-cursor
+│   ├── 📁 get-all-__project_name_camel__
+│   ├── 📁 get-__project_name_camel__-by-id
+│   └── 📁 get-__project_name_camel__-by-cursor
 │   └── index.ts                → Exporta y registra todos los handlers
 
 ├── 📁 events                   → EventHandlers que escuchan eventos del dominio
-│   ├── 📁 __project_name_kebab__-created
-│   ├── 📁 __project_name_kebab__-renamed
-│   └── 📁 __project_name_kebab__-description-updated
+│   ├── 📁 __project_name_camel__-created
+│   ├── 📁 __project_name_camel__-renamed
+│   └── 📁 __project_name_camel__-description-updated
 │   └── index.ts                → Agrupa los EventHandlers
 
 ├── 📁 mappers                  → Adaptadores de entidades del dominio a DTOs (proto/HTTP/etc.)
-│   └── __project_name_kebab__.mapper.ts
+│   └── __project_name_camel__.mapper.ts
 ```
 
 ## 🧠 Qué hace cada componente
@@ -120,7 +120,7 @@ QueryHandler
    ↓
 → Mapper (domain → DTO / Protobuf)
    ↓
-→ Devuelve al cliente
+→ Devuelve al __project_name_camel__
 ```
 
 ## 🧼 Buenas prácticas
@@ -153,7 +153,7 @@ QueryHandler
 1. ✍️ Crea el `Command` o `Query` según el caso de uso
 2. 🧠 En el handler, llama a métodos del dominio (`entity.create()`, etc.)
 3. 💾 Persiste usando el repositorio correspondiente
-4. 📤 Usa mappers si vas a devolver algo al cliente
+4. 📤 Usa mappers si vas a devolver algo al __project_name_camel__
 5. 🪝 En caso de eventos emitidos, crea los `EventHandlers` necesarios
 
 ---

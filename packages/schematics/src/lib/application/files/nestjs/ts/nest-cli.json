@@ -4,10 +4,10 @@
   "compilerOptions": {
     "deleteOutDir": true,
     "webpack": true,
-    "tsConfigPath": "apps/__project_name_kebab__/tsconfig.app.json"
+    "tsConfigPath": "apps/__project_name_camel__/tsconfig.app.json"
   },
   "monorepo": true,
-  "root": "apps/__project_name_kebab__",
+  "root": "apps/__project_name_camel__",
   "projects": {
     "observability": {
       "type": "library",
@@ -25,22 +25,18 @@
       "compilerOptions": {
         "tsConfigPath": "libs/proto/tsconfig.lib.json",
         "webpack": false,
-        "assets": [
-          "src/**/*.proto"
-        ],
+        "assets": ["src/**/*.proto"],
         "watchAssets": true
       }
     },
-    "__project_name_kebab__": {
+    "__project_name_camel__": {
       "type": "application",
-      "root": "apps/__project_name_kebab__",
+      "root": "apps/__project_name_camel__",
       "entryFile": "src/main",
       "sourceRoot": "./",
       "compilerOptions": {
-        "tsConfigPath": "apps/__project_name_kebab__/tsconfig.app.json",
-        "assets": [
-          "libs/proto/src/*.proto"
-        ],
+        "tsConfigPath": "apps/__project_name_camel__/tsconfig.app.json",
+        "assets": ["libs/proto/src/*.proto"],
         "watchAssets": true
       }
     }

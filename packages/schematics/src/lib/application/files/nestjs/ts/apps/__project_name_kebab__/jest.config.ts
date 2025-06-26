@@ -2,7 +2,7 @@ import type { Config } from 'jest'
 
 export default (): Config => {
   return {
-    displayName: '__project_name_kebab__',
+    displayName: '__project_name_camel__',
     rootDir: '.',
     testRegex: '.*\\.spec\\.ts$',
     transform: {
@@ -11,7 +11,7 @@ export default (): Config => {
     moduleFileExtensions: ['js', 'json', 'ts'],
     testEnvironment: 'node',
     moduleNameMapper: {
-      '^@__project_name_kebab__/(.*)$': '<rootDir>/src/$1',
+      '^@__project_name_camel__/(.*)$': '<rootDir>/src/$1',
       '^@proto$': '<rootDir>/../../libs/proto/generated/index.ts'
     },
     setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],

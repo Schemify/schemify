@@ -43,7 +43,7 @@
             <mxPoint y="12" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="A8ThaswsivMoCPdDURNX-12" value="Usuarios/Clientes" style="rounded=1;whiteSpace=wrap;html=1;glass=0;arcSize=2;" vertex="1" parent="1">
+        <mxCell id="A8ThaswsivMoCPdDURNX-12" value="Usuarios/__project_name_pascal__" style="rounded=1;whiteSpace=wrap;html=1;glass=0;arcSize=2;" vertex="1" parent="1">
           <mxGeometry x="190" y="660" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="wVnB4x2G1oxjUDjg679d-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="A8ThaswsivMoCPdDURNX-14" target="A8ThaswsivMoCPdDURNX-15">
@@ -356,7 +356,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="0-GYFhI9fnKzCVLHUYts-1" value="Usuarios / Clientes" style="rounded=1;whiteSpace=wrap;html=1;arcSize=3;" vertex="1" parent="1">
+        <mxCell id="0-GYFhI9fnKzCVLHUYts-1" value="Usuarios / __project_name_pascal__" style="rounded=1;whiteSpace=wrap;html=1;arcSize=3;" vertex="1" parent="1">
           <mxGeometry x="160" y="320" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="0-GYFhI9fnKzCVLHUYts-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="0-GYFhI9fnKzCVLHUYts-2" target="0-GYFhI9fnKzCVLHUYts-3">

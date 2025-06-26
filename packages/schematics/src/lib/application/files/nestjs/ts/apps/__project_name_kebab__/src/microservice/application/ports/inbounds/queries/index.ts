@@ -23,17 +23,17 @@
  */
 
 // 📤 Re-exportación directa (para importación individual si se desea)
-export * from './get-all-__project_name_kebab__/get-all-__project_name_kebab__.handler'
-export * from './get-all-__project_name_kebab__/get-all-__project_name_kebab__.query'
-export * from './get-__project_name_kebab__-by-id/get-__project_name_kebab__-by-id.handler'
-export * from './get-__project_name_kebab__-by-id/get-__project_name_kebab__-by-id.query'
-export * from './get-__project_name_kebab__-by-cursor/get-__project_name_kebab__-by-cursor.handler'
-export * from './get-__project_name_kebab__-by-cursor/get-__project_name_kebab__-by-cursor.query'
+export * from './get-all-__project_name_camel__/get-all-__project_name_camel__.handler'
+export * from './get-all-__project_name_camel__/get-all-__project_name_camel__.query'
+export * from './get-__project_name_camel__-by-id/get-__project_name_camel__-by-id.handler'
+export * from './get-__project_name_camel__-by-id/get-__project_name_camel__-by-id.query'
+export * from './get-__project_name_camel__-by-cursor/get-__project_name_camel__-by-cursor.handler'
+export * from './get-__project_name_camel__-by-cursor/get-__project_name_camel__-by-cursor.query'
 
 // 📦 Arreglo centralizado de todos los handlers de queries
-import { GetAll__project_name_pascal__Handler } from './get-all-__project_name_kebab__/get-all-__project_name_kebab__.handler'
-import { Get__project_name_pascal__ByIdHandler } from './get-__project_name_kebab__-by-id/get-__project_name_kebab__-by-id.handler'
-import { Get__project_name_pascal__ByCursorHandler } from './get-__project_name_kebab__-by-cursor/get-__project_name_kebab__-by-cursor.handler'
+import { GetAll__project_name_pascal__Handler } from './get-all-__project_name_camel__/get-all-__project_name_camel__.handler'
+import { Get__project_name_pascal__ByIdHandler } from './get-__project_name_camel__-by-id/get-__project_name_camel__-by-id.handler'
+import { Get__project_name_pascal__ByCursorHandler } from './get-__project_name_camel__-by-cursor/get-__project_name_camel__-by-cursor.handler'
 
 /**
  * Conjunto de handlers registrados por NestJS en el QueryBus

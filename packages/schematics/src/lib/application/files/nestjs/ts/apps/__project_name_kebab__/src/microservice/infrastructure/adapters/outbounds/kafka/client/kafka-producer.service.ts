@@ -5,7 +5,7 @@ import {
   OnModuleInit,
   OnApplicationShutdown
 } from '@nestjs/common'
-import { ClientKafka } from '@nestjs/microservices'
+import { __project_name_pascal__Kafka } from '@nestjs/microservices'
 import { lastValueFrom } from 'rxjs'
 
 /**
@@ -21,12 +21,15 @@ export class KafkaProducerService
 {
   private ready = false
 
-  constructor(@Inject('KAFKA_PRODUCER') private readonly client: ClientKafka) {}
+  constructor(
+    @Inject('KAFKA_PRODUCER')
+    private readonly __project_name_camel__: __project_name_pascal__Kafka
+  ) {}
 
   /** Conecta el producer (idempotente) */
   async onModuleInit(): Promise<void> {
     if (!this.ready) {
-      await this.client.connect()
+      await this.__project_name_camel__.connect()
       this.ready = true
     }
   }
@@ -37,11 +40,11 @@ export class KafkaProducerService
    */
   async emit(topic: string, payload: any): Promise<unknown> {
     await this.onModuleInit()
-    return lastValueFrom(this.client.emit(topic, payload))
+    return lastValueFrom(this.__project_name_camel__.emit(topic, payload))
   }
 
   /** Cierra la conexión al terminar la aplicación */
   async onApplicationShutdown(): Promise<void> {
-    if (this.ready) await this.client.close()
+    if (this.ready) await this.__project_name_camel__.close()
   }
 }

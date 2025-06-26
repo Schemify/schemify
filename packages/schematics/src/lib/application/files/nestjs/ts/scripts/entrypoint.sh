@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Script de entrypoint inteligente para el microservicio de __project_name_kebab__
+# Script de entrypoint inteligente para el microservicio de __project_name_camel__
 # Detecta el estado de la base de datos y sincroniza migraciones automáticamente
 
-echo "🚀 Iniciando microservicio de __project_name_kebab__..."
+echo "🚀 Iniciando microservicio de __project_name_camel__..."
 
 # Función para esperar a que la base de datos esté lista
 wait_for_database() {
@@ -66,11 +66,11 @@ sync_schema() {
     fi
 }
 
-# Función para generar el cliente Prisma
+# Función para generar el __project_name_camel__ Prisma
 generate_prisma_client() {
-    echo "🔧 Generando cliente Prisma..."
+    echo "🔧 Generando __project_name_camel__ Prisma..."
     npx prisma generate
-    echo "✅ Cliente Prisma generado"
+    echo "✅ __project_name_pascal__ Prisma generado"
 }
 
 # ─── Ejecutar secuencia de inicialización ────────
@@ -86,4 +86,4 @@ generate_prisma_client
 
 # ─── Iniciar la aplicación ────────
 echo "🚀 Iniciando aplicación..."
-exec node ./dist/apps/__project_name_kebab__/src/main 
+exec node ./dist/apps/__project_name_camel__/src/main 
