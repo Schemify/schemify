@@ -1,13 +1,39 @@
 {
   "name": "@schemifyjs/schematics",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.9",
+  "description": "Reusable schematics for scaffolding SchemifyJS projects.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "prebuild": "node ./scripts/update-version.mjs && node ./scripts/copy-assets.mjs",
+    "build": "tsc",
+    "release": "npm version patch && npm run build && npm publish --access public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs"
+  "keywords": [
+    "schemify",
+    "schematics",
+    "scaffolding",
+    "nestjs",
+    "template"
+  ],
+  "author": "Schemify Team",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@schemifyjs/types": "^0.1.0",
+    "fs-extra": "^11.3.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
 }

@@ -1,11 +1,11 @@
 import { NewSchemify } from '@schemifyjs/types'
-import { ProjectScaffolder } from '@schemifyjs/core'
+import { runNewCommand } from '@schemifyjs/core'
 
 export class NewCommand {
-  constructor(private readonly options: NewSchemify) {}
+  constructor(private readonly newSchemify: NewSchemify) {}
 
   async execute(): Promise<void> {
-    const scaffolder = new ProjectScaffolder()
-    await scaffolder.scaffold(this.options)
+    // TODO: Add validation for the newSchemify object
+    runNewCommand(this.newSchemify)
   }
 }

@@ -13,10 +13,12 @@
     "format": "prettier --write \"packages/**/*.ts\"",
     "prepare": "husky",
     "build": "npm run build --ws",
+    "build:cli": "npm run build --workspace=@schemifyjs/cli",
     "release": "npm run release --ws",
     "release:cli": "npm run release --workspace=@schemifyjs/cli",
     "release:core": "npm run release --workspace=@schemifyjs/core",
     "release:types": "npm run release --workspace=@schemifyjs/core",
+    "release:schematics": "npm run release --workspace=@schemifyjs/schematics",
     "start": "node packages/cli/dist/index.js",
     "test:cli": "vitest run ./packages/cli/"
   },

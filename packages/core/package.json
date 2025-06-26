@@ -1,7 +1,7 @@
 {
   "name": "@schemifyjs/core",
-  "version": "0.1.40",
-  "description": "Módulo core del CLI de SchemifyJS. Contiene funciones reutilizables como scaffolding, manejo de plantillas y utilidades.",
+  "version": "0.1.49",
+  "description": "Core module of the SchemifyJS CLI. Provides reusable functions such as scaffolding, template handling, and general utilities.",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "prebuild": "node ./scripts/update-version.mjs",
-    "build": "tsc && cp -r ./templates ./dist/templates",
+    "build": "tsc",
     "release": "npm version patch && npm run build && npm publish --access public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -37,10 +37,12 @@
     "access": "public"
   },
   "devDependencies": {
+    "@angular-devkit/schematics-cli": "^20.0.3",
     "@types/fs-extra": "^11.0.4",
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "@schemifyjs/schematics": "^0.1.2",
     "@schemifyjs/types": "^0.1.0",
     "execa": "^9.6.0",
     "fs-extra": "^11.3.0"

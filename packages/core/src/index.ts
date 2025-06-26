@@ -1,1 +1,1 @@
-export * from './scaffolder/project-scaffolder.js'
+export * from './commands/index.js'

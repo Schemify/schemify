@@ -1,1 +1,1 @@
-export * from './types/new.command.types.js'
+export * from './shared/interfaces/new-schemify.js'
