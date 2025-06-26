@@ -4,10 +4,10 @@
   "compilerOptions": {
     "deleteOutDir": true,
     "webpack": true,
-    "tsConfigPath": "apps/__projectName__/tsconfig.app.json"
+    "tsConfigPath": "apps/__project_name_kebab__/tsconfig.app.json"
   },
   "monorepo": true,
-  "root": "apps/__projectName__",
+  "root": "apps/__project_name_kebab__",
   "projects": {
     "observability": {
       "type": "library",
@@ -31,13 +31,13 @@
         "watchAssets": true
       }
     },
-    "__projectName__": {
+    "__project_name_kebab__": {
       "type": "application",
-      "root": "apps/__projectName__",
+      "root": "apps/__project_name_kebab__",
       "entryFile": "src/main",
       "sourceRoot": "./",
       "compilerOptions": {
-        "tsConfigPath": "apps/__projectName__/tsconfig.app.json",
+        "tsConfigPath": "apps/__project_name_kebab__/tsconfig.app.json",
         "assets": [
           "libs/proto/src/*.proto"
         ],

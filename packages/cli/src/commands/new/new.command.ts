@@ -1,5 +1,6 @@
 import { Command } from 'commander'
 import { NewCommand } from './new.executor.js'
+import { ErrorHandler, ValidationError } from '../../utils/error-handler.js'
 
 export function registerNewCommand(program: Command) {
   program
@@ -11,11 +12,29 @@ export function registerNewCommand(program: Command) {
 }
 
 async function handleNewCommand(name?: string): Promise<void> {
-  if (!name) {
-    console.error('❌ Debes especificar un nombre de proyecto.')
+  try {
+    if (!name) {
+      throw new ValidationError('You must specify a project name.', [
+        'Example: schemify new my-project',
+        'The name must be valid for a project directory'
+      ])
+    }
+
+    // Validate project name
+    if (!/^[a-zA-Z0-9-_]+$/.test(name)) {
+      throw new ValidationError(
+        'The project name contains invalid characters.',
+        [
+          'Use only letters, numbers, hyphens (-) and underscores (_)',
+          'Example: schemify new my-project-123'
+        ]
+      )
+    }
+
+    const command = new NewCommand({ name })
+    await command.execute()
+  } catch (error) {
+    ErrorHandler.handle(error)
     process.exit(1)
   }
-
-  const command = new NewCommand({ name })
-  await command.execute()
 }

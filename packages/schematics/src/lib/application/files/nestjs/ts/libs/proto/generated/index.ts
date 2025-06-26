@@ -1,1 +1,1 @@
-export * as __projectNameCamel__ from './__projectName__'
+export * as __project_name_kebab__ from './__project_name_kebab__'

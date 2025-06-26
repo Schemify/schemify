@@ -1,5 +1,6 @@
 import { generateModule } from './generate-module.js'
 import { generateEvent } from './generate-event.js'
+import { ValidationError } from '../error-handler.js'
 
 export async function handleGenerate(
   type: string,
@@ -12,6 +13,9 @@ export async function handleGenerate(
     case 'event':
       return generateEvent(name, options.path)
     default:
-      throw new Error(`Unsupported generate type: "${type}"`)
+      throw new ValidationError(`Unsupported generation type: "${type}"`, [
+        'Valid types: module, event',
+        'Example: schemify generate module users'
+      ])
   }
 }

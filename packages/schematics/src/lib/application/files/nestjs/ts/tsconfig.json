@@ -18,8 +18,8 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@__projectName__/*": [
-        "apps/__projectName__/src/*"
+      "@__project_name_kebab__/*": [
+        "apps/__project_name_kebab__/src/*"
       ],
       "@observability/observability": [
         "libs/observability/src"

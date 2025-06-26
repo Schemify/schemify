@@ -93,7 +93,7 @@ Puedes monitorear el flujo de mensajes en tiempo real usando:
 - Kafka UI (`http://localhost:8081`)
 - Comando CLI:
   ```bash
-  docker exec -it kafka1 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic __projectName__-created --from-beginning
+  docker exec -it kafka1 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic __project_name_kebab__-created --from-beginning
   ```
 
 ---

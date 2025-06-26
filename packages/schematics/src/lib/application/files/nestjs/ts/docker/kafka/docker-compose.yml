@@ -29,7 +29,7 @@ services:
       # 🛡️ Seguridad y consistencia de replicación
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_DEFAULT_REPLICATION_FACTOR: 1
-      KAFKA_MIN_INSYNC_REPLICAS: 2
+      KAFKA_MIN_INSYNC_REPLICAS: 1
 
       # ⚡ Tiempo inicial de espera para rebalanceo
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
@@ -38,8 +38,33 @@ services:
       KAFKA_MESSAGE_MAX_BYTES: 1048576
       KAFKA_REPLICA_FETCH_MAX_BYTES: 1048576
       KAFKA_MAX_REQUEST_SIZE: 1048576
+
+      # 🔧 Configuración para crear topics automáticamente
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
+      KAFKA_DELETE_TOPIC_ENABLE: 'true'
+      KAFKA_LOG_RETENTION_HOURS: 168
+      KAFKA_LOG_SEGMENT_BYTES: 1073741824
+      KAFKA_LOG_RETENTION_CHECK_INTERVAL_MS: 300000
+    command: >
+      sh -c "
+        echo '🚀 Iniciando Kafka...' &&
+        /etc/confluent/docker/run &
+        sleep 45 &&
+        echo '⏳ Esperando a que Kafka esté completamente listo...' &&
+        until kafka-topics --bootstrap-server localhost:9092 --list > /dev/null 2>&1; do
+          echo '⏳ Kafka aún no está listo, esperando...' &&
+          sleep 5
+        done &&
+        echo '📝 Creando topics de __project_name_kebab__...' &&
+        kafka-topics --create --topic __project_name_kebab__.created --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1 --if-not-exists &&
+        kafka-topics --create --topic __project_name_kebab__.description-updated --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1 --if-not-exists &&
+        echo '📋 Listando todos los topics:' &&
+        kafka-topics --list --bootstrap-server localhost:9092 &&
+        echo '✅ Topics creados exitosamente!' &&
+        wait
+      "
     networks:
-      - kafka-shared-net
+      - kafka-net
 
   kafka-ui:
     image: provectuslabs/kafka-ui:latest
@@ -52,12 +77,12 @@ services:
     depends_on:
       - kafka1
     networks:
-      - kafka-shared-net
+      - kafka-net
 
 volumes:
   kafka1-data:
 
 networks:
-  kafka-shared-net:
-    name: kafka-shared-net
+  kafka-net:
+    name: kafka-net
     driver: bridge
