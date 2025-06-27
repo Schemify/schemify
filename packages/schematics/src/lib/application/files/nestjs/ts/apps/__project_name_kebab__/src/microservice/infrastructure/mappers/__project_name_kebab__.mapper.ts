@@ -1,15 +1,3 @@
-/**
- * __project_name_pascal__Mapper
- * -----------------------------------------------------------------------------
- * Mapper responsable de transformar datos entre distintas capas del sistema:
- *
- *  - 🌐 Infraestructura (ej. Protobuf, HTTP, DB)
- *  - 🧠 Dominio (Entity + ValueObjects)
- *  - 🧱 Persistencia (Primitives)
- *
- * Este mapper aísla las conversiones para mantener los handlers y servicios limpios.
- */
-
 import { __project_name_pascal__Entity } from '@__project_name_camel__/microservice/domain/entities/__project_name_camel__.entity'
 
 import { NameValueObject } from '@__project_name_camel__/microservice/domain/value-objects/name.value-object'

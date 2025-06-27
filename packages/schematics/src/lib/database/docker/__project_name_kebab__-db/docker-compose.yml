@@ -1,0 +1,35 @@
+services:
+  postgres-__project_name_camel__:
+    image: postgres:16-bookworm
+    container_name: postgres-__project_name_camel__
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_DB=${project_name_screaming_DATABASE_NAME}
+      - POSTGRES_USER=${project_name_screaming_DATABASE_USER}
+      - POSTGRES_PASSWORD=${project_name_screaming_DATABASE_PASSWORD}
+    healthcheck:
+      test:
+        [
+          'CMD-SHELL',
+          'pg_isready -U ${project_name_screaming_DATABASE_USER} -d ${project_name_screaming_DATABASE_NAME}'
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    ports:
+      - '${project_name_screaming_DATABASE_PORT}:5432'
+    volumes:
+      - postgres-__project_name_camel__-data:/var/lib/postgresql/data
+      - ../../../apps/__project_name_camel__/prisma/migrations:/prisma/migrations:ro
+    restart: unless-stopped
+    networks:
+      - __project_name_camel__-db-net
+
+volumes:
+  postgres-__project_name_camel__-data:
+
+networks:
+  __project_name_camel__-db-net:
+    name: __project_name_camel__-db-net
+    driver: bridge

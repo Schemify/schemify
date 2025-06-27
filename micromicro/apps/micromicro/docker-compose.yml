@@ -1,0 +1,37 @@
+services:
+  micromicro:
+    build:
+      context: ../../
+      dockerfile: apps/micromicro/Dockerfile
+    container_name: micromicro-prod
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - SERVICE_APP_NAME=${SERVICE_APP_NAME}
+      - SERVICE_PORT=${project_name_screaming_SERVICE_PORT}
+      - SERVICE_GRPC_URL=0.0.0.0:${project_name_screaming_GRPC_PORT}
+      - DATABASE_URL=${project_name_screaming_DATABASE_URL}
+      - KAFKA_CLIENT_ID=${KAFKA_CLIENT_ID}
+      - KAFKA_BROKERS=${KAFKA_BROKERS}
+      - LOG_LEVEL=${LOG_LEVEL}
+    ports:
+      - '${project_name_screaming_SERVICE_PORT}:${project_name_screaming_SERVICE_PORT}'
+      - '${project_name_screaming_GRPC_PORT}:${project_name_screaming_GRPC_PORT}'
+    volumes:
+      - ./prisma/migrations:/app/prisma/migrations:rw
+    restart: always
+    networks:
+      - micromicro-internal-net
+      - micromicro-db-net
+      - kafka-net
+
+networks:
+  micromicro-internal-net:
+    driver: bridge
+  micromicro-db-net:
+    name: micromicro-db-net
+    external: true
+  kafka-net:
+    name: kafka-net
+    external: true

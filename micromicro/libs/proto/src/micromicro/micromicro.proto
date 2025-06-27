@@ -1,0 +1,121 @@
+// * Generación automática con ts-proto y soporte NestJS
+// * Ejecuta: 
+// * npx protoc --plugin=./node_modules/.bin/protoc-gen-ts_proto.cmd --ts_proto_out=./ --ts_proto_opt=nestJs=true ./libs/proto/src/services/micromicro_service/micromicro.proto
+
+syntax = "proto3";
+
+package micromicro;
+
+//
+// ================================
+//   📦 Servicio MicromicroService
+// ================================
+//
+// Contratos de comunicación entre el micromicro y el servidor
+// para la gestión de ejemplos en la aplicación.
+//
+service MicromicroService {
+  // * Crear un nuevo ejemplo
+  rpc createMicromicro(CreateMicromicroDto) returns (Micromicro) {}
+
+  // * Obtener todos los ejemplos (no paginado)
+  rpc getAllMicromicro(MicromicroEmpty) returns (Micromicro) {}
+
+  // * Obtener un ejemplo por ID
+  rpc getMicromicroById(GetMicromicroByIdDto) returns (Micromicro) {}
+
+  // * Actualizar un ejemplo existente
+  rpc updateMicromicro(UpdateMicromicroDto) returns (Micromicro) {}
+
+  // * Eliminar un ejemplo por ID
+  rpc deleteMicromicro(GetMicromicroByIdDto) returns (MicromicroEmpty) {}
+
+  // * Obtener ejemplos paginados (clásico page + limit)
+//   rpc getPaginatedMicromicro(PaginationRequest) returns (PaginatedMicromicro) {}
+
+  // * Soporte para scroll infinito (cursor-based pagination)
+  rpc getMicromicroByCursor(CursorPaginationRequest) returns (CursorPaginatedMicromicro) {}
+}
+
+//
+// ================================
+//   📥 Mensajes de entrada
+// ================================
+//
+
+// ! Mensaje vacío (común en operaciones sin payload)
+message MicromicroEmpty {}
+
+// * Crear nuevo ejemplo
+message CreateMicromicroDto {
+  string name = 1;
+  optional string description = 2;
+}
+
+// * Actualizar un ejemplo
+message UpdateMicromicroDto {
+  string id = 1;
+  UpdateMicromicroData micromicro = 2;
+}
+
+// * Obtener un ejemplo por su ID
+message GetMicromicroByIdDto {
+  string id = 1;
+}
+
+// * Solicitud de paginación clásica
+// message PaginationRequest {
+//   int32 page = 1;  // Página actual (empieza en 1)
+//   int32 limit = 2; // Elementos por página
+// }
+
+// * Solicitud de paginación por cursor (scroll infinito)
+message CursorPaginationRequest {
+  string afterId = 1; // ID del último elemento visto
+  int32 limit = 2;    // Elementos siguientes a devolver
+}
+
+//
+// ================================
+//   📤 Mensajes de salida
+// ================================
+//
+
+// * Lista de múltiples ejemplos (no paginada)
+message Micromicro {
+  repeated Micromicro micromicro = 1;
+}
+
+// * Lista de ejemplos paginada con `page`/`limit`
+message PaginatedMicromicro {
+  repeated Micromicro micromicro = 1;
+  int32 total = 2;
+  int32 page = 3;
+  int32 limit = 4;
+}
+
+// * Lista de ejemplos paginada con `cursor`
+message CursorPaginatedMicromicro {
+  repeated Micromicro micromicro = 1;
+  string nextCursor = 2;
+  bool hasMore = 3;
+}
+
+//
+// ================================
+//   🧱 Modelo base: Micromicro
+// ================================
+//
+
+// * Representación base de un ejemplo
+message Micromicro {
+  string id = 1;            // ! ID único del ejemplo
+  string name = 2;
+  optional string description = 3;
+}
+
+// * Datos anidados para actualizar un ejemplo
+message UpdateMicromicroData {
+  string name = 1;
+  optional string description = 2;
+}

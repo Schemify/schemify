@@ -1,7 +1,5 @@
 export function generateNameVariants(raw: string): Record<string, string> {
-  const cleaned = raw.endsWith('s') ? raw.slice(0, -1) : raw
-
-  const normalized = cleaned
+  const normalized = raw
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase()

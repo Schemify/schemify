@@ -1,0 +1,17 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("project_name_screaming_DATABASE_URL")
+}
+
+generator micromicro {
+provider      = "prisma-client-js"
+binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+model project_name_pascal {
+  id          String   @id
+  name        String
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

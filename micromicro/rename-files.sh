@@ -5,7 +5,7 @@
 
 if [ $# -ne 2 ]; then
     echo "Uso: $0 'nombre_antiguo' 'nombre_nuevo'"
-    echo "Ejemplo: $0 '__project_name_kebab__' 'usuarios'"
+    echo "Ejemplo: $0 'micromicro' 'usuarios'"
     exit 1
 fi
 
