@@ -111,5 +111,5 @@
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
   "include": ["src"],
-  "exclude": ["./src/lib/application/files"]
+  "exclude": ["src/lib/**/files/**"]
 }

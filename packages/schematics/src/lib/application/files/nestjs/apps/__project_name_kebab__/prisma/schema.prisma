@@ -1,0 +1,17 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+model __project_name_pascal__ {
+id          String   @id
+name        String
+description String?
+createdAt   DateTime @default(now())
+updatedAt   DateTime @updatedAt
+}

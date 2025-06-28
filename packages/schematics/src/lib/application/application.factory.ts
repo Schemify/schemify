@@ -4,7 +4,7 @@ import { ApplicationOptions } from '@schemifyjs/types'
 
 import { generateNameVariants } from '../../shared/utils/generate-name-variants.util.js'
 
-import { SchematicEngine } from '../../shared/utils/generate-project.util.js'
+import { SchematicEngine } from '../../engine/generate-project.util.js'
 
 import { runInstallCommand } from './commands/install.command.js'
 import { fileURLToPath } from 'url'

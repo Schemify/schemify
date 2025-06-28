@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common'
-import { __project_name_pascal__sModule } from '@nestjs/microservices'
+import { ClientsModule } from '@nestjs/microservices'
 
-import { KafkaProducerService } from './__project_name_camel__/kafka-producer.service'
+import { KafkaProducerService } from './client/kafka-producer.service'
 
 import { Kafka__project_name_pascal__CreatedPublisher } from './producers/__project_name_camel__-created/__project_name_camel__-created.adapter'
 import { __project_name_pascal__CreatedPublisherPort } from '@__project_name_camel__/microservice/application/ports/outbounds/messaging/__project_name_camel__-created-publisher.port'
@@ -16,11 +16,7 @@ const kafkaConfig = {
 }
 
 @Module({
-  imports: [
-    __project_name_pascal__sModule.register([
-      buildKafkaProducerOptions(kafkaConfig)
-    ])
-  ],
+  imports: [ClientsModule.register([buildKafkaProducerOptions(kafkaConfig)])],
   providers: [
     KafkaProducerService,
     {
