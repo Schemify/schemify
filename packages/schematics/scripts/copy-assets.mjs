@@ -7,8 +7,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 // Lista de carpetas de assets a copiar
 const assetsToCopy = [
   {
-    from: path.resolve(__dirname, '../src/lib/application/files'),
-    to: path.resolve(__dirname, '../dist/lib/application/files')
+    from: path.resolve(__dirname, '../src/libs/application/files'),
+    to: path.resolve(__dirname, '../dist/libs/application/files')
   }
   //   {
   //     from: path.resolve(__dirname, '../src/lib/shared/templates'),
