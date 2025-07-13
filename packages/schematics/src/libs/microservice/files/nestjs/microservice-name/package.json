@@ -19,7 +19,7 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "test:integration": "jest --testPathPattern=\"integration\" --verbose --runInBand",
-    "test:integration:setup": "bash scripts/test-system.sh -s && export MICROSERVICE_NAME_DATABASE_URL=\"postgresql://postgres:postgres@localhost:5434/microservice-name_test\" && export KAFKA_BROKERS=\"localhost:9094\" && export NODE_ENV=\"test\" && npm run test:integration",
+    "test:integration:setup": "bash scripts/test-system.sh -s && export MICROSERVICE_NAME_DATABASE_URL=\"postgresql://postgres:postgres@localhost:5434/__project_name_kebab___test\" && export KAFKA_BROKERS=\"localhost:9094\" && export NODE_ENV=\"test\" && npm run test:integration",
     "test:integration:setup:win": "scripts\\setup-test-env.bat && npm run test:integration",
     "test:integration:setup:ps": "powershell -ExecutionPolicy Bypass -File scripts\\setup-test-env.ps1 && npm run test:integration",
     "test:unit": "jest --testPathPattern=\"\\.spec\\.ts$\" --testPathIgnorePatterns=\"integration\"",

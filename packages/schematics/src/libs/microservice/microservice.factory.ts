@@ -14,7 +14,7 @@
 //       )
 //     }
 
-//     // ⬇️ Output en apps/microservice-name
+//     // ⬇️ Output en apps/__project_name_kebab__
 //     const outputPath = path.resolve('apps', options.name)
 
 //     const schematicPath = path.resolve(

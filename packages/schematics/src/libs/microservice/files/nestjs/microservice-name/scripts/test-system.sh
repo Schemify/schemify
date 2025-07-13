@@ -324,7 +324,7 @@ done
 echo "✅ Test environment is ready!"
 
 # Set environment variables for tests
-export project_name_screaming_DATABASE_URL="postgresql://postgres:postgres@localhost:5434/microservice-name_test"
+export project_name_screaming_DATABASE_URL="postgresql://postgres:postgres@localhost:5434/__project_name_kebab___test"
 export KAFKA_BROKERS="localhost:9094"
 export NODE_ENV="test"
 

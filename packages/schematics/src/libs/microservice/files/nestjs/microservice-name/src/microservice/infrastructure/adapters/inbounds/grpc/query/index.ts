@@ -25,7 +25,7 @@
  */
 
 // 🧩 Controladores individuales (por caso de uso)
-import { GetAllMicroserviceNameGrpcController } from './get-all-microservice-name/get-all-microserviceName.grpc.controller'
+import { GetAllMicroserviceNameGrpcController } from './get-all-__project_name_kebab__/get-all-microserviceName.grpc.controller'
 import { GetMicroserviceNameByIdGrpcController } from './get-microserviceName-by-id/get-microserviceName-by-id.grpc.controller'
 import { GetMicroserviceNameByCursorGrpcController } from './get-microserviceName-by-cursor/get-microserviceName-by-cursor.grpc.controller'
 
@@ -39,6 +39,6 @@ export const GrpcQueryControllers = [
 ]
 
 // 📤 Exportación individual si se necesita
-export * from './get-all-microservice-name/get-all-microserviceName.grpc.controller'
+export * from './get-all-__project_name_kebab__/get-all-microserviceName.grpc.controller'
 export * from './get-microserviceName-by-id/get-microserviceName-by-id.grpc.controller'
 export * from './get-microserviceName-by-cursor/get-microserviceName-by-cursor.grpc.controller'

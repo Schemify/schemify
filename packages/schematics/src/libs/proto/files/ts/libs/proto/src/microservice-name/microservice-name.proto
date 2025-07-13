@@ -1,6 +1,6 @@
 // * Generación automática con ts-proto y soporte NestJS
 // * Ejecuta: 
-// * npx protoc --plugin=./node_modules/.bin/protoc-gen-ts_proto.cmd --ts_proto_out=./ --ts_proto_opt=nestJs=true ./libs/proto/src/services/microservice-name_service/microserviceName.proto
+// * npx protoc --plugin=./node_modules/.bin/protoc-gen-ts_proto.cmd --ts_proto_out=./ --ts_proto_opt=nestJs=true ./libs/proto/src/services/__project_name_kebab___service/microserviceName.proto
 
 syntax = "proto3";
 

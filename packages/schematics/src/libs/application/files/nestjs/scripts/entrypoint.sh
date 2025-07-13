@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Smart entrypoint script for the microservice-name microservice
+# Smart entrypoint script for the __project_name_kebab__ microservice
 # Detects the database state and automatically syncs Prisma migrations and compiles proto files
 
-echo "🚀 Starting microservice-name microservice..."
+echo "🚀 Starting __project_name_kebab__ microservice..."
 
 # Detect auto-applied migrations
 detect_auto_migrations() {
@@ -53,9 +53,9 @@ sync_schema() {
 
 # Generate Prisma client
 generate_prisma_client() {
-    echo "🔧 Generating Prisma client for microservice-name..."
+    echo "🔧 Generating Prisma client for __project_name_kebab__..."
     npx prisma generate
-    echo "✅ Prisma client generated for MicroserviceName"
+    echo "✅ Prisma client generated for __project_name_pascal__"
 }
 
 # Compile .proto files
@@ -76,4 +76,4 @@ compile_proto_files
 
 # ─── Start the application ────────
 echo "🚀 Starting application..."
-exec node ./dist/apps/microservice-name/src/main.js
+exec node ./dist/apps/__project_name_kebab__/src/main.js

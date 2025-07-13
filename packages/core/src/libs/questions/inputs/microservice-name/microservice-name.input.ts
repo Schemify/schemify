@@ -5,7 +5,7 @@ export function microserviceNameQuestion() {
     type: 'input',
     name: 'name',
     message: 'Enter the name of your microservice:',
-    initial: 'microservice-name',
+    default: 'microservice-name',
     validate: validateName
   }
 }

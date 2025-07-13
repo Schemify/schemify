@@ -2,198 +2,146 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://schemify.github.io/schemify.com/assets/img/logos/schemify-logo.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
-
 <p align="center">
-  <!-- Estado general -->
   <img src="https://img.shields.io/badge/Status-Development-orange" alt="Estado del proyecto: En desarrollo" />
-
-  <!-- Tecnologías principales -->
-  <img src="https://img.shields.io/badge/NestJS-%5E10.x-E0234E?logo=nestjs&logoColor=white" alt="NestJS" />
-  <img src="https://img.shields.io/badge/Kafka-Bitnami-black?logo=apachekafka" alt="Kafka Bitnami" />
-  <img src="https://img.shields.io/badge/gRPC-Active-6f42c1?logo=grpc" alt="gRPC" />
-  <img src="https://img.shields.io/badge/Prisma-%5E6.x-2D3748?logo=prisma" alt="Prisma ORM" />
-  <img src="https://img.shields.io/badge/PostgreSQL-%5E15.x-4169E1?logo=postgresql&logoColor=white" alt="PostgreSQL" />
-  <img src="https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker" alt="Docker Ready" />
-
-  <!-- Arquitectura -->
-  <img src="https://img.shields.io/badge/Domain--Driven%20Design-Aplicado-0d1117" alt="Domain-Driven Design aplicado" />
-  <img src="https://img.shields.io/badge/Ports%20%26%20Adapters-Architecture-lightgrey" alt="Arquitectura de Puertos y Adaptadores" />
+  <img src="https://img.shields.io/badge/NestJS-%5E11.x-E0234E?logo=nestjs&logoColor=white" />
+  <img src="https://img.shields.io/badge/Kafka-Bitnami-black?logo=apachekafka" />
+  <img src="https://img.shields.io/badge/gRPC-ts--proto-6f42c1?logo=grpc" />
+  <img src="https://img.shields.io/badge/Prisma-%5E6.x-2D3748?logo=prisma" />
+  <img src="https://img.shields.io/badge/PostgreSQL-%5E15.x-4169E1?logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker" />
+  <img src="https://img.shields.io/badge/DDD-Hexagonal-green" />
 </p>
 
+
 ## 📄 Descripción
-Este microservicio forma parte del ecosistema de <strong>Schemify</strong>. Fue desarrollado con:
 
-- NestJS como framework base.
-- Arquitectura Hexagonal y Domain-Driven Design (DDD).
-- Comunicación sincrónica vía gRPC.
-- Comunicación asíncrona vía Apache Kafka (Bitnami).
-- Prisma ORM y PostgreSQL como capa de persistencia.
-- Pruebas end-to-end usando Jest.
+Este microservicio forma parte del ecosistema **Schemify**. Implementa una arquitectura moderna basada en:
 
----
-
-## ⚙️ Instalación del Proyecto
-
-```bash
-$ npm install
-```
+- NestJS + CQRS
+- Domain-Driven Design (DDD) + Hexagonal
+- Comunicación sincrónica vía gRPC
+- Comunicación asíncrona vía Kafka
+- Prisma ORM + PostgreSQL
+- Tests locales y de integración (testcontainers)
 
 ---
 
-## ⚡ Compilación y Ejecución
+## ⚙️ Instalación Inicial
 
 ```bash
-# Desarrollo
-$ npm run start:dev
+# Instalar dependencias
+npm install
+
+# Generar Prisma Client
+npm run prisma:generate
+
+# Generar contratos gRPC desde .proto
+npm run proto:generate
+````
+
+---
+
+## 🚀 Compilación y Ejecución
+
+```bash
+# Desarrollo local
+npm run start:dev
 
 # Producción
-$ npm run start:prod
+npm run start:prod
 ```
 
 ---
 
-## 🌍 Docker
+## 🐳 Docker / Entorno Completo
 
-Este microservicio está listo para ejecutarse en contenedores. Puedes usar `docker-compose` para levantar los servicios:
+Para levantar todos los servicios necesarios (DB + Kafka + Kafka UI + Microservicio):
 
 ```bash
-$ docker compose up --build
+npm run __project_name_camel__:up:all
 ```
 
-Asegúrate de configurar la red externa `schemify-kafka-net` si usas otros servicios conectados por Kafka.
+Para detenerlos completamente:
+
+```bash
+npm run __project_name_camel__:down:all
+```
+
+> Asegúrate de que no haya conflictos de puertos antes de ejecutar estos comandos.
 
 ---
 
-## 🔧 Pruebas
+## 🧪 Pruebas
 
 ```bash
 # Unitarias
-$ npm run test
+npm run test
+
+# Integración con testcontainers
+npm run test:testcontainers
 
 # End-to-End
-$ npm run test:e2e
+npm run test:e2e
 ```
 
 ---
 
-## 🚧 Tecnologías Clave
+## 📦 Estructura del Proyecto
 
-- **gRPC**: contratos definidos en `.proto`, compilados con `ts-proto`, y expuestos como servicios NestJS.
-- **Kafka**: Producers y Consumers implementados como servicios inyectables. Soporte para múltiples topics y grupos.
-- **DDD / Hexagonal**:
-  - `application/`: DTOs, mappers, servicios y casos de uso.
-  - `domain/`: entidades, value objects, interfaces de repositorios.
-  - `infrastructure/`: controladores gRPC/Kafka, adapters de persistencia, módulos.
-
----
-
-## 🔍 Exploración de mensajes Kafka
-Puedes monitorear el flujo de mensajes en tiempo real usando:
-
-- Kafka UI (`http://localhost:8081`)
-- Comando CLI:
-  ```bash
-  docker exec -it kafka1 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic microserviceName-created --from-beginning
-  ```
+* `src/microservice/application`: comandos, queries y eventos del dominio
+* `src/microservice/domain`: entidades, value objects y eventos
+* `src/microservice/infrastructure`: controladores gRPC/Kafka, adaptadores Prisma, productores Kafka
+* `libs/shared`: configuración global, interfaces comunes
+* `prisma/schema.prisma`: definición de modelo relacional con Prisma
 
 ---
 
-## 👥 Autor y Contacto
+## 🔌 Comunicación gRPC
 
-**Alejandro Díaz**  
-Estudiante de Ingeniería Civil Informática, Universidad de Valparaíso  
+```bash
+# Para regenerar los contratos gRPC
+npm run proto:generate
+```
 
-- GitHub: [IxyzDev](https://github.com/IxyzDev)
-- LinkedIn: [in/ixyzdev](https://www.linkedin.com/in/ixyzdev/)
+Los servicios gRPC están definidos en archivos `.proto` y generados automáticamente con `ts-proto`.
+
+---
+
+## 📡 Exploración Kafka
+
+Puedes observar los mensajes emitidos por Kafka:
+
+* **UI Web**: [http://localhost:8081](http://localhost:8081)
+* **CLI Kafka Bitnami**:
+
+```bash
+docker exec -it kafka1 kafka-console-consumer.sh \
+  --bootstrap-server localhost:9092 \
+  --topic __project_name_camel__-created \
+  --from-beginning
+```
 
 ---
 
-## 🔒 Licencia
+## 🧠 Buenas prácticas
 
-Este proyecto está licenciado bajo la licencia MIT.
+* DDD aplicado en toda la estructura
+* Separación por **puertos y adaptadores** (hexagonal architecture)
+* Eventos de dominio desacoplados mediante Kafka
+* Casos de uso orquestados por CQRS
+* Adaptadores inbounds/outbounds desacoplados
 
 ---
+
+## 👤 Autor
+
+**Alejandro Díaz**
+Estudiante de Ingeniería Civil Informática - Universidad de Valparaíso
+
+* GitHub: [IxyzDev](https://github.com/IxyzDev)
+* LinkedIn: [in/ixyzdev](https://www.linkedin.com/in/ixyzdev/)
 
 <p align="center">
   <em>Schemify Microservice</em> - Diseñado para ser simple, robusto y escalable. ✨
 </p>
-
-
-
-
-<!-- 
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Project setup
-
-```bash
-$ npm install
-```
-
-## Compile and run the project
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Run tests
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
-```bash
-$ npm install -g mau
-$ mau deploy
-```
-
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
-
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE). -->

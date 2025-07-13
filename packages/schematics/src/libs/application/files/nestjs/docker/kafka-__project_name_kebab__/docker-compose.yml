@@ -1,0 +1,57 @@
+services:
+  kafka-1__project_name_kebab__:
+    image: confluentinc/cp-kafka:7.8.0
+    container_name: kafka-1__project_name_kebab__
+    hostname: kafka-1__project_name_kebab__
+    ports:
+      - '9092:9092'
+      - '9093:9093'
+    volumes:
+      - kafka-1__project_name_kebab__-data:/var/lib/kafka/data
+      - ./init-topics.sh:/usr/local/bin/init-topics.sh:ro
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_BROKER_ID: 1
+      CLUSTER_ID: 'EmptNWtoR4GGWx-BH6nGLQ'
+      KAFKA_PROCESS_ROLES: 'broker,controller'
+      KAFKA_CONTROLLER_LISTENER_NAMES: 'CONTROLLER'
+      KAFKA_CONTROLLER_QUORUM_VOTERS: '1@kafka-1__project_name_kebab__:9093'
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: 'CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT'
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092,CONTROLLER://0.0.0.0:9093
+      KAFKA_ADVERTISED_LISTENERS: 'PLAINTEXT://kafka-1__project_name_kebab__:9092'
+      KAFKA_INTER_BROKER_LISTENER_NAME: 'PLAINTEXT'
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_DEFAULT_REPLICATION_FACTOR: 1
+      KAFKA_MIN_INSYNC_REPLICAS: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_MESSAGE_MAX_BYTES: 1048576
+      KAFKA_REPLICA_FETCH_MAX_BYTES: 1048576
+      KAFKA_MAX_REQUEST_SIZE: 1048576
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
+      KAFKA_DELETE_TOPIC_ENABLE: 'true'
+      KAFKA_LOG_RETENTION_HOURS: 168
+      KAFKA_LOG_SEGMENT_BYTES: 1073741824
+      KAFKA_LOG_RETENTION_CHECK_INTERVAL_MS: 300000
+    command: >
+      sh -c "
+        echo '🚀 Starting Kafka broker...' &&
+        /etc/confluent/docker/run &
+
+        sleep 45 &&
+        echo '📜 Executing topic init script...' &&
+        sh /usr/local/bin/init-topics.sh &&
+        wait
+      "
+    networks:
+      - kafka-__project_name_kebab__-broker-net
+      - kafka-ui-shared-net
+
+volumes:
+  kafka-1__project_name_kebab__-data:
+
+networks:
+  kafka-__project_name_kebab__-broker-net:
+    name: kafka-__project_name_kebab__-broker-net
+    driver: bridge
+  kafka-ui-shared-net:
+    external: true

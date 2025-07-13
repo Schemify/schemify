@@ -1,0 +1,33 @@
+services:
+  __project_name_kebab__:
+    build:
+      context: ../../
+      dockerfile: apps/__project_name_kebab__/Dockerfile
+    container_name: __project_name_kebab__-prod
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - SERVICE_APP_NAME=${SERVICE_APP_NAME}
+      - SERVICE_PORT=${__project_name_screaming___SERVICE_PORT}
+      - SERVICE_GRPC_URL=0.0.0.0:${__project_name_screaming___GRPC_PORT}
+      - DATABASE_URL=${__project_name_screaming___DATABASE_URL}
+      - KAFKA_CLIENT_ID=${KAFKA_CLIENT_ID}
+      - KAFKA_GROUP_ID=${KAFKA_GROUP_ID}
+      - KAFKA_BROKERS=${KAFKA_BROKERS}
+      - LOG_LEVEL=${LOG_LEVEL}
+    ports:
+      - '${__project_name_screaming___SERVICE_PORT}:${__project_name_screaming___SERVICE_PORT}'
+      - '${__project_name_screaming___GRPC_PORT}:${__project_name_screaming___GRPC_PORT}'
+    volumes:
+      - ./prisma/migrations:/app/prisma/migrations:rw
+    networks:
+      - dbnet-postgres-__project_name_kebab__
+      - kafka-__project_name_kebab__-broker-net
+
+networks:
+  dbnet-postgres-__project_name_kebab__:
+    external: true
+
+  kafka-__project_name_kebab__-broker-net:
+    external: true

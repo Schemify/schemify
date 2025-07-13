@@ -1,0 +1,39 @@
+// * Generación automática con ts-proto y soporte NestJS
+// * Ejecuta:
+// npx protoc \
+//   --plugin=../../../node_modules/.bin/protoc-gen-ts_proto.cmd \
+//   --ts_proto_out=../generated/event-contracts \
+//   --ts_proto_opt=nestJs=true \
+//   event-contracts/__project_name_kebab__-events.proto
+
+syntax = "proto3";
+
+package __project_name_snake___events;
+
+// ================================
+// 📣 Eventos Kafka: __project_name_camel__
+// ================================
+
+// Evento emitido cuando se crea una nueva entidad
+message __project_name_camel__CreatedEvent {
+  string id = 1;
+  string name = 2;
+  optional string description = 3;
+  string createdAt = 4;
+  optional string updatedAt = 5;
+}
+
+// Evento emitido cuando se actualiza la descripción
+message __project_name_camel__DescriptionUpdatedEvent {
+  string id = 1;
+  string description = 2;
+  optional string updatedAt = 3;
+}
+
+// Evento emitido cuando se renombra
+message __project_name_camel__RenamedEvent {
+  string id = 1;
+  string oldName = 2;
+  string newName = 3;
+  optional string updatedAt = 4;
+}

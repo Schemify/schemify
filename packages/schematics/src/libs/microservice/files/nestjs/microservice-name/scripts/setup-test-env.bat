@@ -1,7 +1,7 @@
 @echo off
 echo Setting up test environment variables...
 
-set MICROSERVICE_NAME_DATABASE_URL=postgresql://postgres:postgres@localhost:5434/microservice-name_test
+set MICROSERVICE_NAME_DATABASE_URL=postgresql://postgres:postgres@localhost:5434/__project_name_kebab___test
 set KAFKA_BROKERS=localhost:9094
 set NODE_ENV=test
 

@@ -1,6 +1,6 @@
 Write-Host "Setting up test environment variables..." -ForegroundColor Green
 
-$env:MICROSERVICE_NAME_DATABASE_URL = "postgresql://postgres:postgres@localhost:5434/microservice-name_test"
+$env:MICROSERVICE_NAME_DATABASE_URL = "postgresql://postgres:postgres@localhost:5434/__project_name_kebab___test"
 $env:KAFKA_BROKERS = "localhost:9094"
 $env:NODE_ENV = "test"
 

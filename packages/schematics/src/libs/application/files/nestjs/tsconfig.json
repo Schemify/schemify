@@ -18,7 +18,7 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@microserviceName/*": ["apps/microservice-name/src/*"],
+      "@__project_name_camel__/*": ["apps/__project_name_kebab__/src/*"],
       "@proto": ["libs/proto/generated/index.ts"]
     },
     "resolveJsonModule": true,
