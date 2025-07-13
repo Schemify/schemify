@@ -1,0 +1,19 @@
+services:
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    container_name: kafka-ui
+    ports:
+      - '8081:8080'
+    environment:
+      KAFKA_CLUSTERS_0_NAME: kafka-1microservice-name
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka-1microservice-name:9092
+      # Puedes agregar más brokers si deseas:
+      # KAFKA_CLUSTERS_1_NAME: other
+      # KAFKA_CLUSTERS_1_BOOTSTRAPSERVERS: kafka-other:9092
+    networks:
+      - kafka-ui-shared-net
+
+networks:
+  kafka-ui-shared-net:
+    name: kafka-ui-shared-net
+    driver: bridge

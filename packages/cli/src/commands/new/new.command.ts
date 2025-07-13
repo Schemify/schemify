@@ -3,12 +3,12 @@ import { executeNewCommand } from './new.executor.js'
 
 export function registerNewCommand(program: Command) {
   program
-    .command('new [name]')
+    .command('new <name>')
     .alias('n')
     .description('Generate Schemify application.')
     .option('-p, --path <path>', 'Custom path to create the project in')
     .showHelpAfterError()
-    .action((type, name, cmd) => {
-      executeNewCommand({ type, name, ...cmd.opts() })
+    .action((name, cmd) => {
+      executeNewCommand(name, cmd)
     })
 }

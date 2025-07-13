@@ -1,0 +1,33 @@
+services:
+  microservice-name:
+    build:
+      context: ../../
+      dockerfile: apps/microservice-name/Dockerfile
+    container_name: microservice-name-prod
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - SERVICE_APP_NAME=${SERVICE_APP_NAME}
+      - SERVICE_PORT=${MICROSERVICE_NAME_SERVICE_PORT}
+      - SERVICE_GRPC_URL=0.0.0.0:${MICROSERVICE_NAME_GRPC_PORT}
+      - DATABASE_URL=${MICROSERVICE_NAME_DATABASE_URL}
+      - KAFKA_CLIENT_ID=${KAFKA_CLIENT_ID}
+      - KAFKA_GROUP_ID=${KAFKA_GROUP_ID}
+      - KAFKA_BROKERS=${KAFKA_BROKERS}
+      - LOG_LEVEL=${LOG_LEVEL}
+    ports:
+      - '${MICROSERVICE_NAME_SERVICE_PORT}:${MICROSERVICE_NAME_SERVICE_PORT}'
+      - '${MICROSERVICE_NAME_GRPC_PORT}:${MICROSERVICE_NAME_GRPC_PORT}'
+    volumes:
+      - ./prisma/migrations:/app/prisma/migrations:rw
+    networks:
+      - dbnet-postgres-microservice-name
+      - kafka-microservice-name-broker-net
+
+networks:
+  dbnet-postgres-microservice-name:
+    external: true
+
+  kafka-microservice-name-broker-net:
+    external: true

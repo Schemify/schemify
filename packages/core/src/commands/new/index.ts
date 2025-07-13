@@ -1,1 +1,1 @@
-export { runNewCommandHandler } from './new.handler.js'
+export * from './new.command.js'

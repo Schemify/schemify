@@ -1,7 +1,4 @@
-export interface NewSchemify {
-  name: string
-  path?: string
-}
+import { type MicroserviceArtifactOptions } from '../../../shared/interfaces/artifacts/microservice.interface.js'
 
 export enum FrameworkType {
   NestJS = 'nestjs'
@@ -14,8 +11,18 @@ export enum PackageManagerType {
   //   Pnpm = "pnpm",
 }
 
-export interface ApplicationOptions extends NewSchemify {
+export interface BaseArtifactOptions {
   framework: FrameworkType
   packageManager: PackageManagerType
   versions?: Record<string, string>
+}
+
+export interface ProjectMetadata {
+  name: string
+  path?: string
+}
+
+export interface NewProjectOptions extends BaseArtifactOptions {
+  metadata: ProjectMetadata
+  microservice?: MicroserviceArtifactOptions
 }

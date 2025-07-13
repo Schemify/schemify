@@ -1,6 +1,6 @@
 {
   "name": "@schemifyjs/cli",
-  "version": "0.1.60",
+  "version": "0.1.63",
   "description": "Official CLI for SchemifyJS.",
   "type": "module",
   "main": "dist/index.js",

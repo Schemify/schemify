@@ -1,3 +1,5 @@
+// import { type BaseArtifactOptions } from '../../../shared/interfaces/base-artifact-options.interface.js'
+
 export type ArtifactType = 'microservice'
 //   | 'dto'
 //   | 'event'
@@ -10,7 +12,10 @@ export type ArtifactType = 'microservice'
 //   | 'middleware'
 //   | 'resolver'
 
-export interface MicroserviceOptions {
+export interface GenerateCommandOptions {
   type: ArtifactType
   name: string
+}
+export interface GenerateArtifactOptions extends GenerateCommandOptions {
+  // BaseArtifactOptions
 }

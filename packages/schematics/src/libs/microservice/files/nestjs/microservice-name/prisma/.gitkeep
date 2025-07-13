@@ -1,0 +1,2 @@
+# This file ensures the prisma directory is created
+# The migrations directory will be created by Prisma when needed 
