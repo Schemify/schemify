@@ -19,8 +19,8 @@ export class Get__project_name_camel__ByIdGrpcController {
 
   @GrpcMethod('__project_name_camel__Service', 'get__project_name_camel__ById')
   async get__project_name_camel__ById(
-    request: __project_name_snake__.Get__project_name_camel__ByIdDto
-  ): Promise<__project_name_snake__.__project_name_camel__> {
+    request: __project_name_snake__.Get__project_name_pascal__ByIdDto
+  ): Promise<__project_name_snake__.__project_name_pascal__> {
     const query = new Get__project_name_camel__ByIdQuery({ id: request.id })
 
     const entity = await this.queryBus.execute(query)

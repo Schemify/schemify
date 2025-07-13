@@ -22,8 +22,8 @@ La capa de dominio representa **el corazón del negocio**: encapsula **las regla
 
 ### ✅ CQRS
 - La lógica de **lectura y escritura se separa** en dos interfaces:
-  - `__project_name_camel__QueryRepository`
-  - `__project_name_camel__CommandRepository`
+  - `__project_name_pascal__QueryRepository`
+  - `__project_name_pascal__CommandRepository`
 
 ## 🧱 Estructura de carpetas
 

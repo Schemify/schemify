@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common'
 
 import { KafkaProducerService } from '../../client/kafka-producer.service'
 
-import { __project_name_camel__CreatedPublisherPort } from 'apps/__project_name_kebab__/src/microservice/application/ports/outbounds/messaging/__project_name_kebab__-created-publisher.port'
+import { __project_name_pascal__CreatedPublisherPort } from 'apps/__project_name_kebab__/src/microservice/application/ports/outbounds/messaging/__project_name_kebab__-created-publisher.port'
 
 import { __project_name_pascal__CreatedEvent } from 'apps/__project_name_kebab__/src/microservice/domain/events/__project_name_kebab__-created.event'
 
@@ -13,7 +13,7 @@ import { __project_name_snake___events } from '@proto'
 
 @Injectable()
 export class Kafka__project_name_camel__CreatedPublisher
-  implements __project_name_camel__CreatedPublisherPort
+  implements __project_name_pascal__CreatedPublisherPort
 {
   constructor(private readonly kafkaProducer: KafkaProducerService) {}
 

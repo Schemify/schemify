@@ -4,7 +4,7 @@ import { ClientsModule } from '@nestjs/microservices'
 import { KafkaProducerService } from './client/kafka-producer.service'
 
 import { Kafka__project_name_camel__CreatedPublisher } from './producers/__project_name_kebab__-created/__project_name_kebab__-created.adapter'
-import { __project_name_camel__CreatedPublisherPort } from 'apps/__project_name_kebab__/src/microservice/application/ports/outbounds/messaging/__project_name_kebab__-created-publisher.port'
+import { __project_name_pascal__CreatedPublisherPort } from 'apps/__project_name_kebab__/src/microservice/application/ports/outbounds/messaging/__project_name_kebab__-created-publisher.port'
 import { buildKafkaProducerOptions } from 'apps/__project_name_kebab__/src/libs/shared/config/kafka/kafka.config'
 
 const kafkaConfig = {
@@ -20,10 +20,10 @@ const kafkaConfig = {
   providers: [
     KafkaProducerService,
     {
-      provide: __project_name_camel__CreatedPublisherPort,
+      provide: __project_name_pascal__CreatedPublisherPort,
       useClass: Kafka__project_name_camel__CreatedPublisher
     }
   ],
-  exports: [KafkaProducerService, __project_name_camel__CreatedPublisherPort]
+  exports: [KafkaProducerService, __project_name_pascal__CreatedPublisherPort]
 })
 export class KafkaProducerModule {}

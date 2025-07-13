@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "build": "nest build",
-    "proto:generate": "sh ./scripts/compile-protos.sh",
+    "proto:generate": "bash ./scripts/compile-protos.sh",
     "prisma:generate": "prisma generate --schema=./apps/__project_name_kebab__/prisma/schema.prisma",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",

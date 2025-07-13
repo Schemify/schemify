@@ -4,7 +4,7 @@ import { CommandBus } from '@nestjs/cqrs'
 import { __project_name_snake__ } from '@proto'
 
 import { Delete__project_name_camel__GrpcController } from './delete__project_name_kebab__.grpc.controller'
-import { Delete__project_name_camel__Command } from 'apps/__project_name_kebab__/src/microservice/application/ports/inbounds/commands'
+import { Delete__project_name_pascal__Command } from 'apps/__project_name_kebab__/src/microservice/application/ports/inbounds/commands'
 
 describe('Delete__project_name_camel__GrpcController', () => {
   let controller: Delete__project_name_camel__GrpcController
@@ -48,11 +48,11 @@ describe('Delete__project_name_camel__GrpcController', () => {
       // Assert
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
-        expect.any(Delete__project_name_camel__Command)
+        expect.any(Delete__project_name_pascal__Command)
       )
 
       const executedCommand = commandBus.execute.mock
-        .calls[0][0] as Delete__project_name_camel__Command
+        .calls[0][0] as Delete__project_name_pascal__Command
       expect(executedCommand.id).toBe(request.id)
 
       expect(result).toEqual({})
@@ -74,7 +74,7 @@ describe('Delete__project_name_camel__GrpcController', () => {
 
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
-        expect.any(Delete__project_name_camel__Command)
+        expect.any(Delete__project_name_pascal__Command)
       )
     })
 
@@ -92,11 +92,11 @@ describe('Delete__project_name_camel__GrpcController', () => {
       // Assert
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
-        expect.any(Delete__project_name_camel__Command)
+        expect.any(Delete__project_name_pascal__Command)
       )
 
       const executedCommand = commandBus.execute.mock
-        .calls[0][0] as Delete__project_name_camel__Command
+        .calls[0][0] as Delete__project_name_pascal__Command
       expect(executedCommand.id).toBe('')
 
       expect(result).toEqual({})
@@ -116,11 +116,11 @@ describe('Delete__project_name_camel__GrpcController', () => {
       // Assert
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
-        expect.any(Delete__project_name_camel__Command)
+        expect.any(Delete__project_name_pascal__Command)
       )
 
       const executedCommand = commandBus.execute.mock
-        .calls[0][0] as Delete__project_name_camel__Command
+        .calls[0][0] as Delete__project_name_pascal__Command
       expect(executedCommand.id).toBe('550e8400-e29b-41d4-a716-446655440000')
 
       expect(result).toEqual({})
@@ -140,11 +140,11 @@ describe('Delete__project_name_camel__GrpcController', () => {
       // Assert
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
-        expect.any(Delete__project_name_camel__Command)
+        expect.any(Delete__project_name_pascal__Command)
       )
 
       const executedCommand = commandBus.execute.mock
-        .calls[0][0] as Delete__project_name_camel__Command
+        .calls[0][0] as Delete__project_name_pascal__Command
       expect(executedCommand.id).toBe('test-id-with-special-chars-@#$%^&*()')
 
       expect(result).toEqual({})
@@ -165,11 +165,11 @@ describe('Delete__project_name_camel__GrpcController', () => {
       // Assert
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
-        expect.any(Delete__project_name_camel__Command)
+        expect.any(Delete__project_name_pascal__Command)
       )
 
       const executedCommand = commandBus.execute.mock
-        .calls[0][0] as Delete__project_name_camel__Command
+        .calls[0][0] as Delete__project_name_pascal__Command
       expect(executedCommand.id).toBe(longId)
 
       expect(result).toEqual({})

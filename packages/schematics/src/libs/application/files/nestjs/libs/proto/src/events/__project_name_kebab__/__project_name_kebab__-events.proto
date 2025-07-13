@@ -11,11 +11,11 @@ syntax = "proto3";
 package __project_name_snake___events;
 
 // ================================
-// 📣 Eventos Kafka: __project_name_camel__
+// 📣 Eventos Kafka: __project_name_pascal__
 // ================================
 
 // Evento emitido cuando se crea una nueva entidad
-message __project_name_camel__CreatedEvent {
+message __project_name_pascal__CreatedEvent {
   string id = 1;
   string name = 2;
   optional string description = 3;
@@ -24,14 +24,14 @@ message __project_name_camel__CreatedEvent {
 }
 
 // Evento emitido cuando se actualiza la descripción
-message __project_name_camel__DescriptionUpdatedEvent {
+message __project_name_pascal__DescriptionUpdatedEvent {
   string id = 1;
   string description = 2;
   optional string updatedAt = 3;
 }
 
 // Evento emitido cuando se renombra
-message __project_name_camel__RenamedEvent {
+message __project_name_pascal__RenamedEvent {
   string id = 1;
   string oldName = 2;
   string newName = 3;

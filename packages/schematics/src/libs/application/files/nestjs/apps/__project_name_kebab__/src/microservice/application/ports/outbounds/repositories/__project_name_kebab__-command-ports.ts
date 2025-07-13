@@ -3,7 +3,7 @@ import { __project_name_pascal__Entity } from 'apps/__project_name_kebab__/src/m
 /**
  * 🔹 Puerto de salida para creación de __project_name_pascal__Entity
  */
-export abstract class Create__project_name_camel__Port {
+export abstract class Create__project_name_pascal__Port {
   abstract create(
     entity: __project_name_pascal__Entity
   ): Promise<__project_name_pascal__Entity>
@@ -12,13 +12,13 @@ export abstract class Create__project_name_camel__Port {
 /**
  * 🔹 Puerto de salida para actualización de __project_name_pascal__Entity
  */
-export abstract class Update__project_name_camel__Port {
+export abstract class Update__project_name_pascal__Port {
   abstract update(entity: __project_name_pascal__Entity): Promise<void>
 }
 
 /**
  * 🔹 Puerto de salida para eliminación de __project_name_pascal__Entity
  */
-export abstract class Delete__project_name_camel__Port {
+export abstract class Delete__project_name_pascal__Port {
   abstract delete(id: string): Promise<void>
 }

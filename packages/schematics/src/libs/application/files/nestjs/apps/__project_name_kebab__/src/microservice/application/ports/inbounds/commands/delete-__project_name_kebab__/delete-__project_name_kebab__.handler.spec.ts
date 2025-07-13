@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/unbound-method */
 import { Test, TestingModule } from '@nestjs/testing'
 import { Delete__project_name_camel__Handler } from './delete-__project_name_kebab__.handler'
-import { Delete__project_name_camel__Command } from './delete-__project_name_kebab__.command'
-import { Delete__project_name_camel__Port } from 'apps/__project_name_kebab__/src/microservice/application/ports/outbounds/repositories/__project_name_kebab__-command-ports'
+import { Delete__project_name_pascal__Command } from './delete-__project_name_kebab__.command'
+import { Delete__project_name_pascal__Port } from 'apps/__project_name_kebab__/src/microservice/application/ports/outbounds/repositories/__project_name_kebab__-command-ports'
 import { Get__project_name_camel__ByIdPort } from 'apps/__project_name_kebab__/src/microservice/application/ports/outbounds/repositories/__project_name_kebab__-query-ports'
 import { NotFoundException } from '@nestjs/common'
 import { __project_name_camel__Entity } from 'apps/__project_name_kebab__/src/microservice/domain/entities/__project_name_kebab__.entity'
 
 describe('Delete__project_name_camel__Handler', () => {
   let handler: Delete__project_name_camel__Handler
-  let deletePort: jest.Mocked<Delete__project_name_camel__Port>
+  let deletePort: jest.Mocked<Delete__project_name_pascal__Port>
   let getByIdPort: jest.Mocked<Get__project_name_camel__ByIdPort>
 
   beforeEach(async () => {
@@ -17,7 +17,7 @@ describe('Delete__project_name_camel__Handler', () => {
       providers: [
         Delete__project_name_camel__Handler,
         {
-          provide: Delete__project_name_camel__Port,
+          provide: Delete__project_name_pascal__Port,
           useValue: { delete: jest.fn() }
         },
         {
@@ -28,7 +28,7 @@ describe('Delete__project_name_camel__Handler', () => {
     }).compile()
 
     handler = module.get(Delete__project_name_camel__Handler)
-    deletePort = module.get(Delete__project_name_camel__Port)
+    deletePort = module.get(Delete__project_name_pascal__Port)
     getByIdPort = module.get(Get__project_name_camel__ByIdPort)
   })
 
@@ -53,7 +53,7 @@ describe('Delete__project_name_camel__Handler', () => {
       getByIdPort.getById.mockResolvedValue(existingEntity)
       deletePort.delete.mockResolvedValue(undefined)
 
-      const command = new Delete__project_name_camel__Command(
+      const command = new Delete__project_name_pascal__Command(
         __project_name_camel__Id
       )
 
@@ -72,7 +72,7 @@ describe('Delete__project_name_camel__Handler', () => {
       const nonExistentId = '__project_name_camel__-no-existe'
       getByIdPort.getById.mockResolvedValue(null)
 
-      const command = new Delete__project_name_camel__Command(nonExistentId)
+      const command = new Delete__project_name_pascal__Command(nonExistentId)
 
       // Act & Assert
       await expect(handler.execute(command)).rejects.toThrow(NotFoundException)
@@ -87,7 +87,7 @@ describe('Delete__project_name_camel__Handler', () => {
       const repositoryError = new Error('Database connection failed')
       getByIdPort.getById.mockRejectedValue(repositoryError)
 
-      const command = new Delete__project_name_camel__Command(
+      const command = new Delete__project_name_pascal__Command(
         __project_name_camel__Id
       )
 
@@ -114,7 +114,7 @@ describe('Delete__project_name_camel__Handler', () => {
       const deleteError = new Error('Delete operation failed')
       deletePort.delete.mockRejectedValue(deleteError)
 
-      const command = new Delete__project_name_camel__Command(
+      const command = new Delete__project_name_pascal__Command(
         __project_name_camel__Id
       )
 

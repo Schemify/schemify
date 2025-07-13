@@ -15,11 +15,12 @@ export function generateNameVariants(
   const screamingSnake = snake.toUpperCase()
 
   return {
-    [`${prefix}_kebab`]: normalized,
-    [`${prefix}_camel`]: camel,
-    [`${prefix}_pascal`]: pascal,
-    [`${prefix}_snake`]: snake,
-    [`${prefix}_screaming`]: screamingSnake
+    // Si prefix = "project" y normalized = "my-service"
+    [`${prefix}_kebab`]: normalized, // project_kebab: "my-service"
+    [`${prefix}_camel`]: camel, // project_camel: "myService"
+    [`${prefix}_pascal`]: pascal, // project_pascal: "MyService"
+    [`${prefix}_snake`]: snake, // project_snake: "my_service"
+    [`${prefix}_screaming`]: screamingSnake // project_screaming: "MY_SERVICE"
   }
 }
 

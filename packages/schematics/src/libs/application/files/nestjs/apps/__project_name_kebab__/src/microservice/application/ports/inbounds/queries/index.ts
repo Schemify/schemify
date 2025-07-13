@@ -13,11 +13,11 @@
  * @Module({
  *   providers: [...QueryHandlers],
  * })
- * export class __project_name_camel__Module {}
+ * export class __project_name_pascal__Module {}
  * ```
  *
  * Incluye:
- * - GetAll__project_name_camel__Query / Handler
+ * - GetAll__project_name_pascal__Query / Handler
  * - Get__project_name_camel__ByIdQuery / Handler
  * - Get__project_name_camel__ByCursorQuery / Handler
  */

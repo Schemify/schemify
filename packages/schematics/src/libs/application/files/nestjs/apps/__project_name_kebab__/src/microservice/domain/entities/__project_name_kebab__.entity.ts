@@ -1,33 +1,3 @@
-/**
- * __project_name_pascal__Entity
- * -----------------------------------------------------------------------------
- * Esta clase representa la **entidad raíz del agregado** (Aggregate Root)
- * en el contexto del dominio de "__project_name_pascal__".
- *
- * Forma parte central de la arquitectura DDD, encapsulando:
- *  - Estado (mediante value objects y propiedades internas)
- *  - Comportamiento (métodos como `create`, `update`)
- *  - Eventos de dominio (emitidos cuando hay cambios relevantes)
- *
- * 🔹 No conoce infraestructura (DB, ORM, HTTP)
- * 🔹 No expone datos primitivos directamente
- * 🔹 Se comunica mediante value objects y métodos bien tipados
- *
- * Esta entidad se usa dentro de:
- *  - Command Handlers (aplicación)
- *  - Repositorios (persistencia)
- *  - Servicios de dominio (si hay reglas transversales)
- *
- * Es construida mediante:
- *  - `create()` → cuando se crea un nuevo agregado (con eventos)
- *  - `fromPrimitives()` → cuando se reconstruye desde datos persistidos
- *
- * Es convertida a plano por:
- *  - `toPrimitives()` → para persistencia, serialización o transporte
- *
- * 🧠 Regla general: La entidad define lo que es **válido** en el dominio.
- */
-
 import { AggregateRoot } from '@nestjs/cqrs'
 import { v4 as uuidv4 } from 'uuid'
 
@@ -38,10 +8,6 @@ import { __project_name_pascal__CreatedEvent } from '../events/__project_name_ke
 import { __project_name_pascal__RenamedEvent } from '../events/__project_name_kebab__-renamed.event'
 import { __project_name_pascal__DescriptionUpdatedEvent } from '../events/__project_name_kebab__-description-updated.event'
 
-/**
- * Representa los campos actualizables de un __project_name_pascal__.
- * Usado en métodos como `update()`, command handlers y DTOs.
- */
 export type __project_name_pascal__UpdateProps = {
   name?: string
   description?: string
@@ -84,7 +50,7 @@ export class __project_name_pascal__Entity extends AggregateRoot {
 
   /**
    * Método fábrica para crear una nueva entidad con sus reglas e invariantes.
-   * Dispara un evento de dominio __project_name_pascal__CreatedEvent.
+   * Dispara un evento de dominio __project_name_camel__CreatedEvent.
    */
   static create(input: {
     name: string
@@ -99,7 +65,7 @@ export class __project_name_pascal__Entity extends AggregateRoot {
       updatedAt: now
     })
 
-    entity.apply(new __project_name_pascal__CreatedEvent(entity))
+    entity.apply(new __project_name_camel__CreatedEvent(entity))
 
     return entity
   }

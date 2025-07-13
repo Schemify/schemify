@@ -7,7 +7,7 @@ import { GrpcMethod } from '@nestjs/microservices'
 
 import { __project_name_snake__ } from '@proto'
 
-import { Create__project_name_camel__Command } from 'apps/__project_name_kebab__/src/microservice/application/ports/inbounds/commands'
+import { Create__project_name_pascal__Command } from 'apps/__project_name_kebab__/src/microservice/application/ports/inbounds/commands'
 
 import { __project_name_pascal__Mapper } from 'apps/__project_name_kebab__/src/microservice/infrastructure/mappers/__project_name_kebab__.mapper'
 
@@ -22,15 +22,15 @@ export class Create__project_name_camel__GrpcController {
 
   @GrpcMethod('__project_name_camel__Service', 'create__project_name_camel__')
   async create__project_name_camel__(
-    request: __project_name_snake__.Create__project_name_camel__Dto
-  ): Promise<__project_name_snake__.__project_name_camel__> {
-    const command = new Create__project_name_camel__Command(
+    request: __project_name_snake__.Create__project_name_pascal__Dto
+  ): Promise<__project_name_snake__.__project_name_pascal__> {
+    const command = new Create__project_name_pascal__Command(
       request.name,
       request.description
     )
 
     const entity = await this.commandBus.execute<
-      Create__project_name_camel__Command,
+      Create__project_name_pascal__Command,
       __project_name_pascal__Entity
     >(command)
 

@@ -1,5 +1,5 @@
 /**
- * GetAll__project_name_camel__Query
+ * GetAll__project_name_pascal__Query
  * -----------------------------------------------------------------------------
  * Query de lectura (CQRS) para obtener todos los registros `__project_name_camel__Entity`.
  *
@@ -11,6 +11,6 @@
 
 import { IQuery } from '@nestjs/cqrs'
 
-export class GetAll__project_name_camel__Query implements IQuery {
+export class GetAll__project_name_pascal__Query implements IQuery {
   constructor() {}
 }

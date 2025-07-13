@@ -13,33 +13,33 @@ package __project_name_snake__;
 
 //
 // ================================
-//   📦 Servicio __project_name_camel__Service
+//   📦 Servicio __project_name_pascal__Service
 // ================================
 //
-// Contratos de comunicación entre el __project_name_camel__ y el servidor
+// Contratos de comunicación entre el __project_name_pascal__ y el servidor
 // para la gestión de ejemplos en la aplicación.
 //
-service __project_name_camel__Service {
+service __project_name_pascal__Service {
   // * Crear un nuevo ejemplo
-  rpc create__project_name_camel__(Create__project_name_camel__Dto) returns (__project_name_camel__) {}
+  rpc create__project_name_pascal__(Create__project_name_pascal__Dto) returns (__project_name_pascal__) {}
 
   // * Obtener todos los ejemplos (no paginado)
-  rpc getAll__project_name_camel__(__project_name_camel__Empty) returns (__project_name_camel__List) {}
+  rpc getAll__project_name_pascal__(__project_name_pascal__Empty) returns (__project_name_pascal__List) {}
 
   // * Obtener un ejemplo por ID
-  rpc get__project_name_camel__ById(Get__project_name_camel__ByIdDto) returns (__project_name_camel__) {}
+  rpc get__project_name_pascal__ById(Get__project_name_pascal__ByIdDto) returns (__project_name_pascal__) {}
 
   // * Actualizar un ejemplo existente
-  rpc update__project_name_camel__(Update__project_name_camel__Dto) returns (__project_name_camel__) {}
+  rpc update__project_name_pascal__(Update__project_name_pascal__Dto) returns (__project_name_pascal__) {}
 
   // * Eliminar un ejemplo por ID
-  rpc delete__project_name_camel__(Get__project_name_camel__ByIdDto) returns (__project_name_camel__Empty) {}
+  rpc delete__project_name_pascal__(Get__project_name_pascal__ByIdDto) returns (__project_name_pascal__Empty) {}
 
   // * Obtener ejemplos paginados (clásico page + limit)
-//   rpc getPaginated__project_name_camel__(PaginationRequest) returns (Paginated__project_name_camel__) {}
+//   rpc getPaginated__project_name_pascal__(PaginationRequest) returns (Paginated__project_name_pascal__) {}
 
   // * Soporte para scroll infinito (cursor-based pagination)
-  rpc get__project_name_camel__ByCursor(CursorPaginationRequest) returns (CursorPaginated__project_name_camel__) {}
+  rpc get__project_name_pascal__ByCursor(CursorPaginationRequest) returns (CursorPaginated__project_name_pascal__) {}
 }
 
 //
@@ -49,22 +49,22 @@ service __project_name_camel__Service {
 //
 
 // ! Mensaje vacío (común en operaciones sin payload)
-message __project_name_camel__Empty {}
+message __project_name_pascal__Empty {}
 
 // * Crear nuevo ejemplo
-message Create__project_name_camel__Dto {
+message Create__project_name_pascal__Dto {
   string name = 1;
   optional string description = 2;
 }
 
 // * Actualizar un ejemplo
-message Update__project_name_camel__Dto {
+message Update__project_name_pascal__Dto {
   string id = 1;
-  Update__project_name_camel__Data __project_name_camel__ = 2;
+  Update__project_name_pascal__Data __project_name_pascal__ = 2;
 }
 
 // * Obtener un ejemplo por su ID
-message Get__project_name_camel__ByIdDto {
+message Get__project_name_pascal__ByIdDto {
   string id = 1;
 }
 
@@ -87,40 +87,40 @@ message CursorPaginationRequest {
 //
 
 // * Lista de múltiples ejemplos (no paginada)
-message __project_name_camel__List {
-  repeated __project_name_camel__ __project_name_camel__ = 1;
+message __project_name_pascal__List {
+  repeated __project_name_camel__ __project_name_pascal__ = 1;
 }
 
 // * Lista de ejemplos paginada con `page`/`limit`
-message Paginated__project_name_camel__ {
-  repeated __project_name_camel__ __project_name_camel__ = 1;
+message Paginated__project_name_pascal__ {
+  repeated __project_name_camel__ __project_name_pascal__ = 1;
   int32 total = 2;
   int32 page = 3;
   int32 limit = 4;
 }
 
 // * Lista de ejemplos paginada con `cursor`
-message CursorPaginated__project_name_camel__ {
-  repeated __project_name_camel__ __project_name_camel__= 1;
+message CursorPaginated__project_name_pascal__ {
+  repeated __project_name_camel__ __project_name_pascal__= 1;
   string nextCursor = 2;
   bool hasMore = 3;
 }
 
 //
 // ================================
-//   🧱 Modelo base: __project_name_camel__
+//   🧱 Modelo base: __project_name_pascal__
 // ================================
 //
 
 // * Representación base de un ejemplo
-message __project_name_camel__ {
+message __project_name_pascal__ {
   string id = 1;            // ! ID único del ejemplo
   string name = 2;
   optional string description = 3;
 }
 
 // * Datos anidados para actualizar un ejemplo
-message Update__project_name_camel__Data {
+message Update__project_name_pascal__Data {
   string name = 1;
   optional string description = 2;
 }
@@ -131,8 +131,8 @@ message Update__project_name_camel__Data {
 // ================================
 //
 
-// * Evento: __project_name_camel__ creado (Kafka)
-message __project_name_camel__CreatedEvent {
+// * Evento: __project_name_pascal__ creado (Kafka)
+message __project_name_pascal__CreatedEvent {
   string id = 1;
   string name = 2;
   optional string description = 3;

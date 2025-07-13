@@ -11,7 +11,7 @@
  * - Estos controladores NO implementan directamente `__project_name_camel__ServiceController`
  * - NestJS los vincula mediante reflexión con el decorador
  *   `@__project_name_camel__ServiceControllerMethods()`
- * - Se usan en el `__project_name_camel__Module` para ser registrados como `controllers`
+ * - Se usan en el `__project_name_pascal__Module` para ser registrados como `controllers`
  *
  * 📦 Exportación centralizada para facilitar su inclusión:
  *
@@ -21,7 +21,7 @@
  * @Module({
  *   controllers: [...GrpcCommandControllers]
  * })
- * export class __project_name_camel__Module {}
+ * export class __project_name_pascal__Module {}
  * ```
  */
 

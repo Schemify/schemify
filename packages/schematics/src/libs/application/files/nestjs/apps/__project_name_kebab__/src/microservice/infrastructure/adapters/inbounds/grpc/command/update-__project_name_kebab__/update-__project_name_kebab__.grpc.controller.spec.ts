@@ -4,7 +4,7 @@ import { CommandBus } from '@nestjs/cqrs'
 import { __project_name_snake__ } from '@proto'
 
 import { Update__project_name_camel__GrpcController } from './update__project_name_kebab__.grpc.controller'
-import { Update__project_name_camel__Command } from 'apps/__project_name_kebab__/src/microservice/application/ports/inbounds/commands'
+import { Update__project_name_pascal__Command } from 'apps/__project_name_kebab__/src/microservice/application/ports/inbounds/commands'
 import { __project_name_pascal__Mapper } from 'apps/__project_name_kebab__/src/microservice/infrastructure/mappers/__project_name_kebab__.mapper'
 import { __project_name_camel__Entity } from 'apps/__project_name_kebab__/src/microservice/domain/entities/__project_name_kebab__.entity'
 import { NameValueObject } from 'apps/__project_name_kebab__/src/microservice/domain/value-objects/name.value-object'
@@ -89,13 +89,13 @@ describe('Update__project_name_camel__GrpcController', () => {
       )
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
-        expect.any(Update__project_name_camel__Command)
+        expect.any(Update__project_name_pascal__Command)
       )
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(mapper.entityToProto).toHaveBeenCalledWith(mockEntity)
 
       const executedCommand = commandBus.execute.mock
-        .calls[0][0] as Update__project_name_camel__Command
+        .calls[0][0] as Update__project_name_pascal__Command
       expect(executedCommand.id).toBe(request.id)
       expect(executedCommand.name).toBe(mockProps.name.value)
       expect(executedCommand.description).toBe(mockProps.description.value)
@@ -141,11 +141,11 @@ describe('Update__project_name_camel__GrpcController', () => {
       )
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
-        expect.any(Update__project_name_camel__Command)
+        expect.any(Update__project_name_pascal__Command)
       )
 
       const executedCommand = commandBus.execute.mock
-        .calls[0][0] as Update__project_name_camel__Command
+        .calls[0][0] as Update__project_name_pascal__Command
       expect(executedCommand.id).toBe(request.id)
       expect(executedCommand.name).toBe(mockProps.name.value)
       expect(executedCommand.description).toBeUndefined()
@@ -195,11 +195,11 @@ describe('Update__project_name_camel__GrpcController', () => {
       )
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
-        expect.any(Update__project_name_camel__Command)
+        expect.any(Update__project_name_pascal__Command)
       )
 
       const executedCommand = commandBus.execute.mock
-        .calls[0][0] as Update__project_name_camel__Command
+        .calls[0][0] as Update__project_name_pascal__Command
       expect(executedCommand.id).toBe(request.id)
       expect(executedCommand.name).toBe(mockProps.name.value)
       expect(executedCommand.description).toBe(mockProps.description.value)
@@ -255,7 +255,7 @@ describe('Update__project_name_camel__GrpcController', () => {
       )
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
-        expect.any(Update__project_name_camel__Command)
+        expect.any(Update__project_name_pascal__Command)
       )
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(mapper.entityToProto).not.toHaveBeenCalled()
@@ -329,7 +329,7 @@ describe('Update__project_name_camel__GrpcController', () => {
       )
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
-        expect.any(Update__project_name_camel__Command)
+        expect.any(Update__project_name_pascal__Command)
       )
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(mapper.entityToProto).toHaveBeenCalledWith(mockEntity)
@@ -373,11 +373,11 @@ describe('Update__project_name_camel__GrpcController', () => {
       )
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
-        expect.any(Update__project_name_camel__Command)
+        expect.any(Update__project_name_pascal__Command)
       )
 
       const executedCommand = commandBus.execute.mock
-        .calls[0][0] as Update__project_name_camel__Command
+        .calls[0][0] as Update__project_name_pascal__Command
       expect(executedCommand.id).toBe(request.id)
       expect(executedCommand.name).toBe(mockProps.name.value)
       expect(executedCommand.description).toBeUndefined()

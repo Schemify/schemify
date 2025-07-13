@@ -16,8 +16,8 @@ Este directorio contiene la integración de **Prisma ORM** dentro del microservi
 ├── prisma.module.ts             → Módulo NestJS que expone el servicio Prisma
 ├── prisma.service.ts            → __project_name_camel__ Prisma extendido y gestionado por NestJS
 └── 📁 repositories
-    ├── 📁 read/                  → Implementaciones del `__project_name_camel__QueryRepository`
-    └── 📁 write/                 → Implementaciones del `__project_name_camel__CommandRepository`
+    ├── 📁 read/                  → Implementaciones del `__project_name_pascal__QueryRepository`
+    └── 📁 write/                 → Implementaciones del `__project_name_pascal__CommandRepository`
 ```
 
 ## ⚙️ prisma.service.ts
@@ -71,7 +71,7 @@ Contiene implementaciones específicas para consultas de solo lectura:
 * `find__project_name_kebab__-by-id.prisma.repository.ts`
 * `find__project_name_kebab__-by-cursor.prisma.repository.ts`
 
-Cada clase implementa `__project_name_camel__QueryRepository`, y solo los métodos requeridos para ese caso de uso (seguimos **CQRS**).
+Cada clase implementa `__project_name_pascal__QueryRepository`, y solo los métodos requeridos para ese caso de uso (seguimos **CQRS**).
 
 ### 📁 `repositories/write/`
 
@@ -81,7 +81,7 @@ Contiene implementaciones de escritura:
 * `update__project_name_kebab__.prisma.repository.ts`
 * `delete__project_name_kebab__.prisma.repository.ts`
 
-Estas clases implementan `__project_name_camel__CommandRepository`.
+Estas clases implementan `__project_name_pascal__CommandRepository`.
 
 ## ✅ ¿Por qué dividir en read/write?
 
@@ -95,11 +95,11 @@ Separar lectura y escritura permite desacoplar responsabilidades, optimizar quer
 En la capa de aplicación (commands y queries):
 
 ```ts
-@QueryHandler(GetAll__project_name_camel__Query)
+@QueryHandler(GetAll__project_name_pascal__Query)
 export class GetAll__project_name_camel__Handler {
   constructor(
-    @Inject('__project_name_camel__QueryRepository')
-    private readonly repository: __project_name_camel__QueryRepository
+    @Inject('__project_name_pascal__QueryRepository')
+    private readonly repository: __project_name_pascal__QueryRepository
   ) {}
 }
 ```
@@ -130,8 +130,8 @@ export class GetAll__project_name_camel__Handler {
 1. Configura `prisma.service.ts`
 2. Registra el módulo en `InfrastructureModule`
 3. Implementa tus `Read` y `Write` repositories por separado
-4. Usa `@Inject('__project_name_camel__QueryRepository')` desde queries
-5. Usa `@Inject('__project_name_camel__CommandRepository')` desde commands
+4. Usa `@Inject('__project_name_pascal__QueryRepository')` desde queries
+5. Usa `@Inject('__project_name_pascal__CommandRepository')` desde commands
 
 ---
 

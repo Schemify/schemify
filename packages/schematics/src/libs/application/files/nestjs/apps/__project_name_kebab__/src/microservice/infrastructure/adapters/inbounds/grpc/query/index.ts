@@ -5,7 +5,7 @@
  * de lectura (`Query`) para el agregado `__project_name_camel__`.
  *
  * Cada controlador maneja un único endpoint gRPC del servicio definido en el `.proto`.
- * Se usa en el `__project_name_camel__Module` para registrar los controladores de lectura gRPC.
+ * Se usa en el `__project_name_pascal__Module` para registrar los controladores de lectura gRPC.
  *
  * ❗ Importante:
  * - No se debe usar `implements __project_name_camel__ServiceController` ya que estos controladores
@@ -20,7 +20,7 @@
  * @Module({
  *   controllers: [...GrpcQueryControllers]
  * })
- * export class __project_name_camel__Module {}
+ * export class __project_name_pascal__Module {}
  * ```
  */
 

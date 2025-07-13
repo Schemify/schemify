@@ -15,13 +15,13 @@ import { __project_name_pascal__Mapper } from 'apps/__project_name_kebab__/src/m
 
 // Puertos (abstract classes)
 import {
-  Create__project_name_camel__Port,
-  Update__project_name_camel__Port,
-  Delete__project_name_camel__Port
+  Create__project_name_pascal__Port,
+  Update__project_name_pascal__Port,
+  Delete__project_name_pascal__Port
 } from 'apps/__project_name_kebab__/src/microservice/application/ports/outbounds/repositories/__project_name_kebab__-command-ports'
 
 import {
-  GetAll__project_name_camel__Port,
+  GetAll__project_name_pascal__Port,
   Get__project_name_camel__ByIdPort,
   Get__project_name_camel__WithCursorPort
 } from 'apps/__project_name_kebab__/src/microservice/application/ports/outbounds/repositories/__project_name_kebab__-query-ports'
@@ -47,15 +47,15 @@ import {
 
     // Command ports
     {
-      provide: Create__project_name_camel__Port,
+      provide: Create__project_name_pascal__Port,
       useClass: Create__project_name_camel__PrismaRepository
     },
     {
-      provide: Update__project_name_camel__Port,
+      provide: Update__project_name_pascal__Port,
       useClass: Update__project_name_camel__PrismaRepository
     },
     {
-      provide: Delete__project_name_camel__Port,
+      provide: Delete__project_name_pascal__Port,
       useClass: Delete__project_name_camel__PrismaRepository
     },
 
@@ -65,7 +65,7 @@ import {
       useClass: Get__project_name_camel__ByIdPrismaRepository
     },
     {
-      provide: GetAll__project_name_camel__Port,
+      provide: GetAll__project_name_pascal__Port,
       useClass: GetAll__project_name_camel__PrismaRepository
     },
     {
@@ -74,11 +74,11 @@ import {
     }
   ],
   exports: [
-    Create__project_name_camel__Port,
-    Update__project_name_camel__Port,
-    Delete__project_name_camel__Port,
+    Create__project_name_pascal__Port,
+    Update__project_name_pascal__Port,
+    Delete__project_name_pascal__Port,
     Get__project_name_camel__ByIdPort,
-    GetAll__project_name_camel__Port,
+    GetAll__project_name_pascal__Port,
     Get__project_name_camel__WithCursorPort,
     PrismaService
   ]

@@ -27,7 +27,7 @@ export class Get__project_name_camel__ByCursorGrpcController {
   )
   async get__project_name_camel__ByCursor(
     request: __project_name_snake__.CursorPaginationRequest
-  ): Promise<__project_name_snake__.CursorPaginated__project_name_camel__> {
+  ): Promise<__project_name_snake__.CursorPaginated__project_name_pascal__> {
     const query = new Get__project_name_camel__ByCursorQuery({
       afterId: request.afterId,
       limit: request.limit

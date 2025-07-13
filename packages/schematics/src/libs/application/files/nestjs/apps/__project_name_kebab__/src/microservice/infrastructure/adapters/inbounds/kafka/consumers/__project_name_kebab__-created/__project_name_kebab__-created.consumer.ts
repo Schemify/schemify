@@ -37,7 +37,7 @@ export class __project_name_camel__CreatedConsumer {
 
     try {
       const event =
-        envelope.payload as __project_name_snake___events.__project_name_camel__CreatedEvent
+        envelope.payload as __project_name_snake___events.__project_name_pascal__CreatedEvent
 
       const query = new Get__project_name_camel__ByIdQuery({ id: event.id })
 
@@ -46,7 +46,7 @@ export class __project_name_camel__CreatedConsumer {
       await this.printConsoleUseCase.execute(result)
     } catch (error) {
       this.logger.error(
-        '❌ Failed to process __project_name_camel__CreatedEvent',
+        '❌ Failed to process __project_name_pascal__CreatedEvent',
         {
           error: error instanceof Error ? error.message : error,
           stack: error instanceof Error ? error.stack : undefined,

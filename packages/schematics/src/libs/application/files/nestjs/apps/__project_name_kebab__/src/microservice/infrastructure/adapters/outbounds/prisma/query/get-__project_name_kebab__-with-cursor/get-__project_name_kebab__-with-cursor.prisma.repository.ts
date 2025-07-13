@@ -19,7 +19,7 @@ export class Get__project_name_camel__WithCursorPrismaRepository
   ) {}
 
   async getWithCursor(cursor?: string, limit: number = 10) {
-    const results = await this.prisma.__project_name_camel__.findMany({
+    const results = await this.prisma.__project_name_pascal__.findMany({
       take: limit + 1,
       ...(cursor && { cursor: { id: cursor }, skip: 1 }),
       orderBy: { id: 'asc' }

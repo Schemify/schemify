@@ -8,13 +8,13 @@ import { __project_name_pascal__Entity } from 'apps/__project_name_kebab__/src/m
 import { PrismaService } from 'apps/__project_name_kebab__/src/microservice/infrastructure/adapters/outbounds/prisma/prisma.service'
 
 // ✅ Puerto de salida (dominio)
-import { Get__project_name_camel__ByIdPort } from 'apps/__project_name_kebab__/src/microservice/application/ports/outbounds/repositories/__project_name_kebab__-query-ports'
+import { Get__project_name_pascal__ByIdPort } from 'apps/__project_name_kebab__/src/microservice/application/ports/outbounds/repositories/__project_name_kebab__-query-ports'
 
 import { __project_name_pascal__Mapper } from 'apps/__project_name_kebab__/src/microservice/infrastructure/mappers/__project_name_kebab__.mapper'
 
 @Injectable()
 export class Get__project_name_camel__ByIdPrismaRepository
-  implements Get__project_name_camel__ByIdPort
+  implements Get__project_name_pascal__ByIdPort
 {
   constructor(
     private readonly prisma: PrismaService,
@@ -22,7 +22,7 @@ export class Get__project_name_camel__ByIdPrismaRepository
   ) {}
 
   async getById(id: string): Promise<__project_name_pascal__Entity | null> {
-    const result = await this.prisma.__project_name_camel__.findUnique({
+    const result = await this.prisma.__project_name_pascal__.findUnique({
       where: { id }
     })
 

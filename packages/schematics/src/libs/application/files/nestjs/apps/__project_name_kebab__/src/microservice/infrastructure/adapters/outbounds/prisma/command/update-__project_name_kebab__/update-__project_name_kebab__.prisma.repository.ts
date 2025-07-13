@@ -8,16 +8,16 @@ import { __project_name_pascal__Entity } from 'apps/__project_name_kebab__/src/m
 import { PrismaService } from 'apps/__project_name_kebab__/src/microservice/infrastructure/adapters/outbounds/prisma/prisma.service'
 
 // ✅ Adaptador de salida (infraestructura)
-import { Update__project_name_camel__Port } from 'apps/__project_name_kebab__/src/microservice/application/ports/outbounds/repositories/__project_name_kebab__-command-ports'
+import { Update__project_name_pascal__Port } from 'apps/__project_name_kebab__/src/microservice/application/ports/outbounds/repositories/__project_name_kebab__-command-ports'
 
 @Injectable()
 export class Update__project_name_camel__PrismaRepository
-  implements Update__project_name_camel__Port
+  implements Update__project_name_pascal__Port
 {
   constructor(private readonly prisma: PrismaService) {}
 
   async update(entity: __project_name_pascal__Entity): Promise<void> {
-    await this.prisma.__project_name_camel__.update({
+    await this.prisma.__project_name_pascal__.update({
       where: { id: entity.id },
       data: {
         name: entity.props.name.value,

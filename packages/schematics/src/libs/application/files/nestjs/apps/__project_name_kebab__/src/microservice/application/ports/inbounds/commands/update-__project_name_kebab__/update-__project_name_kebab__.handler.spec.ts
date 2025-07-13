@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/unbound-method */
 import { Test, TestingModule } from '@nestjs/testing'
 import { Update__project_name_camel__Handler } from './update__project_name_kebab__.handler'
-import { Update__project_name_camel__Command } from './update__project_name_kebab__.command'
+import { Update__project_name_pascal__Command } from './update__project_name_kebab__.command'
 import { Get__project_name_camel__ByIdPort } from 'apps/__project_name_kebab__/src/microservice/application/ports/outbounds/repositories/__project_name_kebab__-query-ports'
-import { Update__project_name_camel__Port } from 'apps/__project_name_kebab__/src/microservice/application/ports/outbounds/repositories/__project_name_kebab__-command-ports'
+import { Update__project_name_pascal__Port } from 'apps/__project_name_kebab__/src/microservice/application/ports/outbounds/repositories/__project_name_kebab__-command-ports'
 import { __project_name_camel__Entity } from '@__project_name_camel__/microservice/domain/entities/__project_name_camel__.entity'
 import { NotFoundException } from '@nestjs/common'
 
 describe('Update__project_name_camel__Handler', () => {
   let handler: Update__project_name_camel__Handler
   let getByIdPort: jest.Mocked<Get__project_name_camel__ByIdPort>
-  let updatePort: jest.Mocked<Update__project_name_camel__Port>
+  let updatePort: jest.Mocked<Update__project_name_pascal__Port>
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -21,7 +21,7 @@ describe('Update__project_name_camel__Handler', () => {
           useValue: { getById: jest.fn() }
         },
         {
-          provide: Update__project_name_camel__Port,
+          provide: Update__project_name_pascal__Port,
           useValue: { update: jest.fn() }
         }
       ]
@@ -29,7 +29,7 @@ describe('Update__project_name_camel__Handler', () => {
 
     handler = module.get(Update__project_name_camel__Handler)
     getByIdPort = module.get(Get__project_name_camel__ByIdPort)
-    updatePort = module.get(Update__project_name_camel__Port)
+    updatePort = module.get(Update__project_name_pascal__Port)
   })
 
   afterEach(() => {
@@ -57,7 +57,7 @@ describe('Update__project_name_camel__Handler', () => {
       getByIdPort.getById.mockResolvedValue(existingEntity)
       updatePort.update.mockResolvedValue(undefined)
 
-      const command = new Update__project_name_camel__Command(
+      const command = new Update__project_name_pascal__Command(
         __project_name_camel__Id,
         'Nuevo Nombre',
         'Nueva Descripción'
@@ -80,7 +80,7 @@ describe('Update__project_name_camel__Handler', () => {
       const nonExistentId = '__project_name_camel__-no-existe'
       getByIdPort.getById.mockResolvedValue(null)
 
-      const command = new Update__project_name_camel__Command(
+      const command = new Update__project_name_pascal__Command(
         nonExistentId,
         'Nuevo Nombre',
         'Nueva Descripción'
@@ -111,7 +111,7 @@ describe('Update__project_name_camel__Handler', () => {
       getByIdPort.getById.mockResolvedValue(existingEntity)
       updatePort.update.mockResolvedValue(undefined)
 
-      const command = new Update__project_name_camel__Command(
+      const command = new Update__project_name_pascal__Command(
         __project_name_camel__Id,
         'Solo Nombre'
       )
@@ -132,7 +132,7 @@ describe('Update__project_name_camel__Handler', () => {
       const repositoryError = new Error('Database connection failed')
       getByIdPort.getById.mockRejectedValue(repositoryError)
 
-      const command = new Update__project_name_camel__Command(
+      const command = new Update__project_name_pascal__Command(
         __project_name_camel__Id,
         'Nuevo Nombre'
       )
@@ -160,7 +160,7 @@ describe('Update__project_name_camel__Handler', () => {
       const updateError = new Error('Update operation failed')
       updatePort.update.mockRejectedValue(updateError)
 
-      const command = new Update__project_name_camel__Command(
+      const command = new Update__project_name_pascal__Command(
         __project_name_camel__Id,
         'Nuevo Nombre'
       )

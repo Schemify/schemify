@@ -9,7 +9,7 @@ generator client {
 }
 
 // ! This error is expected, as the Prisma schema is not yet generated.
-model __project_name_camel__ {
+model __project_name_pascal__ {
 id          String   @id
 name        String
 description String?

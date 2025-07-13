@@ -4,7 +4,7 @@ import { QueryBus } from '@nestjs/cqrs'
 import { __project_name_snake__ } from '@proto'
 
 import { GetAll__project_name_camel__GrpcController } from './get-all__project_name_kebab__.grpc.controller'
-import { GetAll__project_name_camel__Query } from 'apps/__project_name_kebab__/src/microservice/application/ports/inbounds/queries'
+import { GetAll__project_name_pascal__Query } from 'apps/__project_name_kebab__/src/microservice/application/ports/inbounds/queries'
 import { __project_name_pascal__Mapper } from 'apps/__project_name_kebab__/src/microservice/infrastructure/mappers/__project_name_kebab__.mapper'
 import { __project_name_camel__Entity } from 'apps/__project_name_kebab__/src/microservice/domain/entities/__project_name_kebab__.entity'
 
@@ -87,14 +87,14 @@ describe('GetAll__project_name_camel__GrpcController', () => {
       // Assert
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(queryBus.execute).toHaveBeenCalledWith(
-        expect.any(GetAll__project_name_camel__Query)
+        expect.any(GetAll__project_name_pascal__Query)
       )
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(mapper.entityToProto).toHaveBeenCalledTimes(3)
 
       const executedQuery = queryBus.execute.mock
-        .calls[0][0] as GetAll__project_name_camel__Query
-      expect(executedQuery).toBeInstanceOf(GetAll__project_name_camel__Query)
+        .calls[0][0] as GetAll__project_name_pascal__Query
+      expect(executedQuery).toBeInstanceOf(GetAll__project_name_pascal__Query)
 
       expect(result).toEqual(expectedResponse)
       expect(result.__project_name_camel__).toHaveLength(3)
@@ -116,7 +116,7 @@ describe('GetAll__project_name_camel__GrpcController', () => {
       // Assert
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(queryBus.execute).toHaveBeenCalledWith(
-        expect.any(GetAll__project_name_camel__Query)
+        expect.any(GetAll__project_name_pascal__Query)
       )
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(mapper.entityToProto).not.toHaveBeenCalled()
@@ -137,7 +137,7 @@ describe('GetAll__project_name_camel__GrpcController', () => {
 
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(queryBus.execute).toHaveBeenCalledWith(
-        expect.any(GetAll__project_name_camel__Query)
+        expect.any(GetAll__project_name_pascal__Query)
       )
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(mapper.entityToProto).not.toHaveBeenCalled()
@@ -165,7 +165,7 @@ describe('GetAll__project_name_camel__GrpcController', () => {
 
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(queryBus.execute).toHaveBeenCalledWith(
-        expect.any(GetAll__project_name_camel__Query)
+        expect.any(GetAll__project_name_pascal__Query)
       )
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(mapper.entityToProto).toHaveBeenCalledWith(mockEntities[0])
@@ -197,7 +197,7 @@ describe('GetAll__project_name_camel__GrpcController', () => {
       // Assert
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(queryBus.execute).toHaveBeenCalledWith(
-        expect.any(GetAll__project_name_camel__Query)
+        expect.any(GetAll__project_name_pascal__Query)
       )
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(mapper.entityToProto).toHaveBeenCalledWith(mockEntity)
@@ -231,7 +231,7 @@ describe('GetAll__project_name_camel__GrpcController', () => {
       // Assert
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(queryBus.execute).toHaveBeenCalledWith(
-        expect.any(GetAll__project_name_camel__Query)
+        expect.any(GetAll__project_name_pascal__Query)
       )
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(mapper.entityToProto).toHaveBeenCalledWith(mockEntity)
@@ -276,7 +276,7 @@ describe('GetAll__project_name_camel__GrpcController', () => {
       // Assert
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(queryBus.execute).toHaveBeenCalledWith(
-        expect.any(GetAll__project_name_camel__Query)
+        expect.any(GetAll__project_name_pascal__Query)
       )
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(mapper.entityToProto).toHaveBeenCalledTimes(100)

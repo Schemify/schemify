@@ -4,7 +4,7 @@ import { CommandBus } from '@nestjs/cqrs'
 import { __project_name_snake__ } from '@proto'
 
 import { Create__project_name_camel__GrpcController } from './create-__project_name_kebab__.grpc.controller'
-import { Create__project_name_camel__Command } from 'apps/__project_name_kebab__/src/microservice/application/ports/inbounds/commands'
+import { Create__project_name_pascal__Command } from 'apps/__project_name_kebab__/src/microservice/application/ports/inbounds/commands'
 import { __project_name_pascal__Mapper } from 'apps/__project_name_kebab__/src/microservice/infrastructure/mappers/__project_name_kebab__.mapper'
 import { __project_name_camel__Entity } from 'apps/__project_name_kebab__/src/microservice/domain/entities/__project_name_kebab__.entity'
 
@@ -72,13 +72,13 @@ describe('Create__project_name_camel__GrpcController', () => {
       // Assert
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
-        expect.any(Create__project_name_camel__Command)
+        expect.any(Create__project_name_pascal__Command)
       )
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(mapper.entityToProto).toHaveBeenCalledWith(mockEntity)
 
       const executedCommand = commandBus.execute.mock
-        .calls[0][0] as Create__project_name_camel__Command
+        .calls[0][0] as Create__project_name_pascal__Command
       expect(executedCommand.name).toBe(request.name)
       expect(executedCommand.description).toBe(request.description)
 
@@ -111,11 +111,11 @@ describe('Create__project_name_camel__GrpcController', () => {
       // Assert
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
-        expect.any(Create__project_name_camel__Command)
+        expect.any(Create__project_name_pascal__Command)
       )
 
       const executedCommand = commandBus.execute.mock
-        .calls[0][0] as Create__project_name_camel__Command
+        .calls[0][0] as Create__project_name_pascal__Command
       expect(executedCommand.name).toBe(request.name)
       expect(executedCommand.description).toBeUndefined()
 
@@ -139,7 +139,7 @@ describe('Create__project_name_camel__GrpcController', () => {
 
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
-        expect.any(Create__project_name_camel__Command)
+        expect.any(Create__project_name_pascal__Command)
       )
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(mapper.entityToProto).not.toHaveBeenCalled()
@@ -170,7 +170,7 @@ describe('Create__project_name_camel__GrpcController', () => {
 
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
-        expect.any(Create__project_name_camel__Command)
+        expect.any(Create__project_name_pascal__Command)
       )
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(mapper.entityToProto).toHaveBeenCalledWith(mockEntity)
@@ -203,11 +203,11 @@ describe('Create__project_name_camel__GrpcController', () => {
       // Assert
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
-        expect.any(Create__project_name_camel__Command)
+        expect.any(Create__project_name_pascal__Command)
       )
 
       const executedCommand = commandBus.execute.mock
-        .calls[0][0] as Create__project_name_camel__Command
+        .calls[0][0] as Create__project_name_pascal__Command
       expect(executedCommand.name).toBe('')
       expect(executedCommand.description).toBe('')
 
@@ -242,11 +242,11 @@ describe('Create__project_name_camel__GrpcController', () => {
       // Assert
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
-        expect.any(Create__project_name_camel__Command)
+        expect.any(Create__project_name_pascal__Command)
       )
 
       const executedCommand = commandBus.execute.mock
-        .calls[0][0] as Create__project_name_camel__Command
+        .calls[0][0] as Create__project_name_pascal__Command
       expect(executedCommand.name).toBe('__project_name_camel__ @#$%^&*()')
       expect(executedCommand.description).toBe('Descripción con ñáéíóú')
 
