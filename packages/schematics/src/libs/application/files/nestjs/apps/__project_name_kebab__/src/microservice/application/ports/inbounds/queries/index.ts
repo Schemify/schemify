@@ -33,12 +33,12 @@ export * from './get-all-__project_name_kebab__/get-all-__project_name_kebab__.q
 // 📦 Arreglo centralizado de todos los handlers de queries
 import { GetAll__project_name_camel__Handler } from './get-all-__project_name_kebab__/get-all-__project_name_kebab__.handler'
 import { Get__project_name_camel__ByIdHandler } from './get-__project_name_kebab__-by-id/get-__project_name_kebab__-by-id.handler'
-import { Get__project_name_camel__ByCursorHandler } from './get-__project_name_kebab__-by-cursor/get-__project_name_kebab__-by-cursor.handler'
+import { Get__project_name_pascal__ByCursorHandler } from './get-__project_name_kebab__-by-cursor/get-__project_name_kebab__-by-cursor.handler'
 /**
  * Conjunto de handlers registrados por NestJS en el QueryBus
  */
 export const QueryHandlers = [
   GetAll__project_name_camel__Handler,
   Get__project_name_camel__ByIdHandler,
-  Get__project_name_camel__ByCursorHandler
+  Get__project_name_pascal__ByCursorHandler
 ]

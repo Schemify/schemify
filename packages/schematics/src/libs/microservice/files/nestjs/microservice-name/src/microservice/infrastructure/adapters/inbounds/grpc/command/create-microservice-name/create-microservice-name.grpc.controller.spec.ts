@@ -133,9 +133,9 @@ describe('CreateMicroserviceNameGrpcController', () => {
       commandBus.execute.mockRejectedValue(commandError)
 
       // Act & Assert
-      await expect(
-        controller.createMicroserviceName(request)
-      ).rejects.toThrow('Command execution failed')
+      await expect(controller.createMicroserviceName(request)).rejects.toThrow(
+        'Command execution failed'
+      )
 
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
@@ -164,9 +164,9 @@ describe('CreateMicroserviceNameGrpcController', () => {
       })
 
       // Act & Assert
-      await expect(
-        controller.createMicroserviceName(request)
-      ).rejects.toThrow('Mapping failed')
+      await expect(controller.createMicroserviceName(request)).rejects.toThrow(
+        'Mapping failed'
+      )
 
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
@@ -258,9 +258,7 @@ describe('CreateMicroserviceNameGrpcController', () => {
     it('should be properly instantiated with dependencies', () => {
       // Assert
       expect(controller).toBeDefined()
-      expect(controller).toBeInstanceOf(
-        CreateMicroserviceNameGrpcController
-      )
+      expect(controller).toBeInstanceOf(CreateMicroserviceNameGrpcController)
       expect(commandBus).toBeDefined()
       expect(mapper).toBeDefined()
     })
@@ -281,9 +279,7 @@ describe('CreateMicroserviceNameGrpcController', () => {
 
     it('should have correct method signature', () => {
       // Arrange
-      const method = (
-        request: microserviceName.CreateMicroserviceNameDto
-      ) => {
+      const method = (request: microserviceName.CreateMicroserviceNameDto) => {
         return controller.createMicroserviceName(request)
       }
 

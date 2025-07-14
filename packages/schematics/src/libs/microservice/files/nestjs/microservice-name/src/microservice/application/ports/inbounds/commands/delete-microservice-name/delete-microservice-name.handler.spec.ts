@@ -53,9 +53,7 @@ describe('DeleteMicroserviceNameHandler', () => {
       getByIdPort.getById.mockResolvedValue(existingEntity)
       deletePort.delete.mockResolvedValue(undefined)
 
-      const command = new DeleteMicroserviceNameCommand(
-        microserviceNameId
-      )
+      const command = new DeleteMicroserviceNameCommand(microserviceNameId)
 
       // Act
       await handler.execute(command)
@@ -87,9 +85,7 @@ describe('DeleteMicroserviceNameHandler', () => {
       const repositoryError = new Error('Database connection failed')
       getByIdPort.getById.mockRejectedValue(repositoryError)
 
-      const command = new DeleteMicroserviceNameCommand(
-        microserviceNameId
-      )
+      const command = new DeleteMicroserviceNameCommand(microserviceNameId)
 
       // Act & Assert
       await expect(handler.execute(command)).rejects.toThrow(
@@ -114,9 +110,7 @@ describe('DeleteMicroserviceNameHandler', () => {
       const deleteError = new Error('Delete operation failed')
       deletePort.delete.mockRejectedValue(deleteError)
 
-      const command = new DeleteMicroserviceNameCommand(
-        microserviceNameId
-      )
+      const command = new DeleteMicroserviceNameCommand(microserviceNameId)
 
       // Act & Assert
       await expect(handler.execute(command)).rejects.toThrow(

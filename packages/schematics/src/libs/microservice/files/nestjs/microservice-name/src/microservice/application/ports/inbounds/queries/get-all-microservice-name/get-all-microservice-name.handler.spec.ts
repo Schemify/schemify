@@ -22,9 +22,7 @@ describe('GetAllMicroserviceNameHandler', () => {
     }).compile()
 
     handler = module.get(GetAllMicroserviceNameHandler)
-    getAllMicroserviceNamePort = module.get(
-      GetAllMicroserviceNamePort
-    )
+    getAllMicroserviceNamePort = module.get(GetAllMicroserviceNamePort)
   })
 
   afterEach(() => {
@@ -48,9 +46,7 @@ describe('GetAllMicroserviceNameHandler', () => {
         })
       ]
 
-      getAllMicroserviceNamePort.getAll.mockResolvedValue(
-        mockMicroserviceNames
-      )
+      getAllMicroserviceNamePort.getAll.mockResolvedValue(mockMicroserviceNames)
 
       // Act
       const result = await handler.execute()
@@ -79,9 +75,7 @@ describe('GetAllMicroserviceNameHandler', () => {
     it('should propagate repository errors', async () => {
       // Arrange
       const repositoryError = new Error('Database connection failed')
-      getAllMicroserviceNamePort.getAll.mockRejectedValue(
-        repositoryError
-      )
+      getAllMicroserviceNamePort.getAll.mockRejectedValue(repositoryError)
 
       // Act & Assert
       await expect(handler.execute()).rejects.toThrow(
@@ -143,11 +137,10 @@ describe('GetAllMicroserviceNameHandler', () => {
 
     it('should preserve microserviceName entity properties', async () => {
       // Arrange
-      const microserviceNameWithAllProps =
-        MicroserviceNameEntity.create({
-          name: 'MicroserviceName Completo',
-          description: 'Descripción completa'
-        })
+      const microserviceNameWithAllProps = MicroserviceNameEntity.create({
+        name: 'MicroserviceName Completo',
+        description: 'Descripción completa'
+      })
 
       // Override the id for consistent testing
       Object.defineProperty(microserviceNameWithAllProps, 'id', {
@@ -155,9 +148,7 @@ describe('GetAllMicroserviceNameHandler', () => {
       })
 
       const mockMicroserviceNames = [microserviceNameWithAllProps]
-      getAllMicroserviceNamePort.getAll.mockResolvedValue(
-        mockMicroserviceNames
-      )
+      getAllMicroserviceNamePort.getAll.mockResolvedValue(mockMicroserviceNames)
 
       // Act
       const result = await handler.execute()
@@ -165,9 +156,7 @@ describe('GetAllMicroserviceNameHandler', () => {
       // Assert
       expect(result).toHaveLength(1)
       expect(result[0].id).toBe('test-id-123')
-      expect(result[0].props.name.value).toBe(
-        'MicroserviceName Completo'
-      )
+      expect(result[0].props.name.value).toBe('MicroserviceName Completo')
       expect(result[0].props.description?.value).toBe('Descripción completa')
       expect(result[0].props.createdAt).toBeInstanceOf(Date)
       expect(getAllMicroserviceNamePort.getAll).toHaveBeenCalledTimes(1)

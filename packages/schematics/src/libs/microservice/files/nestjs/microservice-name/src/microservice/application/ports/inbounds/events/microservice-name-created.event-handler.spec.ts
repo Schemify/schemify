@@ -33,15 +33,11 @@ describe('MicroserviceNameCreatedEventHandler', () => {
   describe('handle', () => {
     it('should handle MicroserviceNameCreatedEvent successfully', async () => {
       // Arrange
-      const microserviceNameEntity = MicroserviceNameEntity.create(
-        {
-          name: 'MicroserviceName Test',
-          description: 'Descripción del microserviceName'
-        }
-      )
-      const event = new MicroserviceNameCreatedEvent(
-        microserviceNameEntity
-      )
+      const microserviceNameEntity = MicroserviceNameEntity.create({
+        name: 'MicroserviceName Test',
+        description: 'Descripción del microserviceName'
+      })
+      const event = new MicroserviceNameCreatedEvent(microserviceNameEntity)
 
       useCase.execute.mockResolvedValue(undefined)
 
@@ -55,14 +51,10 @@ describe('MicroserviceNameCreatedEventHandler', () => {
 
     it('should handle event with microserviceName without description', async () => {
       // Arrange
-      const microserviceNameEntity = MicroserviceNameEntity.create(
-        {
-          name: 'MicroserviceName Sin Descripción'
-        }
-      )
-      const event = new MicroserviceNameCreatedEvent(
-        microserviceNameEntity
-      )
+      const microserviceNameEntity = MicroserviceNameEntity.create({
+        name: 'MicroserviceName Sin Descripción'
+      })
+      const event = new MicroserviceNameCreatedEvent(microserviceNameEntity)
 
       useCase.execute.mockResolvedValue(undefined)
 
@@ -78,15 +70,11 @@ describe('MicroserviceNameCreatedEventHandler', () => {
 
     it('should propagate use case errors', async () => {
       // Arrange
-      const microserviceNameEntity = MicroserviceNameEntity.create(
-        {
-          name: 'MicroserviceName Error',
-          description: 'Descripción'
-        }
-      )
-      const event = new MicroserviceNameCreatedEvent(
-        microserviceNameEntity
-      )
+      const microserviceNameEntity = MicroserviceNameEntity.create({
+        name: 'MicroserviceName Error',
+        description: 'Descripción'
+      })
+      const event = new MicroserviceNameCreatedEvent(microserviceNameEntity)
       const useCaseError = new Error('Kafka publishing failed')
 
       useCase.execute.mockRejectedValue(useCaseError)
@@ -107,12 +95,8 @@ describe('MicroserviceNameCreatedEventHandler', () => {
       const microserviceName2 = MicroserviceNameEntity.create({
         name: 'MicroserviceName 2'
       })
-      const event1 = new MicroserviceNameCreatedEvent(
-        microserviceName1
-      )
-      const event2 = new MicroserviceNameCreatedEvent(
-        microserviceName2
-      )
+      const event1 = new MicroserviceNameCreatedEvent(microserviceName1)
+      const event2 = new MicroserviceNameCreatedEvent(microserviceName2)
 
       useCase.execute.mockResolvedValue(undefined)
 
@@ -128,15 +112,11 @@ describe('MicroserviceNameCreatedEventHandler', () => {
 
     it('should preserve event properties correctly', async () => {
       // Arrange
-      const microserviceNameEntity = MicroserviceNameEntity.create(
-        {
-          name: 'MicroserviceName Verificación',
-          description: 'Verificar propiedades'
-        }
-      )
-      const event = new MicroserviceNameCreatedEvent(
-        microserviceNameEntity
-      )
+      const microserviceNameEntity = MicroserviceNameEntity.create({
+        name: 'MicroserviceName Verificación',
+        description: 'Verificar propiedades'
+      })
+      const event = new MicroserviceNameCreatedEvent(microserviceNameEntity)
 
       useCase.execute.mockResolvedValue(undefined)
 

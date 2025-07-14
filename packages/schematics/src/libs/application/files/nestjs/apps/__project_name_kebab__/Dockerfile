@@ -46,12 +46,12 @@ COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma
 COPY --from=builder /app/dist ./dist
 
 # ─── Copiar entrypoint ────────
-COPY scripts/entrypoint.sh ./entrypoint.sh
-RUN chmod +x ./entrypoint.sh
+COPY scripts/ ./scripts/
+RUN chmod +x ./*
 
 # ─── Healthcheck ────────
 HEALTHCHECK --interval=10s --timeout=3s --start-period=10s --retries=3 \
     CMD nc -z localhost ${SERVICE_PORT} || exit 1
 
 # ─── Entrypoint ────────
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["./scripts/entrypoint.sh"]

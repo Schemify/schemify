@@ -8,7 +8,7 @@ import { __project_name_pascal__Entity } from 'apps/__project_name_kebab__/src/m
 import { Get__project_name_pascal__WithCursorPort } from 'apps/__project_name_kebab__/src/microservice/application/ports/outbounds/repositories/__project_name_kebab__-query-ports'
 
 @QueryHandler(Get__project_name_pascal__ByCursorQuery)
-export class Ge__project_name_pascal__ByCursorHandler
+export class Get__project_name_pascal__ByCursorHandler
   implements IQueryHandler<Get__project_name_pascal__ByCursorQuery>
 {
   constructor(

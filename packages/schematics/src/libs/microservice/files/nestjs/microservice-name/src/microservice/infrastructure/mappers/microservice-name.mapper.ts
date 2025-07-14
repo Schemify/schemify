@@ -64,9 +64,7 @@ export class MicroserviceNameMapper {
    * @param entity Entidad completa del dominio
    * @returns Objeto plano (primitives)
    */
-  toPrimitives(
-    entity: MicroserviceNameEntity
-  ): MicroserviceNamePrimitives {
+  toPrimitives(entity: MicroserviceNameEntity): MicroserviceNamePrimitives {
     return entity.toPrimitives()
   }
 
@@ -79,9 +77,7 @@ export class MicroserviceNameMapper {
    * @param input Datos planos persistidos
    * @returns Instancia válida de `MicroserviceNameEntity`
    */
-  fromPrimitives(
-    input: MicroserviceNamePrimitives
-  ): MicroserviceNameEntity {
+  fromPrimitives(input: MicroserviceNamePrimitives): MicroserviceNameEntity {
     return new MicroserviceNameEntity(input.id, {
       name: NameValueObject.create(input.name),
       description: DescriptionValueObject.create(

@@ -40,9 +40,7 @@ describe('KafkaMicroserviceNameCreatedPublisher', () => {
         name: 'Test MicroserviceName',
         description: 'Test Description'
       })
-      const event = new MicroserviceNameCreatedEvent(
-        microserviceName
-      )
+      const event = new MicroserviceNameCreatedEvent(microserviceName)
 
       // Act
       await publisher.publish(event)
@@ -65,9 +63,7 @@ describe('KafkaMicroserviceNameCreatedPublisher', () => {
         name: 'Test MicroserviceName',
         description: 'Test Description'
       })
-      const event = new MicroserviceNameCreatedEvent(
-        microserviceName
-      )
+      const event = new MicroserviceNameCreatedEvent(microserviceName)
 
       // Act
       await publisher.publish(event)
@@ -100,9 +96,7 @@ describe('KafkaMicroserviceNameCreatedPublisher', () => {
         name: 'Test MicroserviceName',
         description: 'Test Description'
       })
-      const event = new MicroserviceNameCreatedEvent(
-        microserviceName
-      )
+      const event = new MicroserviceNameCreatedEvent(microserviceName)
 
       // Act
       await publisher.publish(event)
@@ -122,9 +116,7 @@ describe('KafkaMicroserviceNameCreatedPublisher', () => {
         name: 'Test MicroserviceName',
         description: 'Test Description'
       })
-      const event = new MicroserviceNameCreatedEvent(
-        microserviceName
-      )
+      const event = new MicroserviceNameCreatedEvent(microserviceName)
 
       // Act
       await publisher.publish(event)
@@ -142,9 +134,7 @@ describe('KafkaMicroserviceNameCreatedPublisher', () => {
         name: 'Test MicroserviceName',
         description: 'Test Description'
       })
-      const event = new MicroserviceNameCreatedEvent(
-        microserviceName
-      )
+      const event = new MicroserviceNameCreatedEvent(microserviceName)
 
       const kafkaError = new Error('Kafka connection failed')
       emitSpy.mockRejectedValueOnce(kafkaError)
@@ -162,9 +152,7 @@ describe('KafkaMicroserviceNameCreatedPublisher', () => {
         name: 'Test MicroserviceName',
         description: 'Test Description'
       })
-      const event = new MicroserviceNameCreatedEvent(
-        microserviceName
-      )
+      const event = new MicroserviceNameCreatedEvent(microserviceName)
 
       // Act
       await publisher.publish(event)
@@ -175,9 +163,7 @@ describe('KafkaMicroserviceNameCreatedPublisher', () => {
 
       expect(messageValue.payload).toBeDefined()
       expect(messageValue.payload.microserviceName).toBeDefined()
-      expect(messageValue.payload.microserviceName.id).toBe(
-        microserviceName.id
-      )
+      expect(messageValue.payload.microserviceName.id).toBe(microserviceName.id)
       expect(messageValue.payload.microserviceName.props.name.value).toBe(
         'Test MicroserviceName'
       )
@@ -192,9 +178,7 @@ describe('KafkaMicroserviceNameCreatedPublisher', () => {
         name: 'Test MicroserviceName',
         description: 'Test Description'
       })
-      const event = new MicroserviceNameCreatedEvent(
-        microserviceName
-      )
+      const event = new MicroserviceNameCreatedEvent(microserviceName)
 
       // Act
       await publisher.publish(event)
@@ -212,9 +196,7 @@ describe('KafkaMicroserviceNameCreatedPublisher', () => {
         name: 'Test MicroserviceName'
         // No description
       })
-      const event = new MicroserviceNameCreatedEvent(
-        microserviceName
-      )
+      const event = new MicroserviceNameCreatedEvent(microserviceName)
 
       // Act
       await publisher.publish(event)

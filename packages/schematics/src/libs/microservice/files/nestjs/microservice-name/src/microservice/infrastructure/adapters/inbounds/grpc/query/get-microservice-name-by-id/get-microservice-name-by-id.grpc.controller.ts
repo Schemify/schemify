@@ -17,10 +17,7 @@ export class GetMicroserviceNameByIdGrpcController {
     private readonly mapper: MicroserviceNameMapper
   ) {}
 
-  @GrpcMethod(
-    'MicroserviceNameService',
-    'getMicroserviceNameById'
-  )
+  @GrpcMethod('MicroserviceNameService', 'getMicroserviceNameById')
   async getMicroserviceNameById(
     request: microserviceName.GetMicroserviceNameByIdDto
   ): Promise<microserviceName.MicroserviceName> {

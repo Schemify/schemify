@@ -21,10 +21,7 @@ export class GetMicroserviceNameByCursorGrpcController {
     private readonly mapper: MicroserviceNameMapper
   ) {}
 
-  @GrpcMethod(
-    'MicroserviceNameService',
-    'getMicroserviceNameByCursor'
-  )
+  @GrpcMethod('MicroserviceNameService', 'getMicroserviceNameByCursor')
   async getMicroserviceNameByCursor(
     request: microserviceName.CursorPaginationRequest
   ): Promise<microserviceName.CursorPaginatedMicroserviceName> {

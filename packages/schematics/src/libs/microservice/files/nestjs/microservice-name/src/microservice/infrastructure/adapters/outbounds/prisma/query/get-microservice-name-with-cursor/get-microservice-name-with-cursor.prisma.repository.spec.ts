@@ -34,9 +34,7 @@ describe('GetMicroserviceNameWithCursorPrismaRepository', () => {
       ]
     }).compile()
 
-    repository = module.get(
-      GetMicroserviceNameWithCursorPrismaRepository
-    )
+    repository = module.get(GetMicroserviceNameWithCursorPrismaRepository)
     findManySpy = mockPrismaService.microserviceName.findMany
     fromPrimitivesSpy = mockMapper.fromPrimitives
   })

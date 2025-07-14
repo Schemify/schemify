@@ -23,7 +23,7 @@ export class Create__project_name_camel__PrismaRepository
   async create(
     entity: __project_name_pascal__Entity
   ): Promise<__project_name_pascal__Entity> {
-    const createdEntity = await this.prisma.__project_name_pascal__.create({
+    const createdEntity = await this.prisma.__project_name_camel__.create({
       data: {
         id: entity.id,
         name: entity.props.name.value,

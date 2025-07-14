@@ -37,9 +37,7 @@ describe('CreateMicroserviceNameHandler', () => {
     }).compile()
 
     handler = module.get(CreateMicroserviceNameHandler)
-    createMicroserviceNamePort = module.get(
-      CreateMicroserviceNamePort
-    )
+    createMicroserviceNamePort = module.get(CreateMicroserviceNamePort)
     eventPublisher = module.get(EventPublisher)
   })
 
@@ -80,10 +78,7 @@ describe('CreateMicroserviceNameHandler', () => {
 
     it('should throw error when invalid data is provided', async () => {
       // Arrange
-      const invalidCommand = new CreateMicroserviceNameCommand(
-        '',
-        'desc'
-      )
+      const invalidCommand = new CreateMicroserviceNameCommand('', 'desc')
 
       // Act & Assert
       await expect(handler.execute(invalidCommand)).rejects.toThrow()
@@ -99,9 +94,7 @@ describe('CreateMicroserviceNameHandler', () => {
         'desc'
       )
       const repositoryError = new Error('Database connection failed')
-      createMicroserviceNamePort.create.mockRejectedValue(
-        repositoryError
-      )
+      createMicroserviceNamePort.create.mockRejectedValue(repositoryError)
 
       // Act & Assert
       await expect(handler.execute(command)).rejects.toThrow(

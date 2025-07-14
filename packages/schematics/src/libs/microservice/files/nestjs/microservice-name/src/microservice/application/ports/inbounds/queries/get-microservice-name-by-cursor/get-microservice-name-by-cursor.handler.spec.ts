@@ -251,11 +251,10 @@ describe('GetMicroserviceNameByCursorHandler', () => {
 
     it('should preserve microserviceName entity properties in paginated results', async () => {
       // Arrange
-      const microserviceNameWithProps =
-        MicroserviceNameEntity.create({
-          name: 'MicroserviceName Test',
-          description: 'Descripción de prueba'
-        })
+      const microserviceNameWithProps = MicroserviceNameEntity.create({
+        name: 'MicroserviceName Test',
+        description: 'Descripción de prueba'
+      })
 
       // Override the id for consistent testing
       Object.defineProperty(microserviceNameWithProps, 'id', {
@@ -283,9 +282,7 @@ describe('GetMicroserviceNameByCursorHandler', () => {
       // Assert
       expect(result.items).toHaveLength(1)
       expect(result.items[0].id).toBe('test-id-123')
-      expect(result.items[0].props.name.value).toBe(
-        'MicroserviceName Test'
-      )
+      expect(result.items[0].props.name.value).toBe('MicroserviceName Test')
       expect(result.items[0].props.description?.value).toBe(
         'Descripción de prueba'
       )

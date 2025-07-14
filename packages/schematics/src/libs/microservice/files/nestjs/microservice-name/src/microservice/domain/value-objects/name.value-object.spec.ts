@@ -12,9 +12,7 @@ describe('NameValueObject', () => {
 
     it('should trim whitespace from name', () => {
       // Arrange & Act
-      const name = NameValueObject.create(
-        '  MicroserviceName con espacios  '
-      )
+      const name = NameValueObject.create('  MicroserviceName con espacios  ')
 
       // Assert
       expect(name.value).toBe('MicroserviceName con espacios')
@@ -129,9 +127,7 @@ describe('NameValueObject', () => {
 
     it('should handle unicode characters', () => {
       // Arrange & Act
-      const name = NameValueObject.create(
-        'MicroserviceName Español ñáéíóú'
-      )
+      const name = NameValueObject.create('MicroserviceName Español ñáéíóú')
 
       // Assert
       expect(name.value).toBe('MicroserviceName Español ñáéíóú')

@@ -60,13 +60,11 @@ describe('GetAllMicroserviceNameGrpcController', () => {
         })
       ]
 
-      const expectedProtoMicroserviceName = mockEntities.map(
-        (entity) => ({
-          id: entity.id,
-          name: entity.props.name.value,
-          description: entity.props.description?.value
-        })
-      )
+      const expectedProtoMicroserviceName = mockEntities.map((entity) => ({
+        id: entity.id,
+        name: entity.props.name.value,
+        description: entity.props.description?.value
+      }))
 
       const expectedResponse: microserviceName.MicroserviceName = {
         microserviceName: expectedProtoMicroserviceName
@@ -249,13 +247,11 @@ describe('GetAllMicroserviceNameGrpcController', () => {
         })
       )
 
-      const expectedProtoMicroserviceName = mockEntities.map(
-        (entity) => ({
-          id: entity.id,
-          name: entity.props.name.value,
-          description: entity.props.description?.value
-        })
-      )
+      const expectedProtoMicroserviceName = mockEntities.map((entity) => ({
+        id: entity.id,
+        name: entity.props.name.value,
+        description: entity.props.description?.value
+      }))
 
       const expectedResponse: microserviceName.MicroserviceName = {
         microserviceName: expectedProtoMicroserviceName
@@ -323,9 +319,7 @@ describe('GetAllMicroserviceNameGrpcController', () => {
     it('should be properly instantiated with dependencies', () => {
       // Assert
       expect(controller).toBeDefined()
-      expect(controller).toBeInstanceOf(
-        GetAllMicroserviceNameGrpcController
-      )
+      expect(controller).toBeInstanceOf(GetAllMicroserviceNameGrpcController)
       expect(queryBus).toBeDefined()
       expect(mapper).toBeDefined()
     })

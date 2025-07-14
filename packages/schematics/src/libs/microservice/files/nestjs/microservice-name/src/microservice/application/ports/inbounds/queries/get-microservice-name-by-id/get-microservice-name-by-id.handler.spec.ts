@@ -33,11 +33,10 @@ describe('GetMicroserviceNameByIdHandler', () => {
   describe('execute', () => {
     it('should return microserviceName when it exists', async () => {
       // Arrange
-      const existingMicroserviceName =
-        MicroserviceNameEntity.create({
-          name: 'MicroserviceName Existente',
-          description: 'Descripción del microserviceName'
-        })
+      const existingMicroserviceName = MicroserviceNameEntity.create({
+        name: 'MicroserviceName Existente',
+        description: 'Descripción del microserviceName'
+      })
 
       // Override the id for consistent testing
       Object.defineProperty(existingMicroserviceName, 'id', {
@@ -84,18 +83,15 @@ describe('GetMicroserviceNameByIdHandler', () => {
 
     it('should return microserviceName without description when not provided', async () => {
       // Arrange
-      const microserviceNameWithoutDesc =
-        MicroserviceNameEntity.create({
-          name: 'MicroserviceName Sin Descripción'
-        })
+      const microserviceNameWithoutDesc = MicroserviceNameEntity.create({
+        name: 'MicroserviceName Sin Descripción'
+      })
 
       Object.defineProperty(microserviceNameWithoutDesc, 'id', {
         value: 'microserviceName-sin-desc'
       })
 
-      queryRepository.getById.mockResolvedValue(
-        microserviceNameWithoutDesc
-      )
+      queryRepository.getById.mockResolvedValue(microserviceNameWithoutDesc)
 
       const query = new GetMicroserviceNameByIdQuery({
         id: 'microserviceName-sin-desc'
@@ -107,9 +103,7 @@ describe('GetMicroserviceNameByIdHandler', () => {
       // Assert
       expect(result).toBe(microserviceNameWithoutDesc)
       expect(result?.id).toBe('microserviceName-sin-desc')
-      expect(result?.props.name.value).toBe(
-        'MicroserviceName Sin Descripción'
-      )
+      expect(result?.props.name.value).toBe('MicroserviceName Sin Descripción')
       expect(result?.props.description?.value).toBe('')
       expect(queryRepository.getById).toHaveBeenCalledTimes(1)
     })
@@ -150,19 +144,16 @@ describe('GetMicroserviceNameByIdHandler', () => {
 
     it('should preserve all microserviceName entity properties', async () => {
       // Arrange
-      const microserviceNameWithAllProps =
-        MicroserviceNameEntity.create({
-          name: 'MicroserviceName Completo',
-          description: 'Descripción completa del microserviceName'
-        })
+      const microserviceNameWithAllProps = MicroserviceNameEntity.create({
+        name: 'MicroserviceName Completo',
+        description: 'Descripción completa del microserviceName'
+      })
 
       Object.defineProperty(microserviceNameWithAllProps, 'id', {
         value: 'microserviceName-completo-123'
       })
 
-      queryRepository.getById.mockResolvedValue(
-        microserviceNameWithAllProps
-      )
+      queryRepository.getById.mockResolvedValue(microserviceNameWithAllProps)
 
       const query = new GetMicroserviceNameByIdQuery({
         id: 'microserviceName-completo-123'

@@ -46,10 +46,9 @@ describe('GetMicroserviceNameByIdGrpcController', () => {
   describe('getMicroserviceNameById', () => {
     it('should return microserviceName successfully with all fields', async () => {
       // Arrange
-      const request: microserviceName.GetMicroserviceNameByIdDto =
-        {
-          id: 'test-id-123'
-        }
+      const request: microserviceName.GetMicroserviceNameByIdDto = {
+        id: 'test-id-123'
+      }
 
       const mockEntity = MicroserviceNameEntity.create({
         name: 'MicroserviceName Test',
@@ -85,10 +84,9 @@ describe('GetMicroserviceNameByIdGrpcController', () => {
 
     it('should return microserviceName without description', async () => {
       // Arrange
-      const request: microserviceName.GetMicroserviceNameByIdDto =
-        {
-          id: 'test-id-456'
-        }
+      const request: microserviceName.GetMicroserviceNameByIdDto = {
+        id: 'test-id-456'
+      }
 
       const mockEntity = MicroserviceNameEntity.create({
         name: 'MicroserviceName Sin Descripción'
@@ -120,18 +118,17 @@ describe('GetMicroserviceNameByIdGrpcController', () => {
 
     it('should handle query bus errors', async () => {
       // Arrange
-      const request: microserviceName.GetMicroserviceNameByIdDto =
-        {
-          id: 'non-existent-id'
-        }
+      const request: microserviceName.GetMicroserviceNameByIdDto = {
+        id: 'non-existent-id'
+      }
 
       const queryError = new Error('MicroserviceName not found')
       queryBus.execute.mockRejectedValue(queryError)
 
       // Act & Assert
-      await expect(
-        controller.getMicroserviceNameById(request)
-      ).rejects.toThrow('MicroserviceName not found')
+      await expect(controller.getMicroserviceNameById(request)).rejects.toThrow(
+        'MicroserviceName not found'
+      )
 
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(queryBus.execute).toHaveBeenCalledWith(
@@ -143,10 +140,9 @@ describe('GetMicroserviceNameByIdGrpcController', () => {
 
     it('should handle mapper errors', async () => {
       // Arrange
-      const request: microserviceName.GetMicroserviceNameByIdDto =
-        {
-          id: 'test-id-789'
-        }
+      const request: microserviceName.GetMicroserviceNameByIdDto = {
+        id: 'test-id-789'
+      }
 
       const mockEntity = MicroserviceNameEntity.create({
         name: 'MicroserviceName Mapper Error',
@@ -160,9 +156,9 @@ describe('GetMicroserviceNameByIdGrpcController', () => {
       })
 
       // Act & Assert
-      await expect(
-        controller.getMicroserviceNameById(request)
-      ).rejects.toThrow('Entity to proto mapping failed')
+      await expect(controller.getMicroserviceNameById(request)).rejects.toThrow(
+        'Entity to proto mapping failed'
+      )
 
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(queryBus.execute).toHaveBeenCalledWith(
@@ -174,18 +170,17 @@ describe('GetMicroserviceNameByIdGrpcController', () => {
 
     it('should handle empty id', async () => {
       // Arrange
-      const request: microserviceName.GetMicroserviceNameByIdDto =
-        {
-          id: ''
-        }
+      const request: microserviceName.GetMicroserviceNameByIdDto = {
+        id: ''
+      }
 
       const queryError = new Error('Invalid microserviceName ID')
       queryBus.execute.mockRejectedValue(queryError)
 
       // Act & Assert
-      await expect(
-        controller.getMicroserviceNameById(request)
-      ).rejects.toThrow('Invalid microserviceName ID')
+      await expect(controller.getMicroserviceNameById(request)).rejects.toThrow(
+        'Invalid microserviceName ID'
+      )
 
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(queryBus.execute).toHaveBeenCalledWith(
@@ -199,10 +194,9 @@ describe('GetMicroserviceNameByIdGrpcController', () => {
 
     it('should handle special characters in id', async () => {
       // Arrange
-      const request: microserviceName.GetMicroserviceNameByIdDto =
-        {
-          id: 'test-id-@#$%^&*()'
-        }
+      const request: microserviceName.GetMicroserviceNameByIdDto = {
+        id: 'test-id-@#$%^&*()'
+      }
 
       const mockEntity = MicroserviceNameEntity.create({
         name: 'MicroserviceName Especial',
@@ -237,10 +231,9 @@ describe('GetMicroserviceNameByIdGrpcController', () => {
     it('should handle very long id', async () => {
       // Arrange
       const longId = 'a'.repeat(1000)
-      const request: microserviceName.GetMicroserviceNameByIdDto =
-        {
-          id: longId
-        }
+      const request: microserviceName.GetMicroserviceNameByIdDto = {
+        id: longId
+      }
 
       const mockEntity = MicroserviceNameEntity.create({
         name: 'MicroserviceName ID Largo',
@@ -274,18 +267,17 @@ describe('GetMicroserviceNameByIdGrpcController', () => {
 
     it('should handle database timeout errors', async () => {
       // Arrange
-      const request: microserviceName.GetMicroserviceNameByIdDto =
-        {
-          id: 'timeout-id'
-        }
+      const request: microserviceName.GetMicroserviceNameByIdDto = {
+        id: 'timeout-id'
+      }
 
       const timeoutError = new Error('Database timeout')
       queryBus.execute.mockRejectedValue(timeoutError)
 
       // Act & Assert
-      await expect(
-        controller.getMicroserviceNameById(request)
-      ).rejects.toThrow('Database timeout')
+      await expect(controller.getMicroserviceNameById(request)).rejects.toThrow(
+        'Database timeout'
+      )
 
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(queryBus.execute).toHaveBeenCalledWith(
@@ -297,10 +289,9 @@ describe('GetMicroserviceNameByIdGrpcController', () => {
 
     it('should handle entity with special characters in name and description', async () => {
       // Arrange
-      const request: microserviceName.GetMicroserviceNameByIdDto =
-        {
-          id: 'special-chars-id'
-        }
+      const request: microserviceName.GetMicroserviceNameByIdDto = {
+        id: 'special-chars-id'
+      }
 
       const mockEntity = MicroserviceNameEntity.create({
         name: 'MicroserviceName @#$%^&*()',
@@ -337,9 +328,7 @@ describe('GetMicroserviceNameByIdGrpcController', () => {
     it('should be properly instantiated with dependencies', () => {
       // Assert
       expect(controller).toBeDefined()
-      expect(controller).toBeInstanceOf(
-        GetMicroserviceNameByIdGrpcController
-      )
+      expect(controller).toBeInstanceOf(GetMicroserviceNameByIdGrpcController)
       expect(queryBus).toBeDefined()
       expect(mapper).toBeDefined()
     })
@@ -360,9 +349,7 @@ describe('GetMicroserviceNameByIdGrpcController', () => {
 
     it('should have correct method signature', () => {
       // Arrange
-      const method = (
-        request: microserviceName.GetMicroserviceNameByIdDto
-      ) => {
+      const method = (request: microserviceName.GetMicroserviceNameByIdDto) => {
         return controller.getMicroserviceNameById(request)
       }
 

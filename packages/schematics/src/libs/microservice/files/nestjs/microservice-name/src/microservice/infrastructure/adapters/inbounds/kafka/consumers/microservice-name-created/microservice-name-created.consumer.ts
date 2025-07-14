@@ -17,8 +17,7 @@ export class MicroserviceNameCreatedConsumer {
   @EventPattern('microserviceName.created')
   async handle(@Payload() env: Envelope) {
     try {
-      if (env.type !== 'MicroserviceNameCreated' || env.version !== 1)
-        return
+      if (env.type !== 'MicroserviceNameCreated' || env.version !== 1) return
 
       const evt = env.payload as MicroserviceNameCreatedEvent
 

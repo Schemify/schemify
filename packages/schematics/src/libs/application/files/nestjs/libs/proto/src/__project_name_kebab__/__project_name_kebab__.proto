@@ -60,7 +60,7 @@ message Create__project_name_pascal__Dto {
 // * Actualizar un ejemplo
 message Update__project_name_pascal__Dto {
   string id = 1;
-  Update__project_name_pascal__Data __project_name_pascal__ = 2;
+  Update__project_name_pascal__Data __project_name_camel__ = 2;
 }
 
 // * Obtener un ejemplo por su ID
@@ -88,12 +88,12 @@ message CursorPaginationRequest {
 
 // * Lista de múltiples ejemplos (no paginada)
 message __project_name_pascal__List {
-  repeated __project_name_camel__ __project_name_pascal__ = 1;
+  repeated __project_name_pascal__ __project_name_camel__ = 1;
 }
 
 // * Lista de ejemplos paginada con `page`/`limit`
 message Paginated__project_name_pascal__ {
-  repeated __project_name_camel__ __project_name_pascal__ = 1;
+  repeated __project_name_pascal__ __project_name_camel__ = 1;
   int32 total = 2;
   int32 page = 3;
   int32 limit = 4;
@@ -101,7 +101,7 @@ message Paginated__project_name_pascal__ {
 
 // * Lista de ejemplos paginada con `cursor`
 message CursorPaginated__project_name_pascal__ {
-  repeated __project_name_camel__ __project_name_pascal__= 1;
+  repeated __project_name_pascal__ __project_name_camel__= 1;
   string nextCursor = 2;
   bool hasMore = 3;
 }

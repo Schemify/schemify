@@ -14,6 +14,6 @@ export class Delete__project_name_camel__PrismaRepository
   constructor(private readonly prisma: PrismaService) {}
 
   async delete(id: string): Promise<void> {
-    await this.prisma.__project_name_pascal__.delete({ where: { id } })
+    await this.prisma.__project_name_camel__.delete({ where: { id } })
   }
 }

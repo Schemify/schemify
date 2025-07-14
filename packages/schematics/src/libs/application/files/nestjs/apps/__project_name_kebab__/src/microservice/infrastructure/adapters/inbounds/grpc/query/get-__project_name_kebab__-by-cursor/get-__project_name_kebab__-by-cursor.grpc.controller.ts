@@ -11,10 +11,10 @@ import { CursorResult } from 'apps/__project_name_kebab__/src/libs/shared/interf
 
 import { __project_name_pascal__Entity } from 'apps/__project_name_kebab__/src/microservice/domain/entities/__project_name_kebab__.entity'
 
-import { Get__project_name_camel__ByCursorQuery } from 'apps/__project_name_kebab__/src/microservice/application/ports/inbounds/queries'
+import { Get__project_name_pascal__ByCursorQuery } from 'apps/__project_name_kebab__/src/microservice/application/ports/inbounds/queries'
 import { __project_name_pascal__Mapper } from 'apps/__project_name_kebab__/src/microservice/infrastructure/mappers/__project_name_kebab__.mapper'
 
-@Controller('__project_name_camel__Service')
+@Controller()
 export class Get__project_name_camel__ByCursorGrpcController {
   constructor(
     private readonly queryBus: QueryBus,
@@ -22,19 +22,19 @@ export class Get__project_name_camel__ByCursorGrpcController {
   ) {}
 
   @GrpcMethod(
-    '__project_name_camel__Service',
-    'get__project_name_camel__ByCursor'
+    __project_name_snake__.__project_name_screaming___SERVICE_NAME,
+    'get__project_name_pascal__ByCursor'
   )
   async get__project_name_camel__ByCursor(
     request: __project_name_snake__.CursorPaginationRequest
   ): Promise<__project_name_snake__.CursorPaginated__project_name_pascal__> {
-    const query = new Get__project_name_camel__ByCursorQuery({
+    const query = new Get__project_name_pascal__ByCursorQuery({
       afterId: request.afterId,
       limit: request.limit
     })
 
     const { items, nextCursor, hasMore } = await this.queryBus.execute<
-      Get__project_name_camel__ByCursorQuery,
+      Get__project_name_pascal__ByCursorQuery,
       CursorResult<__project_name_pascal__Entity>
     >(query)
 

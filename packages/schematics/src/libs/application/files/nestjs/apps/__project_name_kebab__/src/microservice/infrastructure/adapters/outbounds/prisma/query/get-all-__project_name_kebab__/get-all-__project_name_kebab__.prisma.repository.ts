@@ -21,7 +21,7 @@ export class GetAll__project_name_camel__PrismaRepository
   ) {}
 
   async getAll(): Promise<__project_name_pascal__Entity[]> {
-    const results = await this.prisma.__project_name_pascal__.findMany()
+    const results = await this.prisma.__project_name_camel__.findMany()
     return results.map((item) => this.mapper.fromPrimitives(item))
   }
 }

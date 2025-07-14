@@ -22,8 +22,8 @@ import {
 
 import {
   GetAll__project_name_pascal__Port,
-  Get__project_name_camel__ByIdPort,
-  Get__project_name_camel__WithCursorPort
+  Get__project_name_pascal__ByIdPort,
+  Get__project_name_pascal__WithCursorPort
 } from 'apps/__project_name_kebab__/src/microservice/application/ports/outbounds/repositories/__project_name_kebab__-query-ports'
 
 // Adaptadores de salida (implementaciones)
@@ -61,7 +61,7 @@ import {
 
     // Query ports
     {
-      provide: Get__project_name_camel__ByIdPort,
+      provide: Get__project_name_pascal__ByIdPort,
       useClass: Get__project_name_camel__ByIdPrismaRepository
     },
     {
@@ -69,7 +69,7 @@ import {
       useClass: GetAll__project_name_camel__PrismaRepository
     },
     {
-      provide: Get__project_name_camel__WithCursorPort,
+      provide: Get__project_name_pascal__WithCursorPort,
       useClass: Get__project_name_camel__WithCursorPrismaRepository
     }
   ],
@@ -77,9 +77,9 @@ import {
     Create__project_name_pascal__Port,
     Update__project_name_pascal__Port,
     Delete__project_name_pascal__Port,
-    Get__project_name_camel__ByIdPort,
+    Get__project_name_pascal__ByIdPort,
     GetAll__project_name_pascal__Port,
-    Get__project_name_camel__WithCursorPort,
+    Get__project_name_pascal__WithCursorPort,
     PrismaService
   ]
 })

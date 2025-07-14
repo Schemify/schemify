@@ -5,13 +5,13 @@ import { Injectable } from '@nestjs/common'
 import { PrismaService } from 'apps/__project_name_kebab__/src/microservice/infrastructure/adapters/outbounds/prisma/prisma.service'
 
 // ✅ Puerto de salida (dominio)
-import { Get__project_name_camel__WithCursorPort } from 'apps/__project_name_kebab__/src/microservice/application/ports/outbounds/repositories/__project_name_kebab__-query-ports'
+import { Get__project_name_pascal__WithCursorPort } from 'apps/__project_name_kebab__/src/microservice/application/ports/outbounds/repositories/__project_name_kebab__-query-ports'
 
 import { __project_name_pascal__Mapper } from 'apps/__project_name_kebab__/src/microservice/infrastructure/mappers/__project_name_kebab__.mapper'
 
 @Injectable()
 export class Get__project_name_camel__WithCursorPrismaRepository
-  implements Get__project_name_camel__WithCursorPort
+  implements Get__project_name_pascal__WithCursorPort
 {
   constructor(
     private readonly prisma: PrismaService,
@@ -19,7 +19,7 @@ export class Get__project_name_camel__WithCursorPrismaRepository
   ) {}
 
   async getWithCursor(cursor?: string, limit: number = 10) {
-    const results = await this.prisma.__project_name_pascal__.findMany({
+    const results = await this.prisma.__project_name_camel__.findMany({
       take: limit + 1,
       ...(cursor && { cursor: { id: cursor }, skip: 1 }),
       orderBy: { id: 'asc' }

@@ -135,10 +135,7 @@ export interface MicroserviceNameServiceController {
 
   createMicroserviceName(
     request: CreateMicroserviceNameDto
-  ):
-    | Promise<MicroserviceName>
-    | Observable<MicroserviceName>
-    | MicroserviceName
+  ): Promise<MicroserviceName> | Observable<MicroserviceName> | MicroserviceName
 
   /** Obtener todos los ejemplos (no paginado) */
 
@@ -153,19 +150,13 @@ export interface MicroserviceNameServiceController {
 
   getMicroserviceNameById(
     request: GetMicroserviceNameByIdDto
-  ):
-    | Promise<MicroserviceName>
-    | Observable<MicroserviceName>
-    | MicroserviceName
+  ): Promise<MicroserviceName> | Observable<MicroserviceName> | MicroserviceName
 
   /** Actualizar un ejemplo existente */
 
   updateMicroserviceName(
     request: UpdateMicroserviceNameDto
-  ):
-    | Promise<MicroserviceName>
-    | Observable<MicroserviceName>
-    | MicroserviceName
+  ): Promise<MicroserviceName> | Observable<MicroserviceName> | MicroserviceName
 
   /** Eliminar un ejemplo por ID */
 
@@ -222,5 +213,4 @@ export function MicroserviceNameServiceControllerMethods() {
   }
 }
 
-export const MICROSERVICE_NAME_SERVICE_NAME =
-  'MicroserviceNameService'
+export const MICROSERVICE_NAME_SERVICE_NAME = 'MicroserviceNameService'

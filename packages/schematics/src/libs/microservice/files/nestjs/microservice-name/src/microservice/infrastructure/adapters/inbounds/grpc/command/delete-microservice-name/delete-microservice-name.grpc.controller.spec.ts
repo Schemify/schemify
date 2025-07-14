@@ -36,10 +36,9 @@ describe('DeleteMicroserviceNameGrpcController', () => {
   describe('deleteMicroserviceName', () => {
     it('should delete microserviceName successfully', async () => {
       // Arrange
-      const request: microserviceName.GetMicroserviceNameByIdDto =
-        {
-          id: 'test-id-123'
-        }
+      const request: microserviceName.GetMicroserviceNameByIdDto = {
+        id: 'test-id-123'
+      }
 
       commandBus.execute.mockResolvedValue(undefined)
 
@@ -61,18 +60,17 @@ describe('DeleteMicroserviceNameGrpcController', () => {
 
     it('should handle command bus errors', async () => {
       // Arrange
-      const request: microserviceName.GetMicroserviceNameByIdDto =
-        {
-          id: 'non-existent-id'
-        }
+      const request: microserviceName.GetMicroserviceNameByIdDto = {
+        id: 'non-existent-id'
+      }
 
       const commandError = new Error('MicroserviceName not found')
       commandBus.execute.mockRejectedValue(commandError)
 
       // Act & Assert
-      await expect(
-        controller.deleteMicroserviceName(request)
-      ).rejects.toThrow('MicroserviceName not found')
+      await expect(controller.deleteMicroserviceName(request)).rejects.toThrow(
+        'MicroserviceName not found'
+      )
 
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
@@ -82,10 +80,9 @@ describe('DeleteMicroserviceNameGrpcController', () => {
 
     it('should handle empty ID', async () => {
       // Arrange
-      const request: microserviceName.GetMicroserviceNameByIdDto =
-        {
-          id: ''
-        }
+      const request: microserviceName.GetMicroserviceNameByIdDto = {
+        id: ''
+      }
 
       commandBus.execute.mockResolvedValue(undefined)
 
@@ -107,10 +104,9 @@ describe('DeleteMicroserviceNameGrpcController', () => {
 
     it('should handle UUID format ID', async () => {
       // Arrange
-      const request: microserviceName.GetMicroserviceNameByIdDto =
-        {
-          id: '550e8400-e29b-41d4-a716-446655440000'
-        }
+      const request: microserviceName.GetMicroserviceNameByIdDto = {
+        id: '550e8400-e29b-41d4-a716-446655440000'
+      }
 
       commandBus.execute.mockResolvedValue(undefined)
 
@@ -132,10 +128,9 @@ describe('DeleteMicroserviceNameGrpcController', () => {
 
     it('should handle special characters in ID', async () => {
       // Arrange
-      const request: microserviceName.GetMicroserviceNameByIdDto =
-        {
-          id: 'test-id-with-special-chars-@#$%^&*()'
-        }
+      const request: microserviceName.GetMicroserviceNameByIdDto = {
+        id: 'test-id-with-special-chars-@#$%^&*()'
+      }
 
       commandBus.execute.mockResolvedValue(undefined)
 
@@ -158,10 +153,9 @@ describe('DeleteMicroserviceNameGrpcController', () => {
     it('should handle very long ID', async () => {
       // Arrange
       const longId = 'a'.repeat(1000)
-      const request: microserviceName.GetMicroserviceNameByIdDto =
-        {
-          id: longId
-        }
+      const request: microserviceName.GetMicroserviceNameByIdDto = {
+        id: longId
+      }
 
       commandBus.execute.mockResolvedValue(undefined)
 
@@ -186,9 +180,7 @@ describe('DeleteMicroserviceNameGrpcController', () => {
     it('should be properly instantiated with dependencies', () => {
       // Assert
       expect(controller).toBeDefined()
-      expect(controller).toBeInstanceOf(
-        DeleteMicroserviceNameGrpcController
-      )
+      expect(controller).toBeInstanceOf(DeleteMicroserviceNameGrpcController)
       expect(commandBus).toBeDefined()
     })
 
@@ -201,9 +193,7 @@ describe('DeleteMicroserviceNameGrpcController', () => {
 
     it('should have correct method signature', () => {
       // Arrange
-      const method = (
-        request: microserviceName.GetMicroserviceNameByIdDto
-      ) => {
+      const method = (request: microserviceName.GetMicroserviceNameByIdDto) => {
         return controller.deleteMicroserviceName(request)
       }
 
@@ -216,10 +206,9 @@ describe('DeleteMicroserviceNameGrpcController', () => {
 
     it('should return empty object type', async () => {
       // Arrange
-      const request: microserviceName.GetMicroserviceNameByIdDto =
-        {
-          id: 'test-id'
-        }
+      const request: microserviceName.GetMicroserviceNameByIdDto = {
+        id: 'test-id'
+      }
 
       commandBus.execute.mockResolvedValue(undefined)
 

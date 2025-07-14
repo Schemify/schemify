@@ -22,7 +22,7 @@ export class Get__project_name_camel__ByIdPrismaRepository
   ) {}
 
   async getById(id: string): Promise<__project_name_pascal__Entity | null> {
-    const result = await this.prisma.__project_name_pascal__.findUnique({
+    const result = await this.prisma.__project_name_camel__.findUnique({
       where: { id }
     })
 

@@ -20,7 +20,10 @@ export class Create__project_name_camel__GrpcController {
     private readonly mapper: __project_name_pascal__Mapper
   ) {}
 
-  @GrpcMethod('__project_name_camel__Service', 'create__project_name_camel__')
+  @GrpcMethod(
+    __project_name_snake__.__project_name_screaming___SERVICE_NAME,
+    'create__project_name_pascal__'
+  )
   async create__project_name_camel__(
     request: __project_name_snake__.Create__project_name_pascal__Dto
   ): Promise<__project_name_snake__.__project_name_pascal__> {

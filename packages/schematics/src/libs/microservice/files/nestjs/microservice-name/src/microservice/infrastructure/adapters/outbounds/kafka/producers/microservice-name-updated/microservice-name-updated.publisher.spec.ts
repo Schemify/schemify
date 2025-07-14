@@ -23,10 +23,9 @@ describe('KafkaMicroserviceNameDescriptionUpdatedPublisher', () => {
       ]
     }).compile()
 
-    publisher =
-      module.get<KafkaMicroserviceNameDescriptionUpdatedPublisher>(
-        KafkaMicroserviceNameDescriptionUpdatedPublisher
-      )
+    publisher = module.get<KafkaMicroserviceNameDescriptionUpdatedPublisher>(
+      KafkaMicroserviceNameDescriptionUpdatedPublisher
+    )
     emitSpy = mockKafkaProducerService.emit
   })
 

@@ -55,8 +55,9 @@ export class UpdateMicroserviceNameHandler
   async execute(
     command: UpdateMicroserviceNameCommand
   ): Promise<MicroserviceNameEntity> {
-    const microserviceName =
-      await this.getMicroserviceNameByIdPort.getById(command.id)
+    const microserviceName = await this.getMicroserviceNameByIdPort.getById(
+      command.id
+    )
 
     if (!microserviceName) {
       throw new NotFoundException(

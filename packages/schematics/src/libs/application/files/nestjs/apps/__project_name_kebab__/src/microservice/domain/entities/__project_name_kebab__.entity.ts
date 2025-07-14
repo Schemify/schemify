@@ -43,7 +43,7 @@ export interface __project_name_pascal__Props {
 export class __project_name_pascal__Entity extends AggregateRoot {
   constructor(
     public readonly id: string,
-    public props: Readonly<__project_name_pascal__Props>
+    public props: __project_name_pascal__Props
   ) {
     super()
   }
@@ -65,23 +65,9 @@ export class __project_name_pascal__Entity extends AggregateRoot {
       updatedAt: now
     })
 
-    entity.apply(new __project_name_camel__CreatedEvent(entity))
+    entity.apply(new __project_name_pascal__CreatedEvent(entity))
 
     return entity
-  }
-
-  /**
-   * Devuelve una representación plana del estado de la entidad.
-   * Útil para persistencia o serialización.
-   */
-  toPrimitives(): __project_name_pascal__Primitives {
-    return {
-      id: this.id,
-      name: this.props.name.value,
-      description: this.props.description?.value,
-      createdAt: this.props.createdAt,
-      updatedAt: this.props.updatedAt
-    }
   }
 
   /**
@@ -89,7 +75,7 @@ export class __project_name_pascal__Entity extends AggregateRoot {
    * Solo aplica cambios si el valor realmente fue modificado.
    * Emite eventos por cada campo cambiado.
    */
-  update(input: __project_name_pascal__UpdateProps): void {
+  update(input: Partial<__project_name_pascal__UpdateProps>): void {
     const now = new Date()
     let changed = false
     const updated: __project_name_pascal__Props = { ...this.props }
@@ -135,5 +121,31 @@ export class __project_name_pascal__Entity extends AggregateRoot {
         }
       }
     }
+  }
+
+  /**
+   * Devuelve una representación plana del estado de la entidad.
+   * Útil para persistencia o serialización.
+   */
+  toPrimitives(): __project_name_pascal__Primitives {
+    return {
+      id: this.id,
+      name: this.props.name.value,
+      description: this.props.description?.value,
+      createdAt: this.props.createdAt,
+      updatedAt: this.props.updatedAt
+    }
+  }
+
+  static fromPrimitives(
+    data: __project_name_pascal__Primitives
+  ): __project_name_pascal__Entity {
+    return new __project_name_pascal__Entity(data.id, {
+      name: NameValueObject.create(data.name),
+      // TODO: Handle optional description
+      description: DescriptionValueObject.create(data.description!),
+      createdAt: data.createdAt,
+      updatedAt: data.updatedAt
+    })
   }
 }

@@ -69,13 +69,11 @@ describe('GetMicroserviceNameByCursorGrpcController', () => {
         hasMore: true
       }
 
-      const expectedProtoMicroserviceName = mockEntities.map(
-        (entity) => ({
-          id: entity.id,
-          name: entity.props.name.value,
-          description: entity.props.description?.value
-        })
-      )
+      const expectedProtoMicroserviceName = mockEntities.map((entity) => ({
+        id: entity.id,
+        name: entity.props.name.value,
+        description: entity.props.description?.value
+      }))
 
       const expectedResponse: microserviceName.CursorPaginatedMicroserviceName =
         {
@@ -94,8 +92,7 @@ describe('GetMicroserviceNameByCursorGrpcController', () => {
       })
 
       // Act
-      const result =
-        await controller.getMicroserviceNameByCursor(request)
+      const result = await controller.getMicroserviceNameByCursor(request)
 
       // Assert
       // eslint-disable-next-line @typescript-eslint/unbound-method
@@ -153,8 +150,7 @@ describe('GetMicroserviceNameByCursorGrpcController', () => {
       mapper.entityToProto.mockReturnValue(expectedProtoMicroserviceName)
 
       // Act
-      const result =
-        await controller.getMicroserviceNameByCursor(request)
+      const result = await controller.getMicroserviceNameByCursor(request)
 
       // Assert
       // eslint-disable-next-line @typescript-eslint/unbound-method
@@ -193,8 +189,7 @@ describe('GetMicroserviceNameByCursorGrpcController', () => {
       queryBus.execute.mockResolvedValue(mockCursorResult)
 
       // Act
-      const result =
-        await controller.getMicroserviceNameByCursor(request)
+      const result = await controller.getMicroserviceNameByCursor(request)
 
       // Assert
       // eslint-disable-next-line @typescript-eslint/unbound-method
@@ -247,8 +242,7 @@ describe('GetMicroserviceNameByCursorGrpcController', () => {
       mapper.entityToProto.mockReturnValue(expectedProtoMicroserviceName)
 
       // Act
-      const result =
-        await controller.getMicroserviceNameByCursor(request)
+      const result = await controller.getMicroserviceNameByCursor(request)
 
       // Assert
       // eslint-disable-next-line @typescript-eslint/unbound-method
@@ -346,13 +340,11 @@ describe('GetMicroserviceNameByCursorGrpcController', () => {
         hasMore: true
       }
 
-      const expectedProtoMicroserviceName = mockEntities.map(
-        (entity) => ({
-          id: entity.id,
-          name: entity.props.name.value,
-          description: entity.props.description?.value
-        })
-      )
+      const expectedProtoMicroserviceName = mockEntities.map((entity) => ({
+        id: entity.id,
+        name: entity.props.name.value,
+        description: entity.props.description?.value
+      }))
 
       const expectedResponse: microserviceName.CursorPaginatedMicroserviceName =
         {
@@ -371,8 +363,7 @@ describe('GetMicroserviceNameByCursorGrpcController', () => {
       })
 
       // Act
-      const result =
-        await controller.getMicroserviceNameByCursor(request)
+      const result = await controller.getMicroserviceNameByCursor(request)
 
       // Assert
       // eslint-disable-next-line @typescript-eslint/unbound-method
@@ -413,8 +404,7 @@ describe('GetMicroserviceNameByCursorGrpcController', () => {
       queryBus.execute.mockResolvedValue(mockCursorResult)
 
       // Act
-      const result =
-        await controller.getMicroserviceNameByCursor(request)
+      const result = await controller.getMicroserviceNameByCursor(request)
 
       // Assert
       // eslint-disable-next-line @typescript-eslint/unbound-method
@@ -457,9 +447,7 @@ describe('GetMicroserviceNameByCursorGrpcController', () => {
 
     it('should have correct method signature', () => {
       // Arrange
-      const method = (
-        request: microserviceName.CursorPaginationRequest
-      ) => {
+      const method = (request: microserviceName.CursorPaginationRequest) => {
         return controller.getMicroserviceNameByCursor(request)
       }
 

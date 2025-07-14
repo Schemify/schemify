@@ -84,9 +84,7 @@ describe('UpdateMicroserviceNameGrpcController', () => {
 
       // Assert
       // eslint-disable-next-line @typescript-eslint/unbound-method
-      expect(mapper.protoToProps).toHaveBeenCalledWith(
-        request.microserviceName
-      )
+      expect(mapper.protoToProps).toHaveBeenCalledWith(request.microserviceName)
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
         expect.any(UpdateMicroserviceNameCommand)
@@ -136,9 +134,7 @@ describe('UpdateMicroserviceNameGrpcController', () => {
 
       // Assert
       // eslint-disable-next-line @typescript-eslint/unbound-method
-      expect(mapper.protoToProps).toHaveBeenCalledWith(
-        request.microserviceName
-      )
+      expect(mapper.protoToProps).toHaveBeenCalledWith(request.microserviceName)
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
         expect.any(UpdateMicroserviceNameCommand)
@@ -190,9 +186,7 @@ describe('UpdateMicroserviceNameGrpcController', () => {
 
       // Assert
       // eslint-disable-next-line @typescript-eslint/unbound-method
-      expect(mapper.protoToProps).toHaveBeenCalledWith(
-        request.microserviceName
-      )
+      expect(mapper.protoToProps).toHaveBeenCalledWith(request.microserviceName)
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
         expect.any(UpdateMicroserviceNameCommand)
@@ -215,9 +209,9 @@ describe('UpdateMicroserviceNameGrpcController', () => {
       } as microserviceName.UpdateMicroserviceNameDto
 
       // Act & Assert
-      await expect(
-        controller.updateMicroserviceName(request)
-      ).rejects.toThrow('Falta el objeto microserviceName en el payload')
+      await expect(controller.updateMicroserviceName(request)).rejects.toThrow(
+        'Falta el objeto microserviceName en el payload'
+      )
 
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).not.toHaveBeenCalled()
@@ -245,14 +239,12 @@ describe('UpdateMicroserviceNameGrpcController', () => {
       commandBus.execute.mockRejectedValue(commandError)
 
       // Act & Assert
-      await expect(
-        controller.updateMicroserviceName(request)
-      ).rejects.toThrow('MicroserviceName not found')
+      await expect(controller.updateMicroserviceName(request)).rejects.toThrow(
+        'MicroserviceName not found'
+      )
 
       // eslint-disable-next-line @typescript-eslint/unbound-method
-      expect(mapper.protoToProps).toHaveBeenCalledWith(
-        request.microserviceName
-      )
+      expect(mapper.protoToProps).toHaveBeenCalledWith(request.microserviceName)
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
         expect.any(UpdateMicroserviceNameCommand)
@@ -277,14 +269,12 @@ describe('UpdateMicroserviceNameGrpcController', () => {
       })
 
       // Act & Assert
-      await expect(
-        controller.updateMicroserviceName(request)
-      ).rejects.toThrow('Invalid proto data')
+      await expect(controller.updateMicroserviceName(request)).rejects.toThrow(
+        'Invalid proto data'
+      )
 
       // eslint-disable-next-line @typescript-eslint/unbound-method
-      expect(mapper.protoToProps).toHaveBeenCalledWith(
-        request.microserviceName
-      )
+      expect(mapper.protoToProps).toHaveBeenCalledWith(request.microserviceName)
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).not.toHaveBeenCalled()
       // eslint-disable-next-line @typescript-eslint/unbound-method
@@ -319,14 +309,12 @@ describe('UpdateMicroserviceNameGrpcController', () => {
       })
 
       // Act & Assert
-      await expect(
-        controller.updateMicroserviceName(request)
-      ).rejects.toThrow('Entity to proto mapping failed')
+      await expect(controller.updateMicroserviceName(request)).rejects.toThrow(
+        'Entity to proto mapping failed'
+      )
 
       // eslint-disable-next-line @typescript-eslint/unbound-method
-      expect(mapper.protoToProps).toHaveBeenCalledWith(
-        request.microserviceName
-      )
+      expect(mapper.protoToProps).toHaveBeenCalledWith(request.microserviceName)
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
         expect.any(UpdateMicroserviceNameCommand)
@@ -368,9 +356,7 @@ describe('UpdateMicroserviceNameGrpcController', () => {
 
       // Assert
       // eslint-disable-next-line @typescript-eslint/unbound-method
-      expect(mapper.protoToProps).toHaveBeenCalledWith(
-        request.microserviceName
-      )
+      expect(mapper.protoToProps).toHaveBeenCalledWith(request.microserviceName)
       // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(commandBus.execute).toHaveBeenCalledWith(
         expect.any(UpdateMicroserviceNameCommand)
@@ -390,9 +376,7 @@ describe('UpdateMicroserviceNameGrpcController', () => {
     it('should be properly instantiated with dependencies', () => {
       // Assert
       expect(controller).toBeDefined()
-      expect(controller).toBeInstanceOf(
-        UpdateMicroserviceNameGrpcController
-      )
+      expect(controller).toBeInstanceOf(UpdateMicroserviceNameGrpcController)
 
       expect(commandBus).toBeDefined()
 
@@ -418,9 +402,7 @@ describe('UpdateMicroserviceNameGrpcController', () => {
 
     it('should have correct method signature', () => {
       // Arrange
-      const method = (
-        request: microserviceName.UpdateMicroserviceNameDto
-      ) => {
+      const method = (request: microserviceName.UpdateMicroserviceNameDto) => {
         return controller.updateMicroserviceName(request)
       }
 

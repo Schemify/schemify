@@ -57,11 +57,10 @@ export class GetMicroserviceNameByCursorHandler
   }> {
     const { afterId, limit } = query.payload
 
-    const result =
-      await this.getMicroserviceNameWithCursorPort.getWithCursor(
-        afterId,
-        limit
-      )
+    const result = await this.getMicroserviceNameWithCursorPort.getWithCursor(
+      afterId,
+      limit
+    )
 
     return {
       items: result.items,

@@ -47,9 +47,7 @@ export class DeleteMicroserviceNameHandler
    * @throws NotFoundException si el recurso no existe
    */
   async execute(command: DeleteMicroserviceNameCommand): Promise<void> {
-    const entity = await this.getMicroserviceNameByIdPort.getById(
-      command.id
-    )
+    const entity = await this.getMicroserviceNameByIdPort.getById(command.id)
 
     if (!entity) {
       throw new NotFoundException(

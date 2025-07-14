@@ -35,9 +35,7 @@ describe('MicroserviceNameEntity', () => {
       })
 
       // Assert
-      expect(entity.props.name.value).toBe(
-        'MicroserviceName Sin Descripción'
-      )
+      expect(entity.props.name.value).toBe('MicroserviceName Sin Descripción')
       expect(entity.props.description?.value).toBe('')
     })
 
@@ -153,9 +151,7 @@ describe('MicroserviceNameEntity', () => {
       const descEvent = events.find(
         (e) => e instanceof MicroserviceNameDescriptionUpdatedEvent
       )
-      expect(descEvent).toBeInstanceOf(
-        MicroserviceNameDescriptionUpdatedEvent
-      )
+      expect(descEvent).toBeInstanceOf(MicroserviceNameDescriptionUpdatedEvent)
     })
 
     it('should update both name and description', () => {
@@ -180,9 +176,7 @@ describe('MicroserviceNameEntity', () => {
         events.some((e) => e instanceof MicroserviceNameRenamedEvent)
       ).toBe(true)
       expect(
-        events.some(
-          (e) => e instanceof MicroserviceNameDescriptionUpdatedEvent
-        )
+        events.some((e) => e instanceof MicroserviceNameDescriptionUpdatedEvent)
       ).toBe(true)
     })
 
@@ -232,9 +226,7 @@ describe('MicroserviceNameEntity', () => {
         events.some((e) => e instanceof MicroserviceNameRenamedEvent)
       ).toBe(true)
       expect(
-        events.some(
-          (e) => e instanceof MicroserviceNameDescriptionUpdatedEvent
-        )
+        events.some((e) => e instanceof MicroserviceNameDescriptionUpdatedEvent)
       ).toBe(false)
     })
 
@@ -337,9 +329,7 @@ describe('MicroserviceNameEntity', () => {
       expect(events).toHaveLength(3) // 1 create + 1 rename + 1 description update
       expect(events[0]).toBeInstanceOf(MicroserviceNameCreatedEvent)
       expect(events[1]).toBeInstanceOf(MicroserviceNameRenamedEvent)
-      expect(events[2]).toBeInstanceOf(
-        MicroserviceNameDescriptionUpdatedEvent
-      )
+      expect(events[2]).toBeInstanceOf(MicroserviceNameDescriptionUpdatedEvent)
     })
   })
 })

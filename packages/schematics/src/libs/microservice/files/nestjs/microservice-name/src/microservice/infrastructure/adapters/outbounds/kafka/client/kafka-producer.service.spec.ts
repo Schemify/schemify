@@ -57,9 +57,7 @@ describe('KafkaProducerService', () => {
     it('should handle connection errors', async () => {
       // Arrange
       const connectionError = new Error('Connection failed')
-      mockMicroserviceNameKafka.connect.mockRejectedValue(
-        connectionError
-      )
+      mockMicroserviceNameKafka.connect.mockRejectedValue(connectionError)
 
       // Act & Assert
       await expect(service.onModuleInit()).rejects.toThrow('Connection failed')
@@ -138,9 +136,7 @@ describe('KafkaProducerService', () => {
       // Arrange
       service['ready'] = false
       const connectionError = new Error('Connection failed')
-      mockMicroserviceNameKafka.connect.mockRejectedValue(
-        connectionError
-      )
+      mockMicroserviceNameKafka.connect.mockRejectedValue(connectionError)
       const topic = 'test.topic'
       const payload = { key: 'test-key', value: 'test-value' }
 

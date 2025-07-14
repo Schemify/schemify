@@ -18,7 +18,10 @@ export class GetAll__project_name_camel__GrpcController {
     private readonly mapper: __project_name_pascal__Mapper
   ) {}
 
-  @GrpcMethod('__project_name_pascal__Service', 'getAll__project_name_pascal__')
+  @GrpcMethod(
+    __project_name_snake__.__project_name_screaming___SERVICE_NAME,
+    'getAll__project_name_pascal__'
+  )
   async getAll__project_name_camel__(): Promise<__project_name_snake__.__project_name_pascal__List> {
     const entities = await this.queryBus.execute<
       GetAll__project_name_pascal__Query,

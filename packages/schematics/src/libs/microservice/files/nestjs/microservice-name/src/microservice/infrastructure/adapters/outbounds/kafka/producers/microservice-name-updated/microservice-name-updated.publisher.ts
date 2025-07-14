@@ -15,21 +15,16 @@ export class KafkaMicroserviceNameDescriptionUpdatedPublisher
 {
   constructor(private readonly kafkaProducer: KafkaProducerService) {}
 
-  async publish(
-    event: MicroserviceNameDescriptionUpdatedEvent
-  ): Promise<void> {
+  async publish(event: MicroserviceNameDescriptionUpdatedEvent): Promise<void> {
     const message: Envelope<MicroserviceNameDescriptionUpdatedEvent> = {
       type: 'MicroserviceNameDescriptionUpdated',
       version: 1,
       payload: event
     }
 
-    await this.kafkaProducer.emit(
-      'microserviceName.description-updated',
-      {
-        key: event.id,
-        value: JSON.stringify(message)
-      }
-    )
+    await this.kafkaProducer.emit('microserviceName.description-updated', {
+      key: event.id,
+      value: JSON.stringify(message)
+    })
   }
 }

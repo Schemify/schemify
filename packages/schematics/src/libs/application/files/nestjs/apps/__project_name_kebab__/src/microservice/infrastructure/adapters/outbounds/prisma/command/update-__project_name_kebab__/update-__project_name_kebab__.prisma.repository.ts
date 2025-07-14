@@ -17,7 +17,7 @@ export class Update__project_name_camel__PrismaRepository
   constructor(private readonly prisma: PrismaService) {}
 
   async update(entity: __project_name_pascal__Entity): Promise<void> {
-    await this.prisma.__project_name_pascal__.update({
+    await this.prisma.__project_name_camel__.update({
       where: { id: entity.id },
       data: {
         name: entity.props.name.value,
