@@ -1,15 +1,26 @@
 #!/bin/bash
 
-# Smart entrypoint script for the __project_name_kebab__ microservice
+# Smart entrypoint script for a microservice
 # Detects the database state and automatically syncs Prisma migrations and compiles proto files
 
-echo "🚀 Starting __project_name_kebab__ microservice..."
+PROJECT_NAME=$1
+
+if [ -z "$PROJECT_NAME" ]; then
+    echo "❌ Error: Missing project name"
+    echo "Usage: ./entrypoint.sh <project_name_kebab>"
+    exit 1
+fi
+
+SCHEMA_PATH=apps/$PROJECT_NAME/prisma/schema.prisma
+MAIN_FILE=dist/apps/$PROJECT_NAME/src/main.js
+
+echo "🚀 Starting microservice: $PROJECT_NAME"
 
 # Detect auto-applied migrations
 detect_auto_migrations() {
-    echo "🔍 Checking for auto-applied migrations in the database..."
+    echo "🔍 Checking for auto-applied migrations..."
     
-    DB_MIGRATIONS=$(npx prisma migrate status --schema=./prisma/schema.prisma 2>&1 | grep "auto_init" || echo "")
+    DB_MIGRATIONS=$(npx prisma migrate status --schema=$SCHEMA_PATH 2>&1 | grep "auto_init" || echo "")
     
     if [ -n "$DB_MIGRATIONS" ]; then
         echo "⚠️ Auto-applied migrations detected"
@@ -25,37 +36,37 @@ detect_auto_migrations() {
 sync_migrations() {
     echo "🔄 Syncing local migrations with the database..."
     
-    if npx prisma migrate status --schema=./prisma/schema.prisma 2>&1 | grep -q "drift"; then
-        echo "⚠️ Drift detected between local and remote schema"
+    if npx prisma migrate status --schema=$SCHEMA_PATH 2>&1 | grep -q "drift"; then
+        echo "⚠️ Drift detected"
         
-        echo "📝 Generating drift synchronization migration..."
+        echo "📝 Generating synchronization migration..."
         npx prisma migrate diff \
             --from-empty \
-            --to-schema-datamodel ./prisma/schema.prisma \
+            --to-schema-datamodel $SCHEMA_PATH \
             --script > ./prisma/migrations/$(date +%Y%m%d%H%M%S)_sync_schema.sql 2>/dev/null || true
         
-        echo "✅ Synchronization migration created"
+        echo "✅ Sync migration created"
     else
         echo "✅ No drift detected"
     fi
 }
 
-# Sync Prisma schema with the database
+# Push schema to the database
 sync_schema() {
     echo "🔄 Pushing schema to the database..."
     
-    if npx prisma db push --accept-data-loss --skip-generate; then
-        echo "✅ Schema successfully pushed"
+    if npx prisma db push --schema=$SCHEMA_PATH --accept-data-loss --skip-generate; then
+        echo "✅ Schema pushed successfully"
     else
-        echo "⚠️ Failed to push schema, continuing..."
+        echo "⚠️ Schema push failed, continuing..."
     fi
 }
 
 # Generate Prisma client
 generate_prisma_client() {
-    echo "🔧 Generating Prisma client for __project_name_kebab__..."
-    npx prisma generate
-    echo "✅ Prisma client generated for __project_name_pascal__"
+    echo "🔧 Generating Prisma client for $PROJECT_NAME..."
+    npx prisma generate --schema=$SCHEMA_PATH
+    echo "✅ Prisma client generated"
 }
 
 # Compile .proto files
@@ -76,4 +87,4 @@ compile_proto_files
 
 # ─── Start the application ────────
 echo "🚀 Starting application..."
-exec node ./dist/apps/__project_name_kebab__/src/main.js
+exec node $MAIN_FILE

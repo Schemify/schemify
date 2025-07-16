@@ -1,6 +1,6 @@
 {
   "name": "@schemifyjs/types",
-  "version": "0.1.26",
+  "version": "0.1.27",
   "description": "Tipos compartidos entre los paquetes CLI y Core de SchemifyJS",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

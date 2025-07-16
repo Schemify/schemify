@@ -1,6 +1,6 @@
 {
   "name": "@schemifyjs/schematics",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "Reusable schematics for scaffolding SchemifyJS projects.",
   "type": "module",
   "main": "dist/index.js",

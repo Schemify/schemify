@@ -22,7 +22,7 @@ export class Update__project_name_camel__GrpcController {
     'update__project_name_pascal__'
   )
   async update__project_name_camel__(
-    request: __project_name_snake__.__project_name_pascal__Dto
+    request: __project_name_snake__.Update__project_name_pascal__Dto
   ): Promise<__project_name_snake__.__project_name_pascal__> {
     if (!request.__project_name_camel__) {
       throw new Error('Falta el objeto __project_name_camel__ en el payload')

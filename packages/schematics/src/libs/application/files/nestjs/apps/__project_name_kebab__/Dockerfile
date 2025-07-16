@@ -54,4 +54,4 @@ HEALTHCHECK --interval=10s --timeout=3s --start-period=10s --retries=3 \
     CMD nc -z localhost ${SERVICE_PORT} || exit 1
 
 # ─── Entrypoint ────────
-ENTRYPOINT ["./scripts/entrypoint.sh"]
+ENTRYPOINT ["./scripts/entrypoint.sh", "___project_name_kebab__"]

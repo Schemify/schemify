@@ -1,0 +1,138 @@
+# 🛠️ 1. Preparación de ambiente
+
+Este documento contiene los pasos necesarios para dejar listo el entorno de desarrollo del microservicio `__project_name_kebab__`.
+
+## 📦 1. Instalar dependencias
+
+Desde la raíz del monorepo, ejecutar:
+
+```bash
+npm install
+```
+
+## ⚙️ 2. Configurar variables de entorno
+
+### 📄 Archivo `docker/postgresql-__project_name_kebab__/.env.example`
+
+Contiene las variables de entorno necesarias para levantar el contenedor de PostgreSQL.
+
+```dotenv
+# Variables de conexión a PostgreSQL
+__project_name_screaming___DATABASE_NAME=__project_name_camel__
+__project_name_screaming___DATABASE_USER=__project_name_kebab___user
+__project_name_screaming___DATABASE_PASSWORD=__project_name_kebab___password_secure
+__project_name_screaming___DATABASE_PORT=5432
+```
+
+### 📄 Archivo `apps/__project_name_kebab__/.env.example`
+
+Contiene la configuración de ejecución local del microservicio.
+
+```dotenv
+# ========================================
+# CONFIGURACIÓN GLOBAL DEL PROYECTO
+# ========================================
+
+NODE_ENV=development
+LOG_LEVEL=debug
+
+# ========================================
+# CONFIGURACIÓN DEL MICROSERVICIO __project_name_screaming__
+# ========================================
+
+SERVICE_APP_NAME=__project_name_camel__-service
+__project_name_screaming___SERVICE_PORT=3000
+__project_name_screaming___GRPC_PORT=50051
+
+# ========================================
+# CONFIGURACIÓN DE BASE DE DATOS __project_name_screaming__
+# ========================================
+
+__project_name_screaming___DATABASE_NAME=__project_name_camel__
+__project_name_screaming___DATABASE_USER=__project_name_kebab___user
+__project_name_screaming___DATABASE_PASSWORD=__project_name_kebab___password_secure
+__project_name_screaming___DATABASE_PORT=5432
+__project_name_screaming___DATABASE_HOST=postgres-__project_name_kebab__
+
+__project_name_screaming___DATABASE_URL=postgresql://${__project_name_screaming___DATABASE_USER}:${__project_name_screaming___DATABASE_PASSWORD}@${__project_name_screaming___DATABASE_HOST}:5432/${__project_name_screaming___DATABASE_NAME}?schema=public
+
+# ========================================
+# CONFIGURACIÓN DE KAFKA
+# ========================================
+
+KAFKA_CLIENT_ID=__project_name_camel__-microservice
+KAFKA_GROUP_ID=__project_name_camel__-group
+KAFKA_BROKERS=kafka-1__project_name_kebab__:9092
+```
+
+> ⚠️ Renombrar ambos archivos `.env.example` a `.env` y personalizar.
+
+
+
+## 📊 3. Crear topics Kafka por defecto
+
+Ubicado en el script de inicialización Kafka:
+
+```bash
+docker/kafka-init/kafka-init-__project_name_kebab__.sh
+```
+
+### ✨ Script de creación de topics
+
+```bash
+#!/bin/bash
+
+echo "⏳ Waiting for Kafka to become ready..."
+
+until kafka-topics --bootstrap-server kafka-1__project_name_kebab__:9092 --list > /dev/null 2>&1; do
+  echo "⏳ Kafka not ready, retrying..."
+  sleep 5
+done
+
+echo "📝 Creating default topics for __project_name_kebab__..."
+
+kafka-topics --create --topic __project_name_kebab__.created \
+  --bootstrap-server kafka-1__project_name_kebab__:9092 \
+  --partitions 1 \
+  --replication-factor 1 \
+  --if-not-exists
+
+kafka-topics --create --topic __project_name_kebab__.description-updated \
+  --bootstrap-server kafka-1__project_name_kebab__:9092 \
+  --partitions 1 \
+  --replication-factor 1 \
+  --if-not-exists
+
+echo "📋 Available topics:"
+kafka-topics --list --bootstrap-server kafka-1__project_name_kebab__:9092
+
+echo "✅ Topics created successfully!"
+```
+
+> Para agregar nuevos topics, editar el mismo script repitiendo la instrucción `kafka-topics --create ...`.
+
+
+## 🧬 4. Generar Prisma Client
+
+Desde la raíz del proyecto:
+
+```bash
+npm run prisma:generate
+```
+
+Este comando compila el `schema.prisma` y genera el cliente tipado de Prisma para usar en `infrastructure/prisma/`.
+
+
+## 🛰️ 5. Compilar contratos gRPC
+
+Ejecutar:
+
+```bash
+npm run proto:generate
+```
+
+Esto compilará los archivos `.proto` ubicados en `proto/`, y generará los DTOs y controladores tipados utilizando `ts-proto`.
+
+---
+
+✅ Una vez completado este proceso, el microservicio está listo para ejecutarse en modo desarrollo o pruebas.

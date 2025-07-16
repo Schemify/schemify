@@ -16,7 +16,7 @@
 
 ## 📄 Descripción
 
-Este microservicio forma parte del ecosistema **Schemify**. Implementa una arquitectura moderna basada en:
+Este proyecto forma parte del ecosistema **Schemify**. Implementa una arquitectura moderna basada en:
 
 - NestJS + CQRS
 - Domain-Driven Design (DDD) + Hexagonal
@@ -25,114 +25,9 @@ Este microservicio forma parte del ecosistema **Schemify**. Implementa una arqui
 - Prisma ORM + PostgreSQL
 - Tests locales y de integración (testcontainers)
 
----
+### 📋 [Documentación](./doc/README.md) 
 
-## ⚙️ Instalación Inicial
-
-```bash
-# Instalar dependencias
-npm install
-
-# Generar Prisma Client
-npm run prisma:generate
-
-# Generar contratos gRPC desde .proto
-npm run proto:generate
-````
-
----
-
-## 🚀 Compilación y Ejecución
-
-```bash
-# Desarrollo local
-npm run start:dev
-
-# Producción
-npm run start:prod
-```
-
----
-
-## 🐳 Docker / Entorno Completo
-
-Para levantar todos los servicios necesarios (DB + Kafka + Kafka UI + Microservicio):
-
-```bash
-npm run __project_name_camel__:up:all
-```
-
-Para detenerlos completamente:
-
-```bash
-npm run __project_name_camel__:down:all
-```
-
-> Asegúrate de que no haya conflictos de puertos antes de ejecutar estos comandos.
-
----
-
-## 🧪 Pruebas
-
-```bash
-# Unitarias
-npm run test
-
-# Integración con testcontainers
-npm run test:testcontainers
-
-# End-to-End
-npm run test:e2e
-```
-
----
-
-## 📦 Estructura del Proyecto
-
-* `src/microservice/application`: comandos, queries y eventos del dominio
-* `src/microservice/domain`: entidades, value objects y eventos
-* `src/microservice/infrastructure`: controladores gRPC/Kafka, adaptadores Prisma, productores Kafka
-* `libs/shared`: configuración global, interfaces comunes
-* `prisma/schema.prisma`: definición de modelo relacional con Prisma
-
----
-
-## 🔌 Comunicación gRPC
-
-```bash
-# Para regenerar los contratos gRPC
-npm run proto:generate
-```
-
-Los servicios gRPC están definidos en archivos `.proto` y generados automáticamente con `ts-proto`.
-
----
-
-## 📡 Exploración Kafka
-
-Puedes observar los mensajes emitidos por Kafka:
-
-* **UI Web**: [http://localhost:8081](http://localhost:8081)
-* **CLI Kafka Bitnami**:
-
-```bash
-docker exec -it kafka1 kafka-console-consumer.sh \
-  --bootstrap-server localhost:9092 \
-  --topic __project_name_camel__-created \
-  --from-beginning
-```
-
----
-
-## 🧠 Buenas prácticas
-
-* DDD aplicado en toda la estructura
-* Separación por **puertos y adaptadores** (hexagonal architecture)
-* Eventos de dominio desacoplados mediante Kafka
-* Casos de uso orquestados por CQRS
-* Adaptadores inbounds/outbounds desacoplados
-
----
+Este README contiene una guía completa para implementar y extender el microservicio, organizada en pasos lógicos desde la preparación del ambiente hasta la referencia de documentación externa.
 
 ## 👤 Autor
 

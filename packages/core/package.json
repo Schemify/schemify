@@ -1,6 +1,6 @@
 {
   "name": "@schemifyjs/core",
-  "version": "0.1.53",
+  "version": "0.1.54",
   "description": "Core module of the SchemifyJS CLI. Provides reusable functions such as scaffolding, template handling, and general utilities.",
   "type": "module",
   "main": "dist/index.js",
