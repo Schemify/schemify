@@ -28,15 +28,15 @@ import {
 
 // Adaptadores de salida (implementaciones)
 import {
-  Create__project_name_camel__PrismaRepository,
-  Update__project_name_camel__PrismaRepository,
-  Delete__project_name_camel__PrismaRepository
+  Create__project_name_pascal__PrismaRepository,
+  Update__project_name_pascal__PrismaRepository,
+  Delete__project_name_pascal__PrismaRepository
 } from './command'
 
 import {
-  GetAll__project_name_camel__PrismaRepository,
-  Get__project_name_camel__ByIdPrismaRepository,
-  Get__project_name_camel__WithCursorPrismaRepository
+  GetAll__project_name_pascal__PrismaRepository,
+  Get__project_name_pascal__ByIdPrismaRepository,
+  Get__project_name_pascal__WithCursorPrismaRepository
 } from './query'
 
 @Module({
@@ -48,29 +48,29 @@ import {
     // Command ports
     {
       provide: Create__project_name_pascal__Port,
-      useClass: Create__project_name_camel__PrismaRepository
+      useClass: Create__project_name_pascal__PrismaRepository
     },
     {
       provide: Update__project_name_pascal__Port,
-      useClass: Update__project_name_camel__PrismaRepository
+      useClass: Update__project_name_pascal__PrismaRepository
     },
     {
       provide: Delete__project_name_pascal__Port,
-      useClass: Delete__project_name_camel__PrismaRepository
+      useClass: Delete__project_name_pascal__PrismaRepository
     },
 
     // Query ports
     {
       provide: Get__project_name_pascal__ByIdPort,
-      useClass: Get__project_name_camel__ByIdPrismaRepository
+      useClass: Get__project_name_pascal__ByIdPrismaRepository
     },
     {
       provide: GetAll__project_name_pascal__Port,
-      useClass: GetAll__project_name_camel__PrismaRepository
+      useClass: GetAll__project_name_pascal__PrismaRepository
     },
     {
       provide: Get__project_name_pascal__WithCursorPort,
-      useClass: Get__project_name_camel__WithCursorPrismaRepository
+      useClass: Get__project_name_pascal__WithCursorPrismaRepository
     }
   ],
   exports: [

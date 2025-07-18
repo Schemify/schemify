@@ -11,8 +11,8 @@ if [ -z "$PROJECT_NAME" ]; then
     exit 1
 fi
 
-SCHEMA_PATH=apps/$PROJECT_NAME/prisma/schema.prisma
-MAIN_FILE=dist/apps/$PROJECT_NAME/src/main.js
+SCHEMA_PATH=./prisma/schema.prisma
+MAIN_FILE=./dist/main.js
 
 echo "🚀 Starting microservice: $PROJECT_NAME"
 
@@ -69,12 +69,6 @@ generate_prisma_client() {
     echo "✅ Prisma client generated"
 }
 
-# Compile .proto files
-compile_proto_files() {
-    echo "📦 Compiling .proto files..."
-    sh ./scripts/compile-protos.sh
-}
-
 # ─── Run all setup steps ────────
 
 if detect_auto_migrations; then
@@ -83,7 +77,6 @@ fi
 
 sync_schema
 generate_prisma_client
-compile_proto_files
 
 # ─── Start the application ────────
 echo "🚀 Starting application..."

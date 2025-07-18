@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://schemify.github.io/schemify.com/assets/img/logos/schemify-logo.svg" width="120" alt="Nest Logo" /></a>
+  <a href="https://github.com/Schemify/schemify/" target="blank"><img src="https://schemify.github.io/schemify.com/assets/img/logos/schemify-logo.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
 <p align="center">

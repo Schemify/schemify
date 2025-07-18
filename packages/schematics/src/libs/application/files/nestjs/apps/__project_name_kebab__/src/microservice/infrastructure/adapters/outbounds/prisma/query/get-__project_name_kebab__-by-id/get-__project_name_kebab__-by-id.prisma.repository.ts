@@ -1,19 +1,22 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @darraghor/nestjs-typed/injectable-should-be-provided */
+
 import { Injectable } from '@nestjs/common'
 
 // Entidad del dominio
-import { __project_name_pascal__Entity } from 'apps/__project_name_kebab__/src/microservice/domain/entities/__project_name_kebab__.entity'
+import { __project_name_pascal__Entity } from '@__project_name_camel__/microservice/domain/entities/__project_name_kebab__.entity'
 
 // ✅ Adaptador de salida (infraestructura)
-import { PrismaService } from 'apps/__project_name_kebab__/src/microservice/infrastructure/adapters/outbounds/prisma/prisma.service'
+import { PrismaService } from '@__project_name_camel__/microservice/infrastructure/adapters/outbounds/prisma/prisma.service'
+import { __project_name_pascal__ } from '@prisma/client'
 
 // ✅ Puerto de salida (dominio)
-import { Get__project_name_pascal__ByIdPort } from 'apps/__project_name_kebab__/src/microservice/application/ports/outbounds/repositories/__project_name_kebab__-query-ports'
+import { Get__project_name_pascal__ByIdPort } from '@__project_name_camel__/microservice/application/ports/outbounds/repositories/__project_name_kebab__-query-ports'
 
-import { __project_name_pascal__Mapper } from 'apps/__project_name_kebab__/src/microservice/infrastructure/mappers/__project_name_kebab__.mapper'
+import { __project_name_pascal__Mapper } from '@__project_name_camel__/microservice/infrastructure/mappers/__project_name_kebab__.mapper'
 
 @Injectable()
-export class Get__project_name_camel__ByIdPrismaRepository
+export class Get__project_name_pascal__ByIdPrismaRepository
   implements Get__project_name_pascal__ByIdPort
 {
   constructor(
@@ -22,9 +25,10 @@ export class Get__project_name_camel__ByIdPrismaRepository
   ) {}
 
   async getById(id: string): Promise<__project_name_pascal__Entity | null> {
-    const result = await this.prisma.__project_name_camel__.findUnique({
-      where: { id }
-    })
+    const result: __project_name_pascal__ | null =
+      await this.prisma.__project_name_camel__.findUnique({
+        where: { id }
+      })
 
     if (!result) return null
 

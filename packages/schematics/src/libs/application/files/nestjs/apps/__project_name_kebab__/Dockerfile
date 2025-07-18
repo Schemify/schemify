@@ -14,6 +14,7 @@ COPY . .
 # ✅ Solo generar Prisma __project_name_camel__ (sin aplicar migraciones)
 RUN npx prisma generate --schema=apps/__project_name_kebab__/prisma/schema.prisma
 
+
 # ✅ Compilar código
 RUN npm run build __project_name_kebab__
 RUN npm run build proto
@@ -43,15 +44,16 @@ COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
 COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma
 
 # ─── Copiar código compilado ────────
-COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/dist/apps/__project_name_kebab__/src ./dist
+COPY --from=builder /app/dist/libs/proto/src ./dist/proto
 
 # ─── Copiar entrypoint ────────
-COPY scripts/ ./scripts/
-RUN chmod +x ./*
+COPY scripts/ ./scripts
+RUN chmod +x ./scripts/entrypoint.sh ./scripts/compile-protos.sh
 
 # ─── Healthcheck ────────
 HEALTHCHECK --interval=10s --timeout=3s --start-period=10s --retries=3 \
     CMD nc -z localhost ${SERVICE_PORT} || exit 1
 
 # ─── Entrypoint ────────
-ENTRYPOINT ["./scripts/entrypoint.sh", "___project_name_kebab__"]
+ENTRYPOINT ["./scripts/entrypoint.sh", "__project_name_kebab__"]

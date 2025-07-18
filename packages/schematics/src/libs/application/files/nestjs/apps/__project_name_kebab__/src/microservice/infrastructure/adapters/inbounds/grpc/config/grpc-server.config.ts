@@ -11,7 +11,7 @@ export function grpcServerOptions(): MicroserviceOptions {
     options: {
       package: __project_name_snake__.__project_name_screaming___PACKAGE_NAME,
       protoPath: Object.values(PROTO_PATHS).map((p) =>
-        join(__dirname, '..', p as string)
+        join(__dirname, '..', p)
       ),
       url: process.env.SERVICE_GRPC_URL
     }

@@ -1,17 +1,19 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @darraghor/nestjs-typed/injectable-should-be-provided */
+
 import { Injectable } from '@nestjs/common'
 
 // Entidades del dominio
 import { __project_name_pascal__Entity } from 'apps/__project_name_kebab__/src/microservice/domain/entities/__project_name_kebab__.entity'
 
 // ✅ Puerto de salida (dominio)
-import { PrismaService } from 'apps/__project_name_kebab__/src/microservice/infrastructure/adapters/outbounds/prisma/prisma.service'
+import { PrismaService } from '@__project_name_camel__/microservice/infrastructure/adapters/outbounds/prisma/prisma.service'
 
 // ✅ Adaptador de salida (infraestructura)
-import { Update__project_name_pascal__Port } from 'apps/__project_name_kebab__/src/microservice/application/ports/outbounds/repositories/__project_name_kebab__-command-ports'
+import { Update__project_name_pascal__Port } from '@__project_name_camel__/microservice/application/ports/outbounds/repositories/__project_name_kebab__-command-ports'
 
 @Injectable()
-export class Update__project_name_camel__PrismaRepository
+export class Update__project_name_pascal__PrismaRepository
   implements Update__project_name_pascal__Port
 {
   constructor(private readonly prisma: PrismaService) {}

@@ -1,6 +1,6 @@
 import { join, resolve } from 'path'
 
-const PROTO_ROOT = resolve(__dirname, '../../../libs/proto/src')
+const PROTO_ROOT = resolve(__dirname, './proto')
 
 export const PROTO_PATHS = {
   __project_name_camel__: join(
